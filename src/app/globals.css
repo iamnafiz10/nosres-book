@@ -50,7 +50,7 @@ body {
 
 /*------------------- Account -------------------*/
 #account_dropdown_menu {
-    top: 47px;
+    top: 50px;
     right: 10%;
     width: 315px;
     height: 0;
@@ -60,5 +60,5 @@ body {
 
 .show-account-dropdown-menu {
     visibility: visible !important;
-    height: 215px !important;
+    height: 360px !important;
 }

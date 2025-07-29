@@ -4,11 +4,17 @@ import Link from 'next/link'
 import {AiOutlineClose} from "react-icons/ai";
 import {IoIosArrowDown} from "react-icons/io";
 import {HiOutlineBars3} from "react-icons/hi2";
-import WhoImg4 from '../../public/assets/images/m4.svg';
 import LogoImg from '../../public/assets/images/logo.svg';
 import Image from "next/image";
 import {HiUserCircle} from "react-icons/hi";
 import {Modal, ModalBody} from "flowbite-react";
+import {
+    LuChartNoAxesColumnIncreasing,
+    LuCircleArrowRight,
+    LuLibraryBig,
+    LuShapes,
+    LuUserRoundPlus
+} from "react-icons/lu";
 
 
 function Header() {
@@ -72,86 +78,120 @@ function Header() {
                                     className="for-who-we-are absolute invisible group-hover:visible max-h-0 group-hover:max-h-[220px] transition-all ease-linear duration-300 top-full left-0 right-0 overflow-hidden w-full bg-white border border-b border-bordercolor">
                                     <div className="container">
                                         <div className="grid grid-cols-3 gap-2 h-[200px] pt-2 pb-0">
-                                            <Link href='/about'
-                                                  className="col hover:bg-[#F0F0F0] flex items-center px-4 h-[85px] cursor-pointer">
-                                                <div className="flex items-center gap-3">
-                                                    <Image width={1000} height={500} src="/assets/images/rs1.svg"
-                                                           className="w-8"
-                                                           alt="icon"/>
-                                                    <div className="text">
-                                                        <h2 className="text-[#252C32] font-[500] text-[14px]">
-                                                            Maternelle
-                                                        </h2>
-                                                        <p className="mt-1 text-xs text-[#828D9E]">
-                                                            Découvrir comment nous éveillons les tout-petits
-                                                            au monde.
-                                                        </p>
+                                            <div className="col h-[85px] cursor-pointer">
+                                                <div
+                                                    className="flex items-center gap-1 border-b border-bordercolor pb-2">
+                                                    <div className="icon">
+                                                        <LuChartNoAxesColumnIncreasing size={20}
+                                                                                       className="text-primary"/>
                                                     </div>
+                                                    <h2 className="text-[#252C32] font-[500] text-[14px]">
+                                                        SÉLECTIONS
+                                                    </h2>
                                                 </div>
-                                            </Link>
 
-                                            <div
-                                                className="col hover:bg-[#F0F0F0] flex items-center px-4 h-[85px] cursor-pointer">
-                                                <div className="flex items-center gap-3">
-                                                    <Image width={1000} height={500} src="/assets/images/rs2.svg"
-                                                           className="w-8"
-                                                           alt="icon"/>
-                                                    <div className="text">
-                                                        <h2 className="flex items-center gap-1 text-[#252C32] font-[500] text-[14px]">
+                                                <ul className="mt-3 space-y-2 text-prgcolor text-[14px]">
+                                                    <li>
+                                                        <Link href='#' className="hover:text-primary">Nouveautés</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#' className="hover:text-primary">À paraître</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#' className="hover:text-primary">
+                                                            Ressources téléchargeables
+                                                        </Link>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div className="col h-[85px] cursor-pointer">
+                                                <div
+                                                    className="flex items-center gap-1 border-b border-bordercolor pb-2">
+                                                    <div className="icon">
+                                                        <LuShapes size={20}
+                                                                  className="text-primary"/>
+                                                    </div>
+                                                    <h2 className="text-[#252C32] font-[500] text-[14px]">
+                                                        NIVEAUX
+                                                    </h2>
+                                                </div>
+
+                                                <ul className="mt-3 space-y-2 text-prgcolor text-[14px]">
+                                                    <li>
+                                                        <Link href='#' className="hover:text-primary">Maternelle</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#'
+                                                              className="hover:text-primary flex items-center gap-1">
                                                             Primaire
                                                             <span
-                                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
-                                                        </h2>
-                                                        <p className="mt-1 text-xs text-[#828D9E]">
-                                                            Apprendre comment nous contribuons dans
-                                                            l’éducation primaire.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div
-                                                className="col hover:bg-[#F0F0F0] flex items-center px-4 h-[85px] cursor-pointer">
-                                                <div className="flex items-center gap-3">
-                                                    <Image width={1000} height={500} src="/assets/images/rs3.svg"
-                                                           className="w-8"
-                                                           alt="icon"/>
-                                                    <div className="text">
-                                                        <h2 className="flex items-center gap-1 text-[#252C32] font-[500] text-[14px]">
+                                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#'
+                                                              className="hover:text-primary flex items-center gap-1">
                                                             Secondaire
                                                             <span
-                                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
-                                                        </h2>
-                                                        <p className="mt-1 text-xs text-[#828D9E]">
-                                                            Comprendre comment nous soutenons les
-                                                            parcours au secondaire.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div
-                                                className="col hover:bg-[#F0F0F0] flex items-center px-4 h-[85px] cursor-pointer">
-                                                <div className="flex items-center gap-3">
-                                                    <Image src={WhoImg4} className="w-8" alt="icon"/>
-                                                    <div className="text">
-                                                        <h2 className="flex items-center gap-1 text-[#252C32] font-[500] text-[14px]">
+                                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#'
+                                                              className="hover:text-primary flex items-center gap-1">
                                                             Supérieur
                                                             <span
-                                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
-                                                        </h2>
-                                                        <p className="mt-1 text-xs text-[#828D9E]">
-                                                            Explorer comment nous accompagnons
-                                                            l’apprentissage au supérieur.
-                                                        </p>
+                                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#'
+                                                              className="hover:text-primary flex items-center gap-1">
+                                                            Tous les niveaux
+                                                            <span
+                                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                                        </Link>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div className="col h-[85px] cursor-pointer">
+                                                <div
+                                                    className="flex items-center gap-1 border-b border-bordercolor pb-2">
+                                                    <div className="icon">
+                                                        <LuLibraryBig size={20}
+                                                                      className="text-primary"/>
                                                     </div>
+                                                    <h2 className="text-[#252C32] font-[500] text-[14px]">
+                                                        NOS COLLECTIONS
+                                                    </h2>
                                                 </div>
+
+                                                <ul className="mt-3 space-y-2 text-prgcolor text-[14px]">
+                                                    <li>
+                                                        <Link href='#'
+                                                              className="hover:text-primary flex items-center gap-1">
+                                                            Voyage Méthode de lecture
+                                                            <span
+                                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#' className="hover:text-primary">Collection
+                                                            2</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#' className="hover:text-primary">
+                                                            Collection 3
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link href='#' className="hover:text-primary">
+                                                            Toutes nos collections
+                                                        </Link>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -179,30 +219,47 @@ function Header() {
                                     <div id="account_dropdown_menu"
                                          className="account-dropdown-menu absolute text-gray-700 pt-1 for-account transition-all ease-linear duration-300 bg-white rounded shadow border border-bordercolor">
                                         <div className="container">
-                                            <div
-                                                className="col flex items-center px-2 h-[85px]">
-                                                <div className="flex items-center gap-3">
+                                            <div className="col flex items-center px-2 h-[85px] w-full">
+                                                <div
+                                                    className="flex items-center gap-3 border-b border-bordercolor pb-3 w-full">
                                                     <HiUserCircle size={70} className="text-primary"/>
                                                     <div className="text">
                                                         <h2 className="text-[#252C32] font-semibold text-[14px]">
-                                                            Nosres Account
+                                                            Compte Nosres
                                                         </h2>
                                                     </div>
                                                 </div>
                                             </div>
                                             <p className="mt-2">
                                                 <Link href='#' className="text-primary">
-                                                    Sign in
-                                                </Link> to your Nosres Account or <Link href='#'
-                                                                                        className="text-primary">
-                                                create
-                                            </Link> one. A Nosres account gives you access to
-                                                all Nosres services.
+                                                    Connectez-vous
+                                                </Link> à votre compte Nosres ou <Link href='#'
+                                                                                       className="text-primary">
+                                                créez-en
+                                            </Link> un.
                                             </p>
-                                            <div className="flex justify-start text-center">
+                                            <h4 className="mt-3 text-[14px] text-prgcolor">
+                                                De nombreuses ressources pédagogiques
+                                                complémentaires aux manuels scolaires
+                                                peuvent être téléchargées gratuitement
+                                                sur le site.
+                                            </h4>
+                                            <div className="flex justify-start">
                                                 <Link href='/'
-                                                      className="mt-2 w-[120px] py-2 flex text-[14px] items-center justify-center gap-2 border rounded text-primary hover:bg-primary hover:text-white hover:border-primary">
-                                                    Learn More
+                                                      className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary hover:bg-primary hover:text-white hover:border-primary">
+                                                    <div className="icon">
+                                                        <LuCircleArrowRight size={20} className=""/>
+                                                    </div>
+                                                    Connectez-vous
+                                                </Link>
+                                            </div>
+                                            <div className="flex justify-start">
+                                                <Link href='/'
+                                                      className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-transparent text-white hover:text-primary hover:border-primary">
+                                                    <div className="icon">
+                                                        <LuUserRoundPlus size={20} className=""/>
+                                                    </div>
+                                                    Créez votre compte
                                                 </Link>
                                             </div>
                                         </div>
@@ -235,38 +292,125 @@ function Header() {
                             </summary>
                             <ul className="mt-4 space-y-4">
                                 <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                    <Link href='/public'>Maternelle</Link>
+                                    <Link href='/' className="flex items-center gap-1">
+                                        <div className="icon">
+                                            <LuChartNoAxesColumnIncreasing size={18} className="text-primary"/>
+                                        </div>
+                                        SÉLECTIONS
+                                    </Link>
                                 </li>
 
+                                <div className="ml-6 space-y-2">
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Nouveautés
+                                        </Link>
+                                    </li>
+
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            À paraître
+                                        </Link>
+                                    </li>
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Ressources téléchargeables
+                                        </Link>
+                                    </li>
+                                </div>
+
+                            </ul>
+
+                            <ul className="mt-4 space-y-4">
                                 <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
-                                        Primaire
-                                        <span
-                                            className="text-[8px] cursor-auto text-primary bg-[#eeeeee] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
+                                        <div className="icon">
+                                            <LuShapes size={18} className="text-primary"/>
+                                        </div>
+                                        NIVEAUX
                                     </Link>
                                 </li>
 
+                                <div className="ml-6 space-y-2">
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Maternelle
+                                        </Link>
+                                    </li>
+
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Primaire
+                                            <span
+                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                        </Link>
+                                    </li>
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Secondaire
+                                            <span
+                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                        </Link>
+                                    </li>
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Supérieur
+                                            <span
+                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                        </Link>
+                                    </li>
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Tous les niveaux
+                                            <span
+                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                        </Link>
+                                    </li>
+                                </div>
+
+                            </ul>
+
+                            <ul className="mt-4 space-y-4">
                                 <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                    <Link href='/public' className="flex items-center gap-1">
-                                        Secondaire
-                                        <span
-                                            className="text-[8px] cursor-auto text-primary bg-[#eeeeee] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
+                                    <Link href='/' className="flex items-center gap-1">
+                                        <div className="icon">
+                                            <LuLibraryBig size={18} className="text-primary"/>
+                                        </div>
+                                        NOS COLLECTIONS
                                     </Link>
                                 </li>
 
-                                <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                    <Link href='/public' className="flex items-center gap-1">
-                                        Supérieur
-                                        <span
-                                            className="text-[8px] cursor-auto text-primary bg-[#eeeeee] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
-                                    </Link>
-                                </li>
+                                <div className="ml-6 space-y-2">
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Voyage Méthode de lecture
+                                        </Link>
+                                    </li>
+
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Primaire
+                                            <span
+                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                        </Link>
+                                    </li>
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Collection 2
+                                        </Link>
+                                    </li>
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Collection 3
+                                        </Link>
+                                    </li>
+                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                        <Link href='/' className="flex items-center gap-1">
+                                            Toutes nos collections
+                                        </Link>
+                                    </li>
+                                </div>
+
                             </ul>
                         </details>
 
@@ -304,30 +448,47 @@ function Header() {
             >
                 <ModalBody>
                     <div className="container">
-                        <div
-                            className="col flex items-center px-2 h-[85px]">
-                            <div className="flex items-center gap-3">
-                                <HiUserCircle size={70}/>
+                        <div className="col flex items-center px-2 h-[85px] w-full">
+                            <div
+                                className="flex items-center gap-3 border-b border-bordercolor pb-3 w-full">
+                                <HiUserCircle size={70} className="text-primary"/>
                                 <div className="text">
                                     <h2 className="text-[#252C32] font-semibold text-[14px]">
-                                        Nosres Account
+                                        Compte Nosres
                                     </h2>
                                 </div>
                             </div>
                         </div>
-                        <hr/>
                         <p className="mt-2">
                             <Link href='#' className="text-primary">
-                                Sign in
-                            </Link> to your Nosres Account or <Link href='#' className="text-primary">
-                            create
-                        </Link> one. A Nosres account gives you access to
-                            all Nosres services.
+                                Connectez-vous
+                            </Link> à votre compte Nosres ou <Link href='#'
+                                                                   className="text-primary">
+                            créez-en
+                        </Link> un.
                         </p>
-                        <div className="flex justify-start text-center">
+                        <h4 className="mt-3 text-[14px] text-prgcolor">
+                            De nombreuses ressources pédagogiques
+                            complémentaires aux manuels scolaires
+                            peuvent être téléchargées gratuitement
+                            sur le site.
+                        </h4>
+                        <div className="flex justify-start">
                             <Link href='/'
-                                  className="mt-2 w-[120px] py-2 flex text-[14px] items-center justify-center gap-2 border rounded text-primary hover:bg-primary hover:text-white hover:border-primary">
-                                Learn More
+                                  className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary hover:bg-primary hover:text-white hover:border-primary">
+                                <div className="icon">
+                                    <LuCircleArrowRight size={20} className=""/>
+                                </div>
+                                Connectez-vous
+                            </Link>
+                        </div>
+                        <div className="flex justify-start">
+                            <Link href='/'
+                                  className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-transparent text-white hover:text-primary hover:border-primary">
+                                <div className="icon">
+                                    <LuUserRoundPlus size={20} className=""/>
+                                </div>
+                                Créez votre compte
                             </Link>
                         </div>
                     </div>
