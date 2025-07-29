@@ -1,26 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
 
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
+
+@theme{
+    --breakpoint- *: initial;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1100px;
+    --color-primary: #4D7FB8;
+    --color-prgcolor: #39393b;
+    --color-graycolor: #828D9E;
+    --color-bordercolor: #e5e7eb;
+    /*--color-bordercolor: #a1a1a1db;*/
+}
+
+@utility container {
+    margin-inline: auto;
+    padding: 1rem;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --background: #ffffff;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif !important;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*------------------- Mobile Menu -------------------*/
+#mobile_menu {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: -120%;
+    transition: 0.3s ease-in-out;
+    height: 100%;
+}
+
+.show_menu {
+    top: 0 !important;
+    height: 100% !important;
 }
