@@ -29,15 +29,15 @@ function Footer() {
             <section id="footer-section" className="bg-[#F4F4F4] mt-10">
                 <div className="container py-10">
                     <footer>
-                        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            <div className="col">
+                        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-12 gap-4">
+                            <div className="col col-span-4">
                                 <h3 className="text-gray-600 font-semibold mt-2 text-[16px]">
-                                    Inscrivez-vous à notre lettre<br/>
-                                    éducative :
+                                    Abonnez-vous à notre newsletter
                                 </h3>
                                 <p className="mt-1 text-gray-500 text-[12px]">
-                                    Un email par mois pour suivre nos projets, découvrir
-                                    nos ressources et rejoindre la communauté Nosres.
+                                    Recevez les dernières nouveautés, idées<br/>
+                                    pédagogiques, offres spéciales et ressources<br/>
+                                    exclusives directement dans votre boîte mail.
                                 </p>
 
                                 <div
@@ -63,9 +63,9 @@ function Footer() {
                                 </div>
                             </div>
 
-                            <div className="col mt-3">
+                            <div className="col col-span-2 mt-3">
                                 <h3 className="font-semibold text-gray-600 text-[12px]">
-                                    Nosres Education
+                                    Nosres Books
                                 </h3>
                                 <ul className="mt-3 space-y-2 text-gray-500 text-[12px]">
                                     <li className="hover:text-primary">
@@ -75,6 +75,9 @@ function Footer() {
                                         <Link href='/'>Notre équipe</Link>
                                     </li>
                                     <li className="hover:text-primary">
+                                        <Link href='/'>Nos auteurs</Link>
+                                    </li>
+                                    <li className="hover:text-primary">
                                         <Link href='mailto:nosres@email.com' className="flex items-center gap-2">
                                             Nous contacter
                                         </Link>
@@ -82,7 +85,7 @@ function Footer() {
                                 </ul>
                             </div>
 
-                            <div className="col mt-3">
+                            <div className="col col-span-3 mt-3">
                                 <h3 className="font-semibold text-gray-600 text-[12px]">Parcours éducatif</h3>
                                 <ul className="mt-3 space-y-2 text-gray-500 text-[12px]">
                                     <li className="hover:text-primary">
@@ -120,35 +123,30 @@ function Footer() {
                                 </ul>
                             </div>
 
-                            <div className="col mt-3">
-                                <h3 className="font-semibold text-gray-600 text-[12px]">Nos piliers</h3>
+                            <div className="col col-span-3 mt-3">
+                                <h3 className="font-semibold text-gray-600 text-[12px]">Ressources</h3>
                                 <ul className="mt-3 space-y-2 text-gray-500 text-[12px]">
                                     <li className="hover:text-primary">
                                         <Link href='/' className="flex items-center gap-1">
-                                            Nosres Books
-                                            <span
-                                                className="text-[10px] cursor-auto text-primary bg-[#eeeeee] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
+                                            Pour les auteurs potentiels
                                         </Link>
                                     </li>
                                     <li className="hover:text-primary">
                                         <Link href='/' className="flex items-center gap-1">
-                                            Nosres laboratoire éducatif
-                                            <span
-                                                className="text-[10px] cursor-auto text-primary bg-[#eeeeee] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
+                                            Pour les auteurs actuels
                                         </Link>
                                     </li>
                                     <li className="hover:text-primary">
-                                        <Link href='/'>Link 3</Link>
+                                        <Link href='/'>Pour les éducateurs</Link>
                                     </li>
                                     <li className="hover:text-primary">
-                                        <Link href='/'>Link 4</Link>
+                                        <Link href='/'>Pour les institutions</Link>
                                     </li>
                                     <li className="hover:text-primary">
-                                        <Link href='/'>Link 5</Link>
+                                        <Link href='/'>Service clientèle</Link>
+                                    </li>
+                                    <li className="hover:text-primary">
+                                        <Link href='/'>Droits et permissions</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -166,11 +164,12 @@ function Footer() {
                                     </Link>
                                 </div>
                                 <h3 className="mt-4 text-gray-600 font-semibold">
-                                    Inscrivez-vous à notre lettre
-                                    éducative :</h3>
+                                    Abonnez-vous à notre newsletter
+                                </h3>
                                 <p className="mt-1 text-gray-500 text-[12px]">
-                                    Un email par mois pour suivre nos projets, découvrir
-                                    nos ressources et rejoindre la communauté Nosres.
+                                    Recevez les dernières nouveautés, idées
+                                    pédagogiques, offres spéciales et ressources
+                                    exclusives directement dans votre boîte mail.
                                 </p>
                                 <div
                                     className="mt-6 flex cursor-pointer items-center gap-0 justify-start hover:text-[#3A5F8A]">
@@ -197,7 +196,7 @@ function Footer() {
                             <details className="group">
                                 <summary
                                     className="relative border-b border-b-[#ABABAB] pb-4 flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px]  focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
-                                    Nosres Education
+                                    Nosres Books
                                     <RxPlus
                                         className="absolute right-0 top-1 h-4 w-4 stroke-slate-700 transition duration-300 group-open:rotate-90"/>
                                 </summary>
@@ -207,6 +206,9 @@ function Footer() {
                                     </li>
                                     <li className="hover:text-primary">
                                         <Link href='/'>Notre équipe</Link>
+                                    </li>
+                                    <li className="hover:text-primary">
+                                        <Link href='/'>Nos auteurs</Link>
                                     </li>
                                     <li className="hover:text-primary">
                                         <Link href='mailto:nosres@email.com'>Nous contacter</Link>
@@ -258,47 +260,41 @@ function Footer() {
                             <details className="group pt-8">
                                 <summary
                                     className="relative border-b border-b-[#ABABAB] pb-4 flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px]  focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
-                                    Nos piliers
+                                    Ressources
                                     <RxPlus
                                         className="absolute right-0 top-1 h-4 w-4 stroke-slate-700 transition duration-300 group-open:rotate-90"/>
                                 </summary>
                                 <ul className="mt-4 space-y-2 text-gray-500 text-[12px]">
                                     <li className="hover:text-primary">
                                         <Link href='/' className="flex items-center gap-1">
-                                            Nosres Books
-                                            <span
-                                                className="text-[10px] cursor-auto text-primary bg-[#eeeeee] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
+                                            Pour les auteurs potentiels
                                         </Link>
                                     </li>
                                     <li className="hover:text-primary">
                                         <Link href='/' className="flex items-center gap-1">
-                                            Nosres laboratoire éducatif
-                                            <span
-                                                className="text-[10px] cursor-auto text-primary bg-[#eeeeee] px-2 py-1 rounded-full">
-                                                                COMING SOON
-                                                            </span>
+                                            Pour les auteurs actuels
                                         </Link>
                                     </li>
                                     <li className="hover:text-primary">
-                                        <Link href='/'>Link 3</Link>
+                                        <Link href='/'>Pour les éducateurs</Link>
                                     </li>
                                     <li className="hover:text-primary">
-                                        <Link href='/'>Link 4</Link>
+                                        <Link href='/'>Pour les institutions</Link>
                                     </li>
                                     <li className="hover:text-primary">
-                                        <Link href='/'>Link 5</Link>
+                                        <Link href='/'>Service clientèle</Link>
+                                    </li>
+                                    <li className="hover:text-primary">
+                                        <Link href='/'>Droits et permissions</Link>
                                     </li>
                                 </ul>
                             </details>
                         </div>
 
-                        {/*<div className="mt-12 border-t border-[#9999998f]">*/}
-
-                        {/*</div>*/}
+                        <div className="mt-8 border-t border-bordercolor">
+                        </div>
                         {/* Copyright */}
-                        <div className="copyright sm:flex justify-between pt-4 mt-10">
+                        <div className="copyright sm:flex justify-between pt-4 mt-2">
                             <div className="left">
                                 <ul className="block space-y-2 md:space-y-0 md:flex items-center gap-4 text-gray-500 text-[12px]">
                                     <div className="logo">

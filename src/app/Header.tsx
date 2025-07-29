@@ -48,6 +48,13 @@ function Header() {
     // Mobile Account popup
     const [openModal, setOpenModal] = useState(false);
 
+    // Mobile menu dropdown
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const toggleDropdown = (key: string) => {
+        setOpenDropdown(prev => (prev === key ? null : key));
+    };
+
+
     return (
         <>
             <section id="header-section" className="relative">
@@ -291,7 +298,8 @@ function Header() {
                                     className="absolute right-0 top-1 h-4 w-4 stroke-slate-700 transition duration-300 group-open:rotate-180"/>
                             </summary>
                             <ul className="mt-4 space-y-4">
-                                <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                <li onClick={() => toggleDropdown('selections')}
+                                    className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
                                             <LuChartNoAxesColumnIncreasing size={18} className="text-primary"/>
@@ -299,30 +307,31 @@ function Header() {
                                         SÉLECTIONS
                                     </Link>
                                 </li>
+                                {openDropdown === 'selections' && (
+                                    <div className="ml-6 space-y-2">
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Nouveautés
+                                            </Link>
+                                        </li>
 
-                                <div className="ml-6 space-y-2">
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Nouveautés
-                                        </Link>
-                                    </li>
-
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            À paraître
-                                        </Link>
-                                    </li>
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Ressources téléchargeables
-                                        </Link>
-                                    </li>
-                                </div>
-
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                À paraître
+                                            </Link>
+                                        </li>
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Ressources téléchargeables
+                                            </Link>
+                                        </li>
+                                    </div>
+                                )}
                             </ul>
 
                             <ul className="mt-4 space-y-4">
-                                <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                <li onClick={() => toggleDropdown('niveaux')}
+                                    className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
                                             <LuShapes size={18} className="text-primary"/>
@@ -330,48 +339,50 @@ function Header() {
                                         NIVEAUX
                                     </Link>
                                 </li>
+                                {openDropdown === 'niveaux' && (
+                                    <div className="ml-6 space-y-2">
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Maternelle
+                                            </Link>
+                                        </li>
 
-                                <div className="ml-6 space-y-2">
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Maternelle
-                                        </Link>
-                                    </li>
-
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Primaire
-                                            <span
-                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
-                                        </Link>
-                                    </li>
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Secondaire
-                                            <span
-                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
-                                        </Link>
-                                    </li>
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Supérieur
-                                            <span
-                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
-                                        </Link>
-                                    </li>
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Tous les niveaux
-                                            <span
-                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
-                                        </Link>
-                                    </li>
-                                </div>
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Primaire
+                                                <span
+                                                    className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                            </Link>
+                                        </li>
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Secondaire
+                                                <span
+                                                    className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                            </Link>
+                                        </li>
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Supérieur
+                                                <span
+                                                    className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                            </Link>
+                                        </li>
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Tous les niveaux
+                                                <span
+                                                    className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                            </Link>
+                                        </li>
+                                    </div>
+                                )}
 
                             </ul>
 
                             <ul className="mt-4 space-y-4">
-                                <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                <li onClick={() => toggleDropdown('collection')}
+                                    className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
                                             <LuLibraryBig size={18} className="text-primary"/>
@@ -379,38 +390,38 @@ function Header() {
                                         NOS COLLECTIONS
                                     </Link>
                                 </li>
+                                {openDropdown === 'collection' && (
+                                    <div className="ml-6 space-y-2">
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Voyage Méthode de lecture
+                                            </Link>
+                                        </li>
 
-                                <div className="ml-6 space-y-2">
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Voyage Méthode de lecture
-                                        </Link>
-                                    </li>
-
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Primaire
-                                            <span
-                                                className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
-                                        </Link>
-                                    </li>
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Collection 2
-                                        </Link>
-                                    </li>
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Collection 3
-                                        </Link>
-                                    </li>
-                                    <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
-                                        <Link href='/' className="flex items-center gap-1">
-                                            Toutes nos collections
-                                        </Link>
-                                    </li>
-                                </div>
-
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Primaire
+                                                <span
+                                                    className="text-[10px] text-primary bg-[#F3F4F4] px-2 py-1 rounded-full">COMING SOON</span>
+                                            </Link>
+                                        </li>
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Collection 2
+                                            </Link>
+                                        </li>
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Collection 3
+                                            </Link>
+                                        </li>
+                                        <li className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                            <Link href='/' className="flex items-center gap-1">
+                                                Toutes nos collections
+                                            </Link>
+                                        </li>
+                                    </div>
+                                )}
                             </ul>
                         </details>
 
@@ -444,7 +455,7 @@ function Header() {
                 dismissible
                 show={openModal}
                 onClose={() => setOpenModal(false)}
-                className="block lg:hidden"
+                className="flex lg:hidden"
             >
                 <ModalBody>
                     <div className="container">

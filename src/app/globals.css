@@ -62,3 +62,21 @@ body {
     visibility: visible !important;
     height: 360px !important;
 }
+
+
+/* Home page slider keyframe */
+@keyframes scroll-left-loop {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll-left-delay {
+    animation: scroll-left-loop 30s linear infinite;
+    animation-delay: 0s;
+}
+
+
