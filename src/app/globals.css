@@ -15,7 +15,6 @@
     --color-prgcolor: #39393b;
     --color-graycolor: #828D9E;
     --color-bordercolor: #e5e7eb;
-    /*--color-bordercolor: #a1a1a1db;*/
 }
 
 @utility container {
@@ -47,4 +46,19 @@ body {
 .show_menu {
     top: 0 !important;
     height: 100% !important;
+}
+
+/*------------------- Account -------------------*/
+#account_dropdown_menu {
+    top: 47px;
+    right: 10%;
+    width: 315px;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.show-account-dropdown-menu {
+    visibility: visible !important;
+    height: 215px !important;
 }
