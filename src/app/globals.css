@@ -33,6 +33,10 @@ body {
     padding: 0;
 }
 
+p {
+    color: #39393b !important
+}
+
 /*------------------- Mobile Menu -------------------*/
 #mobile_menu {
     position: fixed;
@@ -72,9 +76,9 @@ body {
 }
 
 /* Home page slider keyframe */
-@keyframes scroll-left-loop {
+@keyframes scrollLeft {
     0% {
-        transform: translateX(0%);
+        transform: translateX(0);
     }
     100% {
         transform: translateX(-50%);
@@ -82,8 +86,8 @@ body {
 }
 
 .animate-scroll-left-delay {
-    animation: scroll-left-loop 30s linear infinite;
-    animation-delay: 0s;
+    animation: scrollLeft 20s linear infinite;
 }
+
 
 

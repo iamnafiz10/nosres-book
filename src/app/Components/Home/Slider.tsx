@@ -6,9 +6,13 @@ import bookImgTwo from '../../../../public/assets/images/book2.jpg';
 import bookImgThree from '../../../../public/assets/images/book3.jpg';
 import bookImgFour from '../../../../public/assets/images/book4.jpg';
 import bookImgFive from '../../../../public/assets/images/book5.jpg';
+import {LuCirclePause, LuCirclePlay} from "react-icons/lu";
 
 function Slider() {
     const [activeTab, setActiveTab] = useState<'tab1' | 'tab2' | 'tab3' | 'tab4' | 'tab5'>('tab1');
+
+    // Slider push/play button
+    const [isPlaying, setIsPlaying] = useState(true);
     return (
         <>
             <section id="slider-section">
@@ -75,8 +79,12 @@ function Slider() {
 
                 {activeTab === 'tab1' && (
                     <div className="tab_one_content">
-                        <div className="overflow-hidden w-full h-[500px]">
-                            <div className="flex w-max gap-x-5 animate-scroll-left-delay">
+                        <div className="overflow-hidden w-full h-[450px]">
+                            <div
+                                className="flex w-max gap-x-5 animate-scroll-left-delay"
+                                style={{animationPlayState: isPlaying ? 'running' : 'paused'}}
+                            >
+
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
@@ -104,13 +112,24 @@ function Slider() {
                                 )}
                             </div>
                         </div>
+                        <div className="slider_button flex items-center justify-center">
+                            <button
+                                onClick={() => setIsPlaying(!isPlaying)}
+                                className="bg-white text-graycolor p-3 hover:text-primary transition-all"
+                            >
+                                {isPlaying ? <LuCirclePause size={25}/> : <LuCirclePlay size={25}/>}
+                            </button>
+                        </div>
                     </div>
                 )}
 
                 {activeTab === 'tab2' && (
                     <div className="tab_two_content">
-                        <div className="overflow-hidden w-full h-[500px]">
-                            <div className="flex w-max gap-x-5 animate-scroll-left-delay">
+                        <div className="overflow-hidden w-full h-[450px]">
+                            <div
+                                className="flex w-max gap-x-5 animate-scroll-left-delay"
+                                style={{animationPlayState: isPlaying ? 'running' : 'paused'}}
+                            >
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
@@ -138,13 +157,24 @@ function Slider() {
                                 )}
                             </div>
                         </div>
+                        <div className="slider_button flex items-center justify-center">
+                            <button
+                                onClick={() => setIsPlaying(!isPlaying)}
+                                className="bg-white text-graycolor p-3 hover:text-primary transition-all"
+                            >
+                                {isPlaying ? <LuCirclePause size={25}/> : <LuCirclePlay size={25}/>}
+                            </button>
+                        </div>
                     </div>
                 )}
 
                 {activeTab === 'tab3' && (
                     <div className="tab_three_content">
-                        <div className="overflow-hidden w-full h-[500px]">
-                            <div className="flex w-max gap-x-5 animate-scroll-left-delay">
+                        <div className="overflow-hidden w-full h-[450px]">
+                            <div
+                                className="flex w-max gap-x-5 animate-scroll-left-delay"
+                                style={{animationPlayState: isPlaying ? 'running' : 'paused'}}
+                            >
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
@@ -172,13 +202,24 @@ function Slider() {
                                 )}
                             </div>
                         </div>
+                        <div className="slider_button flex items-center justify-center">
+                            <button
+                                onClick={() => setIsPlaying(!isPlaying)}
+                                className="bg-white text-graycolor p-3 hover:text-primary transition-all"
+                            >
+                                {isPlaying ? <LuCirclePause size={25}/> : <LuCirclePlay size={25}/>}
+                            </button>
+                        </div>
                     </div>
                 )}
 
                 {activeTab === 'tab4' && (
                     <div className="tab_four_content">
-                        <div className="overflow-hidden w-full h-[500px]">
-                            <div className="flex w-max gap-x-5 animate-scroll-left-delay">
+                        <div className="overflow-hidden w-full h-[450px]">
+                            <div
+                                className="flex w-max gap-x-5 animate-scroll-left-delay"
+                                style={{animationPlayState: isPlaying ? 'running' : 'paused'}}
+                            >
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
@@ -206,13 +247,24 @@ function Slider() {
                                 )}
                             </div>
                         </div>
+                        <div className="slider_button flex items-center justify-center">
+                            <button
+                                onClick={() => setIsPlaying(!isPlaying)}
+                                className="bg-white text-graycolor p-3 hover:text-primary transition-all"
+                            >
+                                {isPlaying ? <LuCirclePause size={25}/> : <LuCirclePlay size={25}/>}
+                            </button>
+                        </div>
                     </div>
                 )}
 
                 {activeTab === 'tab5' && (
                     <div className="tab_five_content">
-                        <div className="overflow-hidden w-full h-[500px]">
-                            <div className="flex w-max gap-x-5 animate-scroll-left-delay">
+                        <div className="overflow-hidden w-full h-[450px]">
+                            <div
+                                className="flex w-max gap-x-5 animate-scroll-left-delay"
+                                style={{animationPlayState: isPlaying ? 'running' : 'paused'}}
+                            >
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
@@ -239,6 +291,14 @@ function Slider() {
                                     ))
                                 )}
                             </div>
+                        </div>
+                        <div className="slider_button flex items-center justify-center">
+                            <button
+                                onClick={() => setIsPlaying(!isPlaying)}
+                                className="bg-white text-graycolor p-3 hover:text-primary transition-all"
+                            >
+                                {isPlaying ? <LuCirclePause size={25}/> : <LuCirclePlay size={25}/>}
+                            </button>
                         </div>
                     </div>
                 )}

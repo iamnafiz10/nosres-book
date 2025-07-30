@@ -105,7 +105,7 @@ function Header() {
                                                         <LuShapes size={16}
                                                                   className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-prgcolor font-[500] text-[12px]">
+                                                    <h2 className="text-graycolor font-normal text-[12px]">
                                                         SÉLECTIONS
                                                     </h2>
                                                 </div>
@@ -132,7 +132,7 @@ function Header() {
                                                         <LuChartNoAxesColumnIncreasing size={16}
                                                                                        className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-prgcolor font-[500] text-[12px]">
+                                                    <h2 className="text-graycolor font-[500] text-[12px]">
                                                         NIVEAUX
                                                     </h2>
                                                 </div>
@@ -183,7 +183,7 @@ function Header() {
                                                         <LuLibraryBig size={16}
                                                                       className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-prgcolor font-[500] text-[12px]">
+                                                    <h2 className="text-graycolor font-[500] text-[12px]">
                                                         NOS COLLECTIONS
                                                     </h2>
                                                 </div>
@@ -315,7 +315,7 @@ function Header() {
                             </summary>
                             <ul className="mt-4 space-y-4">
                                 <li onClick={() => toggleDropdown('selections')}
-                                    className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                    className="text-[12px] text-graycolor font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
                                             <LuShapes size={16} className="text-primary"/>
@@ -347,7 +347,7 @@ function Header() {
 
                             <ul className="mt-4 space-y-4">
                                 <li onClick={() => toggleDropdown('niveaux')}
-                                    className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                    className="text-graycolor text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
                                             <LuChartNoAxesColumnIncreasing size={16} className="text-primary"/>
@@ -398,7 +398,7 @@ function Header() {
 
                             <ul className="mt-4 space-y-4">
                                 <li onClick={() => toggleDropdown('collection')}
-                                    className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
+                                    className="text-[12px] text-graycolor font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
                                             <LuLibraryBig size={16} className="text-primary"/>
