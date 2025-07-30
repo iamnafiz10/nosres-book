@@ -55,7 +55,7 @@ function Books() {
                                                 id="cat1"
                                                 checked={selected.includes("Maternelle")}
                                                 onChange={() => toggleOption("Maternelle")}
-                                                className="mr-2 focus:outline-none focus:ring-0 focus:border-0 focus:ring-offset-0"
+                                                className="mr-2 focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
                                             />
                                             Maternelle
                                         </Label>

@@ -87,17 +87,17 @@ function Header() {
                                         <div className="grid grid-cols-3 gap-2 h-[200px] pt-2 pb-0">
                                             <div className="col h-[85px] cursor-pointer">
                                                 <div
-                                                    className="flex items-center gap-1 border-b border-bordercolor pb-2">
+                                                    className="flex items-center gap-1 pb-2">
                                                     <div className="icon">
                                                         <LuChartNoAxesColumnIncreasing size={20}
                                                                                        className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-[#252C32] font-[500] text-[14px]">
+                                                    <h2 className="text-[#252C32] font-[500] text-[12px]">
                                                         SÉLECTIONS
                                                     </h2>
                                                 </div>
 
-                                                <ul className="mt-3 space-y-2 text-prgcolor text-[14px]">
+                                                <ul className="mt-1 space-y-2 text-prgcolor text-[14px]">
                                                     <li>
                                                         <Link href='#' className="hover:text-primary">Nouveautés</Link>
                                                     </li>
@@ -114,17 +114,17 @@ function Header() {
 
                                             <div className="col h-[85px] cursor-pointer">
                                                 <div
-                                                    className="flex items-center gap-1 border-b border-bordercolor pb-2">
+                                                    className="flex items-center gap-1 pb-2">
                                                     <div className="icon">
                                                         <LuShapes size={20}
                                                                   className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-[#252C32] font-[500] text-[14px]">
+                                                    <h2 className="text-[#252C32] font-[500] text-[12px]">
                                                         NIVEAUX
                                                     </h2>
                                                 </div>
 
-                                                <ul className="mt-3 space-y-2 text-prgcolor text-[14px]">
+                                                <ul className="mt-1 space-y-2 text-prgcolor text-[14px]">
                                                     <li>
                                                         <Link href='#' className="hover:text-primary">Maternelle</Link>
                                                     </li>
@@ -165,17 +165,17 @@ function Header() {
 
                                             <div className="col h-[85px] cursor-pointer">
                                                 <div
-                                                    className="flex items-center gap-1 border-b border-bordercolor pb-2">
+                                                    className="flex items-center gap-1 pb-2">
                                                     <div className="icon">
                                                         <LuLibraryBig size={20}
                                                                       className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-[#252C32] font-[500] text-[14px]">
+                                                    <h2 className="text-[#252C32] font-[500] text-[12px]">
                                                         NOS COLLECTIONS
                                                     </h2>
                                                 </div>
 
-                                                <ul className="mt-3 space-y-2 text-prgcolor text-[14px]">
+                                                <ul className="mt-1 space-y-2 text-prgcolor text-[14px]">
                                                     <li>
                                                         <Link href='#'
                                                               className="hover:text-primary flex items-center gap-1">
@@ -237,14 +237,14 @@ function Header() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <p className="mt-2">
+                                            <h4 className="mt-2 text-[14px]">
                                                 <Link href='#' className="text-primary">
                                                     Connectez-vous
                                                 </Link> à votre compte Nosres ou <Link href='#'
                                                                                        className="text-primary">
                                                 créez-en
                                             </Link> un.
-                                            </p>
+                                            </h4>
                                             <h4 className="mt-3 text-[14px] text-prgcolor">
                                                 De nombreuses ressources pédagogiques
                                                 complémentaires aux manuels scolaires
@@ -470,14 +470,14 @@ function Header() {
                                 </div>
                             </div>
                         </div>
-                        <p className="mt-2">
+                        <h4 className="mt-2 text-[14px]">
                             <Link href='#' className="text-primary">
                                 Connectez-vous
                             </Link> à votre compte Nosres ou <Link href='#'
                                                                    className="text-primary">
                             créez-en
                         </Link> un.
-                        </p>
+                        </h4>
                         <h4 className="mt-3 text-[14px] text-prgcolor">
                             De nombreuses ressources pédagogiques
                             complémentaires aux manuels scolaires

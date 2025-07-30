@@ -66,6 +66,7 @@ body {
 /* Check box design */
 #checkbox label input {
     color: #4D7FB8 !important;
+    font-width: 400 !important;
 }
 
 /* Home page slider keyframe */
