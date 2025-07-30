@@ -132,7 +132,7 @@ function Header() {
                                                         <LuChartNoAxesColumnIncreasing size={16}
                                                                                        className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-graycolor font-[500] text-[12px]">
+                                                    <h2 className="text-graycolor font-normal text-[12px]">
                                                         NIVEAUX
                                                     </h2>
                                                 </div>
@@ -183,7 +183,7 @@ function Header() {
                                                         <LuLibraryBig size={16}
                                                                       className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-graycolor font-[500] text-[12px]">
+                                                    <h2 className="text-graycolor font-normal text-[12px]">
                                                         NOS COLLECTIONS
                                                     </h2>
                                                 </div>

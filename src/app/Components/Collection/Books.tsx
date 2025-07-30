@@ -21,12 +21,14 @@ function Books() {
                                 {/* Button */}
                                 <button
                                     onClick={() => setOpen(!open)}
-                                    className="w-full text-[14px] text-prgcolor bg-gray-100 border border-gray-300 py-1 px-4 rounded flex justify-start items-center"
+                                    className={`w-full text-[14px] text-prgcolor bg-gray-100 border border-gray-300 py-1 px-4 rounded flex justify-start items-center ${
+                                        selected.length > 0 ? 'font-bold' : ''
+                                    }`}
                                 >
                                     Niveau
                                     <span className="flex items-center justify-end gap-1 w-full">
                                         <span
-                                            className="h-[23px] text-[14px] w-[23px] rounded-full bg-white flex items-center justify-center">
+                                            className="h-[23px] font-normal text-[14px] w-[23px] rounded-full bg-white flex items-center justify-center">
                                           {selected.length}
                                         </span>
                                     <svg
