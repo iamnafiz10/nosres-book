@@ -12,7 +12,7 @@ function Slider() {
     return (
         <>
             <section id="slider-section">
-                <div className="container pt-24">
+                <div className="container pt-16">
                     <div className="head-wrap">
                         <h1 className="font-semibold text-[24px]">
                             Nouveautés et à découvrir
@@ -75,13 +75,13 @@ function Slider() {
 
                 {activeTab === 'tab1' && (
                     <div className="tab_one_content">
-                        <div className="overflow-hidden w-full py-12">
+                        <div className="overflow-hidden w-full h-[500px]">
                             <div className="flex w-max gap-x-5 animate-scroll-left-delay">
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box group w-[250px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
                                                 className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
@@ -94,9 +94,10 @@ function Slider() {
 
                                             <div
                                                 className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
-                                                <h4 className="text-[14px] text-prgcolor font-[600]">A Calculated
-                                                    Restraint</h4>
-                                                <h4 className="text-[14px] text-graycolor">Richard Breitman</h4>
+                                                <h4 className="text-[14px] text-prgcolor font-[600]">
+                                                    War And Peace
+                                                </h4>
+                                                <h4 className="text-[14px] text-graycolor">John Grishan</h4>
                                             </div>
                                         </div>
                                     ))
@@ -108,13 +109,13 @@ function Slider() {
 
                 {activeTab === 'tab2' && (
                     <div className="tab_two_content">
-                        <div className="overflow-hidden w-full py-12">
+                        <div className="overflow-hidden w-full h-[500px]">
                             <div className="flex w-max gap-x-5 animate-scroll-left-delay">
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box group w-[250px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
                                                 className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
@@ -128,9 +129,9 @@ function Slider() {
                                             <div
                                                 className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
-                                                    John Grishan
+                                                    Lord Of The Rings
                                                 </h4>
-                                                <h4 className="text-[14px] text-graycolor">Mark Jeson</h4>
+                                                <h4 className="text-[14px] text-graycolor">Habib Basari</h4>
                                             </div>
                                         </div>
                                     ))
@@ -142,13 +143,13 @@ function Slider() {
 
                 {activeTab === 'tab3' && (
                     <div className="tab_three_content">
-                        <div className="overflow-hidden w-full py-12">
+                        <div className="overflow-hidden w-full h-[500px]">
                             <div className="flex w-max gap-x-5 animate-scroll-left-delay">
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box group w-[250px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
                                                 className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
@@ -162,9 +163,9 @@ function Slider() {
                                             <div
                                                 className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
-                                                    The Firm
+                                                    The Catcher
                                                 </h4>
-                                                <h4 className="text-[14px] text-graycolor">David Miller</h4>
+                                                <h4 className="text-[14px] text-graycolor">Mark Jeson</h4>
                                             </div>
                                         </div>
                                     ))
@@ -176,13 +177,13 @@ function Slider() {
 
                 {activeTab === 'tab4' && (
                     <div className="tab_four_content">
-                        <div className="overflow-hidden w-full py-12">
+                        <div className="overflow-hidden w-full h-[500px]">
                             <div className="flex w-max gap-x-5 animate-scroll-left-delay">
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box group w-[250px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
                                                 className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
@@ -196,9 +197,9 @@ function Slider() {
                                             <div
                                                 className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
-                                                    The Firm
+                                                    Origin of Species
                                                 </h4>
-                                                <h4 className="text-[14px] text-graycolor">Kobi Mainu</h4>
+                                                <h4 className="text-[14px] text-graycolor">Loney Jill</h4>
                                             </div>
                                         </div>
                                     ))
@@ -210,13 +211,13 @@ function Slider() {
 
                 {activeTab === 'tab5' && (
                     <div className="tab_five_content">
-                        <div className="overflow-hidden w-full py-12">
+                        <div className="overflow-hidden w-full h-[500px]">
                             <div className="flex w-max gap-x-5 animate-scroll-left-delay">
                                 {[...Array(2)].flatMap((_, groupIndex) =>
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box group w-[250px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
                                                 className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
@@ -230,9 +231,9 @@ function Slider() {
                                             <div
                                                 className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
-                                                    The Firm
+                                                    Great Gatsby
                                                 </h4>
-                                                <h4 className="text-[14px] text-graycolor">Rocky shakh</h4>
+                                                <h4 className="text-[14px] text-graycolor">David Martin</h4>
                                             </div>
                                         </div>
                                     ))
