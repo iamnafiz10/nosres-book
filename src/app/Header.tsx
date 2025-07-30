@@ -97,7 +97,7 @@ function Header() {
                                                     </h2>
                                                 </div>
 
-                                                <ul className="mt-1 space-y-2 text-prgcolor text-[14px]">
+                                                <ul className="mt-1 space-y-2 text-prgcolor text-[12px]">
                                                     <li>
                                                         <Link href='#' className="hover:text-primary">Nouveautés</Link>
                                                     </li>
@@ -124,7 +124,7 @@ function Header() {
                                                     </h2>
                                                 </div>
 
-                                                <ul className="mt-1 space-y-2 text-prgcolor text-[14px]">
+                                                <ul className="mt-1 space-y-2 text-prgcolor text-[12px]">
                                                     <li>
                                                         <Link href='#' className="hover:text-primary">Maternelle</Link>
                                                     </li>
@@ -175,7 +175,7 @@ function Header() {
                                                     </h2>
                                                 </div>
 
-                                                <ul className="mt-1 space-y-2 text-prgcolor text-[14px]">
+                                                <ul className="mt-1 space-y-2 text-prgcolor text-[12px]">
                                                     <li>
                                                         <Link href='#'
                                                               className="hover:text-primary flex items-center gap-1">
