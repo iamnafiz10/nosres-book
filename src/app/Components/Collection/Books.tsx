@@ -21,7 +21,7 @@ function Books() {
                                 {/* Button */}
                                 <button
                                     onClick={() => setOpen(!open)}
-                                    className="w-full text-[14px] bg-gray-100 border border-gray-300 text-gray-700 py-1 px-4 rounded flex justify-start items-center"
+                                    className="w-full text-[14px] text-prgcolor bg-gray-100 border border-gray-300 py-1 px-4 rounded flex justify-start items-center"
                                 >
                                     Niveau
                                     <span className="flex items-center justify-end gap-1 w-full">
