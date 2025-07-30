@@ -9,7 +9,7 @@ function Education() {
     return (
         <>
             <section id="ce-section"
-                     className="bg-[linear-gradient(to_right,_rgba(139,202,232,0.3),_rgba(197,176,151,0.3))]">
+                     className="mt-10 bg-[linear-gradient(to_right,_rgba(139,202,232,0.3),_rgba(197,176,151,0.3))]">
                 <div className="container py-16">
                     <div className="head-wrap">
                         <h1 className="font-semibold text-[24px]">
