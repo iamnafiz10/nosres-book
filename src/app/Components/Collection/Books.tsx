@@ -21,22 +21,25 @@ function Books() {
                                 {/* Button */}
                                 <button
                                     onClick={() => setOpen(!open)}
-                                    className={`w-full text-[14px] text-prgcolor bg-gray-100 border border-gray-300 py-1 px-4 rounded flex justify-start items-center ${
-                                        selected.length > 0 ? 'font-bold' : ''
-                                    }`}
+                                    className={`w-full text-[14px] bg-gray-100 border border-gray-300 py-1 px-4 rounded flex justify-start items-center
+                                        ${selected.length > 0 ? 'font-bold text-primary' : ''}
+                                        ${open ? 'font-bold text-graycolor' : ''}
+                                      `}
                                 >
                                     Niveau
                                     <span className="flex items-center justify-end gap-1 w-full">
-                                        <span
-                                            className="h-[23px] font-normal text-[14px] w-[23px] rounded-full bg-white flex items-center justify-center">
-                                          {selected.length}
-                                        </span>
-                                    <svg
-                                        className={`w-4 h-4 ml-2 transition-transform ${open ? "rotate-180" : ""}`}
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
+                                        {selected.length > 0 && (
+                                            <span
+                                                className="h-[20px] text-prgcolor font-normal text-[14px] w-[20px] rounded-full bg-white flex items-center justify-center">
+                                                {selected.length}
+                                            </span>
+                                        )}
+                                        <svg
+                                            className={`w-4 h-4 ml-2 transition-transform ${open ? "rotate-180" : ""}`}
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
                                         <path
                                             d="M19 9l-7 7-7-7"
                                             strokeWidth="2"
