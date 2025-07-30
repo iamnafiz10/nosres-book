@@ -9,7 +9,7 @@ function Hero() {
             <section id="banner-section" className="bg-cover bg-no-repeat bg-center h-[650px] py-[10rem]"
                      style={{backgroundImage: `url(${heroImage.src})`}}>
                 <div className="container">
-                    <h1 className="text-2xl md:text-[38px] leading-6 md:leading-10 text-[#263F5C] font-bold md:font-[520] mb-4">
+                    <h1 className="text-2xl md:text-[38px] leading-6 md:leading-10 text-[#263F5C] font-bold md:font-medium mb-4">
                         Des livres...<br/>
                         <span className="text-[#3A5F8A]">
                             pour faire avancer
