@@ -50,7 +50,7 @@ function Books() {
                                     <div id="checkbox"
                                          className="absolute mt-1 w-full bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="cat1"
-                                               className="flex items-center px-4 py-2 text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
                                                 id="cat1"
                                                 checked={selected.includes("Maternelle")}
@@ -61,7 +61,7 @@ function Books() {
                                         </Label>
 
                                         <Label htmlFor="cat2"
-                                               className="flex items-center text-prgcolor px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
                                                 id="cat2"
                                                 checked={selected.includes("Primaire")}
@@ -72,7 +72,7 @@ function Books() {
                                         </Label>
 
                                         <Label htmlFor="cat3"
-                                               className="flex items-center text-prgcolor px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
                                                 id="cat3"
                                                 checked={selected.includes("Secondaire")}
@@ -83,7 +83,7 @@ function Books() {
                                         </Label>
 
                                         <Label htmlFor="cat4"
-                                               className="flex items-center text-prgcolor px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
                                                 id="cat4"
                                                 checked={selected.includes("Supérieur")}
