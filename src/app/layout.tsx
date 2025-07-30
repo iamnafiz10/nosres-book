@@ -33,7 +33,7 @@ export default function RootLayout({
         <Header/>
         <AOSProvider/>
         {children}
-        {/*<Footer/>*/}
+        <Footer/>
         </body>
         </html>
     );

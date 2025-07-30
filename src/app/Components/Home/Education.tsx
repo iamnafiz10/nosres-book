@@ -3,6 +3,7 @@ import Image from "next/image";
 import SliderOne from "../../../../public/assets/images/edu1.png";
 import SliderTwo from "../../../../public/assets/images/edu2.png";
 import SliderThree from "../../../../public/assets/images/edu3.png";
+import {LuCircleArrowRight} from "react-icons/lu";
 
 function Education() {
     return (
@@ -70,6 +71,15 @@ function Education() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="button-area mt-8">
+                        <button type='button'
+                                className="text-[14px] cursor-pointer flex items-center gap-2 text-primary hover:underline">
+                            <span className="icon">
+                                <LuCircleArrowRight size={20}/>
+                            </span>
+                            Découvrir nos collections
+                        </button>
                     </div>
                 </div>
             </section>

@@ -1,6 +1,7 @@
 import Slider from "@/app/Components/Home/Slider";
 import Here from "@/app/Components/Home/Here";
 import Education from "@/app/Components/Home/Education";
+import En from "@/app/Components/Home/En";
 
 export default function Home() {
     return (
@@ -8,6 +9,7 @@ export default function Home() {
             <Here/>
             <Slider/>
             <Education/>
+            <En/>
         </>
     );
 }

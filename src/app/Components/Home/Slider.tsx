@@ -81,10 +81,10 @@ function Slider() {
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-12 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
-                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
+                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-12">
                                                 <Image
                                                     src={bookImgOne}
                                                     alt={`bookImgOne-${groupIndex}-${i}`}
@@ -93,7 +93,7 @@ function Slider() {
                                             </div>
 
                                             <div
-                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
+                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[35px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
                                                     War And Peace
                                                 </h4>
@@ -115,10 +115,10 @@ function Slider() {
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-12 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
-                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
+                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-12">
                                                 <Image
                                                     src={bookImgTwo}
                                                     alt={`bookImgTwo-${groupIndex}-${i}`}
@@ -127,7 +127,7 @@ function Slider() {
                                             </div>
 
                                             <div
-                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
+                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[35px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
                                                     Lord Of The Rings
                                                 </h4>
@@ -149,10 +149,10 @@ function Slider() {
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-12 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
-                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
+                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-12">
                                                 <Image
                                                     src={bookImgThree}
                                                     alt={`bookImgThree-${groupIndex}-${i}`}
@@ -161,7 +161,7 @@ function Slider() {
                                             </div>
 
                                             <div
-                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
+                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[35px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
                                                     The Catcher
                                                 </h4>
@@ -183,10 +183,10 @@ function Slider() {
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-12 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
-                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
+                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-12">
                                                 <Image
                                                     src={bookImgFour}
                                                     alt={`bookImgFour-${groupIndex}-${i}`}
@@ -195,7 +195,7 @@ function Slider() {
                                             </div>
 
                                             <div
-                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
+                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[35px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
                                                     Origin of Species
                                                 </h4>
@@ -217,10 +217,10 @@ function Slider() {
                                     [...Array(5)].map((_, i) => (
                                         <div
                                             key={`${groupIndex}-${i}`}
-                                            className="image_box pt-8 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
+                                            className="image_box pt-12 group w-[250px] h-[400px] cursor-pointer transition-all duration-300"
                                         >
                                             <div
-                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-8">
+                                                className="book_image overflow-hidden transition-all duration-500 group-hover:-translate-y-12">
                                                 <Image
                                                     src={bookImgFive}
                                                     alt={`bookImgFive-${groupIndex}-${i}`}
@@ -229,7 +229,7 @@ function Slider() {
                                             </div>
 
                                             <div
-                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[20px] group-hover:max-h-[100px] group-hover:opacity-100">
+                                                className="book_details mt-0 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:-mt-[35px] group-hover:max-h-[100px] group-hover:opacity-100">
                                                 <h4 className="text-[14px] text-prgcolor font-[600]">
                                                     Great Gatsby
                                                 </h4>
