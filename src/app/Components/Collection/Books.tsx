@@ -23,7 +23,7 @@ function Books() {
                                     onClick={() => setOpen(!open)}
                                     className={`w-full text-[14px] bg-gray-100 border border-gray-300 py-1 px-4 rounded flex justify-start items-center
                                         ${selected.length > 0 ? 'font-bold text-primary' : ''}
-                                        ${open ? 'font-bold text-graycolor' : ''}
+                                        ${open ? 'font-bold text-prgcolor' : ''}
                                       `}
                                 >
                                     Niveau
