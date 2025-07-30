@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Link from 'next/link'
 import {AiOutlineClose} from "react-icons/ai";
 import {IoIosArrowDown} from "react-icons/io";
@@ -34,17 +34,30 @@ function Header() {
 
     // 👇️ Account (Icon)
     const [isAccountVisible, setAccountVisible] = useState(false);
+    const dropdownAccountRef = useRef(null);
     const handleAccountClick = () => {
-        const account = document.getElementById('account_dropdown_menu');
-        if (account) {
-            if (isAccountVisible) {
-                account.classList.remove('show-account-dropdown-menu');
-            } else {
-                account.classList.add('show-account-dropdown-menu');
-            }
-            setAccountVisible(!isAccountVisible);
-        }
+        setAccountVisible(!isAccountVisible);
     };
+
+    useEffect(() => {
+        const handleOutsideClick = (event: { target: any; }) => {
+            // @ts-ignore
+            if (dropdownAccountRef.current && !dropdownAccountRef.current.contains(event.target)) {
+                // Click occurred outside of dropdown menu, so close it
+                setAccountVisible(false);
+            }
+        };
+
+        // Add event listener to detect clicks out-Side of the dropdown menu
+        document.addEventListener('mousedown', handleOutsideClick);
+
+        // Remove event listener on component unmount
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, []);
+
+
     // Mobile Account popup
     const [openModal, setOpenModal] = useState(false);
 
@@ -89,10 +102,10 @@ function Header() {
                                                 <div
                                                     className="flex items-center gap-1 pb-2">
                                                     <div className="icon">
-                                                        <LuChartNoAxesColumnIncreasing size={20}
-                                                                                       className="text-primary"/>
+                                                        <LuShapes size={16}
+                                                                  className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-[#252C32] font-[500] text-[12px]">
+                                                    <h2 className="text-prgcolor font-[500] text-[12px]">
                                                         SÉLECTIONS
                                                     </h2>
                                                 </div>
@@ -116,10 +129,10 @@ function Header() {
                                                 <div
                                                     className="flex items-center gap-1 pb-2">
                                                     <div className="icon">
-                                                        <LuShapes size={20}
-                                                                  className="text-primary"/>
+                                                        <LuChartNoAxesColumnIncreasing size={16}
+                                                                                       className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-[#252C32] font-[500] text-[12px]">
+                                                    <h2 className="text-prgcolor font-[500] text-[12px]">
                                                         NIVEAUX
                                                     </h2>
                                                 </div>
@@ -167,10 +180,10 @@ function Header() {
                                                 <div
                                                     className="flex items-center gap-1 pb-2">
                                                     <div className="icon">
-                                                        <LuLibraryBig size={20}
+                                                        <LuLibraryBig size={16}
                                                                       className="text-primary"/>
                                                     </div>
-                                                    <h2 className="text-[#252C32] font-[500] text-[12px]">
+                                                    <h2 className="text-prgcolor font-[500] text-[12px]">
                                                         NOS COLLECTIONS
                                                     </h2>
                                                 </div>
@@ -219,58 +232,61 @@ function Header() {
                             <div className="four">
                                 <div className="dropdown inline-block relative">
                                     <div onClick={handleAccountClick}
+                                         ref={dropdownAccountRef}
                                          className="mt-2 text-center cursor-pointer text-primary transition relative">
                                         <HiUserCircle size={35}/>
                                     </div>
 
-                                    <div id="account_dropdown_menu"
-                                         className="account-dropdown-menu absolute text-gray-700 pt-1 for-account transition-all ease-linear duration-300 bg-white rounded shadow border border-bordercolor">
-                                        <div className="container">
-                                            <div className="col flex items-center px-2 h-[85px] w-full">
-                                                <div
-                                                    className="flex items-center gap-3 border-b border-bordercolor pb-3 w-full">
-                                                    <HiUserCircle size={70} className="text-primary"/>
-                                                    <div className="text">
-                                                        <h2 className="text-[#252C32] font-semibold text-[14px]">
-                                                            Compte Nosres
-                                                        </h2>
+                                    {isAccountVisible &&
+                                        <div id="account_dropdown_menu"
+                                             className="account-dropdown-menu absolute text-gray-700 pt-1 for-account transition-all ease-linear duration-300 bg-white rounded shadow border border-bordercolor">
+                                            <div className="container">
+                                                <div className="col flex items-center px-2 h-[85px] w-full">
+                                                    <div
+                                                        className="flex items-center gap-3 border-b border-bordercolor pb-3 w-full">
+                                                        <HiUserCircle size={70} className="text-primary"/>
+                                                        <div className="text">
+                                                            <h2 className="text-prgcolor font-semibold text-[14px]">
+                                                                Compte Nosres
+                                                            </h2>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <h4 className="mt-2 text-[14px]">
-                                                <Link href='#' className="text-primary">
-                                                    Connectez-vous
-                                                </Link> à votre compte Nosres ou <Link href='#'
-                                                                                       className="text-primary">
-                                                créez-en
-                                            </Link> un.
-                                            </h4>
-                                            <h4 className="mt-3 text-[14px] text-prgcolor">
-                                                De nombreuses ressources pédagogiques
-                                                complémentaires aux manuels scolaires
-                                                peuvent être téléchargées gratuitement
-                                                sur le site.
-                                            </h4>
-                                            <div className="flex justify-start">
-                                                <Link href='/'
-                                                      className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary hover:bg-primary hover:text-white hover:border-primary">
-                                                    <div className="icon">
-                                                        <LuCircleArrowRight size={20} className=""/>
-                                                    </div>
-                                                    Connectez-vous
-                                                </Link>
-                                            </div>
-                                            <div className="flex justify-start">
-                                                <Link href='/'
-                                                      className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-transparent text-white hover:text-primary hover:border-primary">
-                                                    <div className="icon">
-                                                        <LuUserRoundPlus size={20} className=""/>
-                                                    </div>
-                                                    Créez votre compte
-                                                </Link>
+                                                <h4 className="mt-2 text-[14px] text-graycolor">
+                                                    <Link href='#' className="text-primary">
+                                                        Connectez-vous
+                                                    </Link> à votre compte Nosres ou <Link href='#'
+                                                                                           className="text-primary">
+                                                    créez-en
+                                                </Link> un.
+                                                </h4>
+                                                <h4 className="mt-3 text-[14px] text-graycolor">
+                                                    De nombreuses ressources pédagogiques
+                                                    complémentaires aux manuels scolaires
+                                                    peuvent être téléchargées gratuitement
+                                                    sur le site.
+                                                </h4>
+                                                <div className="flex justify-start">
+                                                    <Link href='/'
+                                                          className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary hover:bg-primary hover:text-white hover:border-primary">
+                                                        <div className="icon">
+                                                            <LuCircleArrowRight size={20} className=""/>
+                                                        </div>
+                                                        Connectez-vous
+                                                    </Link>
+                                                </div>
+                                                <div className="flex justify-start">
+                                                    <Link href='/'
+                                                          className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-[#3A5F8A] text-white hover:text-white hover:border-primary">
+                                                        <div className="icon">
+                                                            <LuUserRoundPlus size={20} className=""/>
+                                                        </div>
+                                                        Créez votre compte
+                                                    </Link>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -302,7 +318,7 @@ function Header() {
                                     className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
-                                            <LuChartNoAxesColumnIncreasing size={18} className="text-primary"/>
+                                            <LuShapes size={16} className="text-primary"/>
                                         </div>
                                         SÉLECTIONS
                                     </Link>
@@ -334,7 +350,7 @@ function Header() {
                                     className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
-                                            <LuShapes size={18} className="text-primary"/>
+                                            <LuChartNoAxesColumnIncreasing size={16} className="text-primary"/>
                                         </div>
                                         NIVEAUX
                                     </Link>
@@ -385,7 +401,7 @@ function Header() {
                                     className="text-[12px] font-normal pb-2 hover:text-primary border-b border-bordercolor bordercolor">
                                     <Link href='/' className="flex items-center gap-1">
                                         <div className="icon">
-                                            <LuLibraryBig size={18} className="text-primary"/>
+                                            <LuLibraryBig size={16} className="text-primary"/>
                                         </div>
                                         NOS COLLECTIONS
                                     </Link>
@@ -464,13 +480,13 @@ function Header() {
                                 className="flex items-center gap-3 border-b border-bordercolor pb-3 w-full">
                                 <HiUserCircle size={70} className="text-primary"/>
                                 <div className="text">
-                                    <h2 className="text-[#252C32] font-semibold text-[14px]">
+                                    <h2 className="text-prgcolor font-semibold text-[14px]">
                                         Compte Nosres
                                     </h2>
                                 </div>
                             </div>
                         </div>
-                        <h4 className="mt-2 text-[14px]">
+                        <h4 className="mt-2 text-[14px] text-graycolor">
                             <Link href='#' className="text-primary">
                                 Connectez-vous
                             </Link> à votre compte Nosres ou <Link href='#'
@@ -478,7 +494,7 @@ function Header() {
                             créez-en
                         </Link> un.
                         </h4>
-                        <h4 className="mt-3 text-[14px] text-prgcolor">
+                        <h4 className="mt-3 text-[14px] text-graycolor">
                             De nombreuses ressources pédagogiques
                             complémentaires aux manuels scolaires
                             peuvent être téléchargées gratuitement
@@ -495,7 +511,7 @@ function Header() {
                         </div>
                         <div className="flex justify-start">
                             <Link href='/'
-                                  className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-transparent text-white hover:text-primary hover:border-primary">
+                                  className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-[#3A5F8A] text-white hover:text-white hover:border-primary">
                                 <div className="icon">
                                     <LuUserRoundPlus size={20} className=""/>
                                 </div>
