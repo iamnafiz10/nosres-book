@@ -245,49 +245,49 @@ function Books() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px]" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
                         </div>
                     </div>
 
