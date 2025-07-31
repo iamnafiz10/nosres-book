@@ -180,7 +180,7 @@ function Header() {
                                                 <div
                                                     className="flex items-center gap-1 pb-2">
                                                     <div className="icon">
-                                                        <LuLibraryBig size={16}
+                                                        <LuLibraryBig size={14}
                                                                       className="text-primary"/>
                                                     </div>
                                                     <h2 className="text-graycolor font-normal text-[12px]">

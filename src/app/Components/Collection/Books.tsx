@@ -168,30 +168,30 @@ function Books() {
                                 {openTrier && (
                                     <div id="checkbox"
                                          className="absolute mt-1 w-full bg-white border border-gray-300 rounded shadow z-10">
-                                        <Label htmlFor="cat1"
+                                        <Label htmlFor="cata1"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
-                                                id="cat1"
+                                                id="cata1"
                                                 checked={selectedTrier.includes("A")}
                                                 onChange={() => toggleOptionTrier("A")}
                                                 className="mr-2 focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
                                             />
                                             A
                                         </Label>
-                                        <Label htmlFor="cat2"
+                                        <Label htmlFor="cata2"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
-                                                id="cat2"
+                                                id="cata2"
                                                 checked={selectedTrier.includes("B")}
                                                 onChange={() => toggleOptionTrier("B")}
                                                 className="mr-2 focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
                                             />
                                             B
                                         </Label>
-                                        <Label htmlFor="cat3"
+                                        <Label htmlFor="cata3"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
-                                                id="cat3"
+                                                id="cata3"
                                                 checked={selectedTrier.includes("C")}
                                                 onChange={() => toggleOptionTrier("C")}
                                                 className="mr-2 focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
@@ -232,62 +232,81 @@ function Books() {
                         </div>
                         <div className="right_side">
                             <div className="flex justify-start">
-                                <button type='button'
+                                {selectedTrier.length > 0 &&
+                                    <button
+                                        onClick={() => setSelectedTrier([])}
+                                        type='button'
                                         className="mt-2 font-normal py-2 px-4 cursor-pointer flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-[#3A5F8A] text-white hover:text-white hover:border-primary">
-                                    <div className="icon">
-                                        <LuTrash2 size={15}/>
-                                    </div>
-                                    Effacer tous les filtres
-                                </button>
+                                        <div className="icon">
+                                            <LuTrash2 size={15}/>
+                                        </div>
+                                        Effacer tous les filtres
+                                    </button>
+                                }
                             </div>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                         <div className="col">
-                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer" alt="colorBookImg"/>
+                            <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
+                                   alt="colorBookImg"/>
                         </div>
                     </div>
 
