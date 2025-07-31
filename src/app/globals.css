@@ -37,6 +37,11 @@ p {
     color: #39393b !important
 }
 
+.box p {
+    font-size: 14px !important;
+    color: #828d9e !important;
+}
+
 /*------------------- Mobile Menu -------------------*/
 #mobile_menu {
     position: fixed;
