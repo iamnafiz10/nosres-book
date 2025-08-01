@@ -96,7 +96,7 @@ function Slider() {
                                                 <Image
                                                     src={bookImgOne}
                                                     alt={`bookImgOne-${groupIndex}-${i}`}
-                                                    className="w-full h-[350px] rounded-xl transition-transform duration-300"
+                                                    className="w-full h-[350px] transition-transform duration-300"
                                                 />
                                             </div>
 
@@ -141,7 +141,7 @@ function Slider() {
                                                 <Image
                                                     src={bookImgTwo}
                                                     alt={`bookImgTwo-${groupIndex}-${i}`}
-                                                    className="w-full h-[350px] rounded-xl transition-transform duration-300"
+                                                    className="w-full h-[350px]  transition-transform duration-300"
                                                 />
                                             </div>
 
@@ -186,7 +186,7 @@ function Slider() {
                                                 <Image
                                                     src={bookImgThree}
                                                     alt={`bookImgThree-${groupIndex}-${i}`}
-                                                    className="w-full h-[350px] rounded-xl transition-transform duration-300"
+                                                    className="w-full h-[350px]  transition-transform duration-300"
                                                 />
                                             </div>
 
@@ -231,7 +231,7 @@ function Slider() {
                                                 <Image
                                                     src={bookImgFour}
                                                     alt={`bookImgFour-${groupIndex}-${i}`}
-                                                    className="w-full h-[350px] rounded-xl transition-transform duration-300"
+                                                    className="w-full h-[350px]  transition-transform duration-300"
                                                 />
                                             </div>
 
@@ -276,7 +276,7 @@ function Slider() {
                                                 <Image
                                                     src={bookImgFive}
                                                     alt={`bookImgFive-${groupIndex}-${i}`}
-                                                    className="w-full h-[350px] rounded-xl transition-transform duration-300"
+                                                    className="w-full h-[350px]  transition-transform duration-300"
                                                 />
                                             </div>
 

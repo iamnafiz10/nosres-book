@@ -92,9 +92,9 @@ h2 {
     font-size: 16px !important;
 }
 
-.copyright {
-    border-top: 0.5px solid #9999998f;
-}
+/*.copyright {*/
+/*    border-top: 0.5px solid #9999998f;*/
+/*}*/
 
 .search-bar input {
     background-color: rgba(250, 250, 250, 0.73);

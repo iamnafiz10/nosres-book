@@ -45,7 +45,10 @@ function Books() {
                             <div className="relative w-[170px]">
                                 {/* Button */}
                                 <button
-                                    onClick={() => setOpen(!open)}
+                                    onClick={() => {
+                                        setOpen(!open);
+                                        setOpenTrier(false);
+                                    }}
                                     className={`w-full text-[14px] bg-gray-100 border border-gray-300 py-1 px-4 rounded flex justify-start items-center
                                         ${selected.length > 0 ? 'font-bold text-primary' : ''}
                                         ${open ? 'font-bold text-prgcolor' : ''}
@@ -131,7 +134,10 @@ function Books() {
                             <div className="relative w-[275px]">
                                 {/* Button */}
                                 <button
-                                    onClick={() => setOpenTrier(!openTrier)}
+                                    onClick={() => {
+                                        setOpenTrier(!openTrier);
+                                        setOpen(false);
+                                    }}
                                     className={`w-full text-[14px] bg-white border border-gray-300 py-1 px-4 rounded flex justify-between items-center`}
                                 >
                                     {/* Left Icon */}
@@ -167,36 +173,45 @@ function Books() {
                                 {/* Dropdown */}
                                 {openTrier && (
                                     <div id="checkbox"
-                                         className="absolute mt-1 w-full bg-white border border-gray-300 rounded shadow z-10">
-                                        <Label htmlFor="cata1"
+                                         className="w-full absolute mt-1 bg-white border border-gray-300 rounded shadow z-10">
+                                        <Label htmlFor="catff1"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
-                                                id="cata1"
+                                                id="catff1"
                                                 checked={selectedTrier.includes("A")}
                                                 onChange={() => toggleOptionTrier("A")}
                                                 className="mr-2 focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
                                             />
                                             A
+                                            <h4 className="text-[14px] text-prgcolor ml-auto">
+                                                5
+                                            </h4>
                                         </Label>
-                                        <Label htmlFor="cata2"
+                                        <Label htmlFor="catff2"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
-                                                id="cata2"
+                                                id="catff2"
                                                 checked={selectedTrier.includes("B")}
                                                 onChange={() => toggleOptionTrier("B")}
                                                 className="mr-2 focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
                                             />
                                             B
+                                            <h4 className="text-[14px] text-prgcolor ml-auto">
+                                                5
+                                            </h4>
                                         </Label>
-                                        <Label htmlFor="cata3"
+                                        <Label htmlFor="catff3"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
-                                                id="cata3"
+                                                id="catff3"
                                                 checked={selectedTrier.includes("C")}
                                                 onChange={() => toggleOptionTrier("C")}
                                                 className="mr-2 focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
                                             />
                                             C
+                                            <h4 className="text-[14px] text-prgcolor ml-auto">
+                                                5
+                                            </h4>
                                         </Label>
                                     </div>
                                 )}
@@ -313,7 +328,7 @@ function Books() {
                     {/*Pagination*/}
                     <div className="mt-10 flex justify-center items-center">
                         <div
-                            className="bg-white w-[450px] flex items-center justify-center border border-bordercolor rounded text-[14px] text-prgcolor">
+                            className="bg-white w-[350px] flex items-center justify-center border border-bordercolor rounded text-[14px] text-prgcolor">
                             {/* Left Arrows */}
                             <button type='button' className="mx-2 text-graycolor">
                                 <LuArrowLeftToLine size={16}/>
@@ -323,17 +338,20 @@ function Books() {
                             </button>
 
                             {/* Page Numbers */}
-                            {[1, 2, 3, 4,].map((num) => (
-                                <button type='button'
-                                        key={num}
+                            {[1, 2, 3, 4].map((num) => (
+                                <React.Fragment key={num}>
+                                    <button
+                                        type="button"
                                         className={`px-4 py-2 ${
                                             num === 1
                                                 ? 'border-b-3 text-prgcolor border-primary'
                                                 : 'text-graycolor cursor-pointer'
                                         }`}
-                                >
-                                    {num}
-                                </button>
+                                    >
+                                        {num}
+                                    </button>
+                                    {num === 4 && <span className="text-graycolor -ml-[10px] font-semibold">...</span>}
+                                </React.Fragment>
                             ))}
 
                             {/* Right Arrows */}
