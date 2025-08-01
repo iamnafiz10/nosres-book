@@ -24,7 +24,7 @@ function Page() {
     };
     return (
         <>
-            <section id="banner-section" className="bg-[#F4F4F4] pt-[8rem] pb-[5rem]">
+            <section id="banner-section" className="bg-[#F4F4F4] pt-[5.7rem] pb-[3rem]">
                 <div className="container">
                     <h1 className="text-2xl md:text-[38px] leading-0 md:leading-10 text-prgcolor font-bold md:font-medium mb-4">
                         Découvrez nos collections
@@ -148,11 +148,11 @@ function Page() {
                                     {/* Text */}
                                     <span
                                         className={`flex-1 text-center transition-all duration-150 ${
-                                            selectedTrier.length > 0 || openTrier ? 'font-bold text-primary' : ''
-                                        }`}
+                                            selectedTrier.length > 0 || openTrier ? 'font-bold' : ''
+                                        } ${selectedTrier.length > 0 ? 'text-primary' : ''}`}
                                     >
-                                        Trier par ordre alphabétique
-                                  </span>
+                                      Trier par ordre alphabétique
+                                    </span>
 
                                     {/* Right Arrow */}
                                     <span className="ml-4 flex items-center justify-end">

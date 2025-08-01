@@ -597,7 +597,7 @@ function Books() {
 
                                 {openDropdown === 'Format' && (
                                     <div id="checkbox"
-                                         className="absolute mt-1 w-full bg-white border border-gray-300 rounded shadow z-10">
+                                         className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         {["Papier", "Numérique"].map((format, i) => (
                                             <Label
                                                 key={i}
