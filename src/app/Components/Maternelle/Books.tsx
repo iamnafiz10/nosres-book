@@ -126,7 +126,7 @@ function Books() {
                                 {/* Dropdown */}
                                 {openDropdown === 'Sélection' && (
                                     <div id="checkbox"
-                                         className="absolute mt-1 w-full lg:w-[280px] bg-white border border-gray-300 rounded shadow z-10">
+                                         className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="cat1"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
@@ -224,7 +224,7 @@ function Books() {
                                 {/* Dropdown */}
                                 {openDropdown === 'Classe' && (
                                     <div id="checkbox"
-                                         className="absolute mt-1 w-full lg:w-[220px] bg-white border border-gray-300 rounded shadow z-10">
+                                         className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="catt1"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
@@ -305,7 +305,7 @@ function Books() {
                                 {/* Dropdown */}
                                 {openDropdown === 'Matière' && (
                                     <div id="checkbox"
-                                         className="absolute mt-1 w-full lg:w-[250px] bg-white border border-gray-300 rounded shadow z-10">
+                                         className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="cattt1"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
@@ -532,7 +532,7 @@ function Books() {
 
                                 {openDropdown === 'Type' && (
                                     <div id="checkbox"
-                                         className="w-full lg:w-[250px] absolute mt-1 bg-white border border-gray-300 rounded shadow z-10">
+                                         className="w-full lg:w-[302px] absolute mt-1 bg-white border border-gray-300 rounded shadow z-10">
                                         {[
                                             "Livre de l’élève",
                                             "Cahier d’activités",
