@@ -78,18 +78,36 @@ function Books() {
         );
     };
 
-    // Drpdown close clicked outside
-    const dropdownRef = useRef<HTMLDivElement>(null);
+    // Dropdown close clicked outside (1)
+    const selectionRef = useRef<HTMLDivElement>(null);
+    const classeRef = useRef<HTMLDivElement>(null);
+    const matiereRef = useRef<HTMLDivElement>(null);
+    const collectionRef = useRef<HTMLDivElement>(null);
+    const typeRef = useRef<HTMLDivElement>(null);
+    const formatRef = useRef<HTMLDivElement>(null);
+    const trierparRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            const target = event.target as Node;
+
+            const isInsideAnyDropdown =
+                (selectionRef.current && selectionRef.current.contains(target)) ||
+                (classeRef.current && classeRef.current.contains(target)) ||
+                (matiereRef.current && matiereRef.current.contains(target)) ||
+                (collectionRef.current && collectionRef.current.contains(target)) ||
+                (typeRef.current && typeRef.current.contains(target)) ||
+                (formatRef.current && formatRef.current.contains(target)) ||
+                (trierparRef.current && trierparRef.current.contains(target));
+
+            if (!isInsideAnyDropdown) {
                 setOpenDropdown(null);
             }
         };
 
-        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
 
@@ -100,7 +118,7 @@ function Books() {
                     {/* Flex One*/}
                     <div className="block lg:flex space-y-4 lg:space-y-0 gap-1 items-center justify-between">
                         <div className="one w-full">
-                            <div ref={dropdownRef} className="relative w-full m">
+                            <div ref={selectionRef} className="relative w-full m">
                                 {/* Button */}
                                 <button
                                     onClick={() =>
@@ -140,8 +158,9 @@ function Books() {
 
                                 {/* Dropdown */}
                                 {openDropdown === 'Sélection' && (
-                                    <div id="checkbox"
-                                         className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
+                                    <div
+                                        id="checkbox"
+                                        className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="cat1"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
@@ -199,7 +218,7 @@ function Books() {
                         </div>
 
                         <div className="two w-full">
-                            <div ref={dropdownRef} className="relative w-full m">
+                            <div ref={classeRef} className="relative w-full m">
                                 {/* Button */}
                                 <button
                                     onClick={() =>
@@ -282,7 +301,7 @@ function Books() {
                         </div>
 
                         <div className="three w-full">
-                            <div ref={dropdownRef} className="relative w-full m">
+                            <div ref={matiereRef} className="relative w-full m">
                                 {/* Button */}
                                 <button
                                     onClick={() =>
@@ -435,7 +454,7 @@ function Books() {
                         </div>
 
                         <div className="four w-full">
-                            <div ref={dropdownRef} className="relative w-full m">
+                            <div ref={collectionRef} className="relative w-full m">
                                 <button
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === 'Collection' ? null : 'Collection')
@@ -513,7 +532,7 @@ function Books() {
                         </div>
 
                         <div className="five w-full">
-                            <div ref={dropdownRef} className="relative w-full m">
+                            <div ref={typeRef} className="relative w-full m">
                                 <button
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === 'Type' ? null : 'Type')
@@ -578,7 +597,7 @@ function Books() {
                         </div>
 
                         <div className="six w-full">
-                            <div ref={dropdownRef} className="relative w-full m">
+                            <div ref={formatRef} className="relative w-full m">
                                 <button
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === 'Format' ? null : 'Format')
@@ -635,7 +654,7 @@ function Books() {
                         </div>
 
                         <div className="right_side w-full">
-                            <div ref={dropdownRef} className="relative w-full m">
+                            <div ref={trierparRef} className="relative w-full m">
                                 <button
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === 'Trierpar' ? null : 'Trierpar')

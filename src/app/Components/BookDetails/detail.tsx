@@ -2,8 +2,21 @@
 import {IoIosArrowForward} from "react-icons/io";
 import Image from "next/image";
 import bookImg from '../../../../public/assets/images/book1.jpg';
-import {LuBookmark, LuBookOpenText, LuCircleMinus, LuCirclePlus, LuInfo, LuShare} from "react-icons/lu";
-import {useState} from "react";
+import {
+    LuArrowRight,
+    LuBookmark,
+    LuBookOpenText,
+    LuCircleMinus,
+    LuCirclePlus,
+    LuInfo,
+    LuShare,
+    LuStore,
+} from "react-icons/lu";
+import React, {useState} from "react";
+import bookImgone from "../../../../public/assets/images/book1.jpg";
+import bookImgtwo from "../../../../public/assets/images/book2.jpg";
+import bookImgthree from "../../../../public/assets/images/book3.jpg";
+import bookImgfour from "../../../../public/assets/images/book4.jpg";
 
 function Detail() {
     // Show more description
@@ -37,8 +50,8 @@ function Detail() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-12 gap-6 mt-6">
-                        <div className="col md:col-span-3">
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
+                        <div className="col lg:col-span-3">
                             <Image src={bookImg} className="w-full" alt="bookImg"/>
                             <button type='button'
                                     className="mt-4 py-2 block w-full text-primary hover:text-white hover:bg-primary cursor-pointer gap-2 border border-primary rounded text-[14px] flex items-center justify-center">
@@ -48,7 +61,7 @@ function Detail() {
                                 Regarder à l'intérieur
                             </button>
                         </div>
-                        <div className="col md:col-span-7">
+                        <div className="col lg:col-span-6">
                             <h4 className="text-prgcolor text-[18px] font-semibold">
                                 A Calculated Restrain
                             </h4>
@@ -61,7 +74,7 @@ function Detail() {
                             </h4>
 
                             <div
-                                className="flex items-center justify-between border-b border-bordercolor pb-4 gap-4 text-[14px] mt-2">
+                                className="flex items-center justify-between gap-4 text-[14px] mt-2">
                                 <h4>
                                     Date de parution: <span className="text-graycolor">May 6, 2025</span>
                                 </h4>
@@ -74,16 +87,19 @@ function Detail() {
                                             className=" cursor-pointer py-1 px-6 text-[12px] rounded-full bg-[#F4F4F4]">
                                         Papier
                                     </button>
-                                    <span className="icon cursor-pointer">
+                                </div>
+                            </div>
+
+                            <div className="flex items-center justify-end gap-4 border-b border-bordercolor pb-4 mt-4">
+                                <span className="icon cursor-pointer">
                                         <LuBookmark size={17} className="text-graycolor hover:text-primary"/>
                                     </span>
-                                    <span className="icon cursor-pointer">
+                                <span className="icon cursor-pointer">
                                         <LuInfo size={17} className="text-graycolor hover:text-primary"/>
                                     </span>
-                                    <span className="icon cursor-pointer">
+                                <span className="icon cursor-pointer">
                                         <LuShare size={16} className="text-graycolor hover:text-primary"/>
                                     </span>
-                                </div>
                             </div>
 
                             {/*Book Description*/}
@@ -191,8 +207,211 @@ function Detail() {
                                 </div>
                             </div>
 
+                            <h4 className="text-[16px] text-black font-semibold mt-8">
+                                Prix
+                            </h4>
+                            <h4 className="mt-1 text-[14px] text-prgcolor">
+                                2024, Winner of the PROSE Award in Business, Finance, and Management
+                            </h4>
+
+                            <h4 className="text-[16px] text-black font-semibold mt-8">
+                                Auteur (s)
+                            </h4>
+                            <h4 className="mt-1 text-[14px] text-prgcolor">
+                                Richard Breitman is Distinguished Professor Emeritus at American University. His
+                                many books include The Berlin Mission: The American Who Resisted Nazi Germany from
+                                Within; FDR and the Jews, coauthored with Allan J. Lichtman; Official
+                                Secrets: What the Nazis Planned, What the British and Americans Knew; and The
+                                Architect of Genocide: Himmler and the Final Solution.
+                            </h4>
+
+                            <h4 className="text-[16px] text-black font-semibold mt-8">
+                                Détails du livre
+                            </h4>
+                            <div className="wrap mt-1 space-y-2">
+                                <h4 className="text-[14px] text-prgcolor">
+                                    Catégorie (s) :
+                                    <span className="text-graycolor"> Enfants</span>
+                                </h4>
+                                <h4 className="text-[14px] text-prgcolor">
+                                    Maison d’édition :
+                                    <span className="text-graycolor"> Harvard University Press</span>
+                                </h4>
+                                <h4 className="text-[14px] text-prgcolor">
+                                    Date de parution :
+                                    <span className="text-graycolor"> May 6, 2025</span>
+                                </h4>
+                                <h4 className="text-[14px] text-prgcolor">
+                                    Collection
+                                    <span
+                                        className="text-primary cursor-pointer"> The Charles Eliot Norton Lectures</span>
+                                </h4>
+                                <h4 className="text-[14px] text-prgcolor">
+                                    Langue :
+                                    <span className="text-graycolor"> English</span>
+                                </h4>
+                                <h4 className="text-[14px] text-prgcolor">
+                                    Nombre de pages :
+                                    <span className="text-graycolor"> 352 pages</span>
+                                </h4>
+                                <h4 className="text-[14px] text-prgcolor">
+                                    ISBN :
+                                    <span className="text-graycolor"> 978-0674293649</span>
+                                </h4>
+                                <h4 className="text-[14px] text-prgcolor">
+                                    Poids :
+                                    <span className="text-graycolor"> 1.15 pounds</span>
+                                </h4>
+                                <h4 className="text-[14px] text-prgcolor">
+                                    Dimensions :
+                                    <span className="text-graycolor"> 5.5 x 0.87 x 8.25 inches</span>
+                                </h4>
+                            </div>
+
                         </div>
-                        <div className="col md:col-span-4">Hi</div>
+                        <div className="col lg:col-span-3 ">
+                            <div className="box bg-[#E6E8EA] flex flex-col justify-center rounded-xl py-8 px-4">
+                                <h4 className="text-[18px] font-semibold text-center">
+                                    $35.00
+                                </h4>
+                                <div className="icon flex justify-center mt-2">
+                                    <div className="p-4 bg-white rounded-full">
+                                        <LuStore size={35} className="text-primary"/>
+                                    </div>
+                                </div>
+                                <button type='button'
+                                        className="mt-3 py-2 px-4 cursor-pointer border border-primary hover:bg-white hover:text-primary flex items-center justify-center gap-2 text-white rounded bg-primary text-[14px]">
+                                    <span>
+                                        <LuArrowRight size={15}/>
+                                    </span>
+                                    Acheter ailleurs
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*Books*/}
+                    <h4 className="text-prgcolor text-[18px] font-semibold mt-14">
+                        De cet (ces) auteur(s)
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 mt-6">
+                        <div className="col">
+                            <div className="relative">
+                                <Image src={bookImgone} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                       alt="bookImgone"/>
+                                <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
+                                    À PARAÎTRE
+                                </h4>
+                            </div>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                        <div className="col">
+                            <div className="relative">
+                                <Image src={bookImgtwo} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                       alt="bookImgtwo"/>
+                                <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
+                                    NOUVEAUTÉ
+                                </h4>
+                            </div>
+
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                        <div className="col">
+                            <Image src={bookImgthree} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                   alt="bookImgthree"/>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                        <div className="col">
+                            <Image src={bookImgfour} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                   alt="colorBookImg"/>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                    </div>
+
+                    {/*Books*/}
+                    <h4 className="text-prgcolor text-[18px] font-semibold mt-14">
+                        Recommendations
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 mt-6">
+                        <div className="col">
+                            <div className="relative">
+                                <Image src={bookImgone} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                       alt="bookImgone"/>
+                                <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
+                                    À PARAÎTRE
+                                </h4>
+                            </div>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                        <div className="col">
+                            <div className="relative">
+                                <Image src={bookImgtwo} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                       alt="bookImgtwo"/>
+                                <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
+                                    NOUVEAUTÉ
+                                </h4>
+                            </div>
+
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                        <div className="col">
+                            <Image src={bookImgthree} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                   alt="bookImgthree"/>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                        <div className="col">
+                            <Image src={bookImgfour} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                   alt="colorBookImg"/>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </section>
