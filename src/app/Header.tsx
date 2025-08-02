@@ -81,8 +81,8 @@ function Header() {
                     <div className="container flex items-center justify-between">
                         <div className="logo">
                             <Link href='/' className="flex items-center gap-2">
-                                <Image src={LogoImg} className="h-10 w-7 logo_header" alt="LogoImg"/>
-                                <span className="font-semibold text-[22px] uppercase text-primary">Nosres Books</span>
+                                <Image src={LogoImg} className="h-10 w-5 md:w-7 logo_header" alt="LogoImg"/>
+                                <span className="font-semibold text-[18px] md:text-[22px] uppercase text-primary">Nosres Books</span>
                             </Link>
                         </div>
 

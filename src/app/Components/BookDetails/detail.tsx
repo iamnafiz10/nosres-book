@@ -1,16 +1,15 @@
 "use client";
 import {IoIosArrowForward} from "react-icons/io";
 import Image from "next/image";
-import bookImg from '../../../../public/assets/images/book1.jpg';
 import {
     LuArrowRight, LuBarcode,
     LuBookmark,
-    LuBookOpenText, LuBuilding, LuCalendar1,
+    LuBookOpenText, LuBuilding, LuCalendar1, LuChevronLeft, LuChevronRight,
     LuCircleMinus,
     LuCirclePlus, LuExternalLink, LuFacebook, LuFile, LuGlobe,
     LuInfo, LuLayoutGrid, LuLibraryBig, LuLink2, LuLinkedin, LuMail, LuRuler,
     LuShare,
-    LuStore, LuTwitter, LuWeight,
+    LuStore, LuTwitter, LuWeight, LuX,
 } from "react-icons/lu";
 import {LiaPinterest} from "react-icons/lia";
 import React, {useEffect, useRef, useState} from "react";
@@ -18,7 +17,15 @@ import bookImgone from "../../../../public/assets/images/book1.jpg";
 import bookImgtwo from "../../../../public/assets/images/book2.jpg";
 import bookImgthree from "../../../../public/assets/images/book3.jpg";
 import bookImgfour from "../../../../public/assets/images/book4.jpg";
+import bookImg from '../../../../public/assets/images/book1.jpg';
 
+import sliderOne from '../../../../public/assets/images/slider1.jpg'
+import sliderTwo from '../../../../public/assets/images/slider2.jpg'
+import sliderThree from '../../../../public/assets/images/slider5.jpg'
+import sliderFour from '../../../../public/assets/images/slider4.jpg'
+import {HiMagnifyingGlassMinus, HiMagnifyingGlassPlus} from "react-icons/hi2";
+
+// @ts-ignore
 function Detail() {
     // Show more description
     const [showMore, setShowMore] = useState(false);
@@ -124,7 +131,19 @@ function Detail() {
         };
     }, []);
 
+    // Book view slider
+    const [isOpen, setIsOpen] = useState(false);
+    const [current, setCurrent] = useState(0);
 
+    const images = [sliderOne, sliderTwo, sliderThree, sliderFour];
+
+    const goPrev = () => {
+        setCurrent(current === 0 ? images.length - 1 : current - 1);
+    };
+
+    const goNext = () => {
+        setCurrent(current === images.length - 1 ? 0 : current + 1);
+    };
     return (
         <>
             <section id="detail-section">
@@ -155,7 +174,7 @@ function Detail() {
                     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
                         <div className="col lg:col-span-3">
                             <Image src={bookImg} className="w-full" alt="bookImg"/>
-                            <button type='button'
+                            <button onClick={() => setIsOpen(true)} type='button'
                                     className="mt-4 py-2 block w-full text-primary hover:text-white hover:bg-primary cursor-pointer gap-2 border border-primary rounded text-[14px] flex items-center justify-center">
                                 <span className="icon">
                                     <LuBookOpenText size={15} className=""/>
@@ -713,6 +732,95 @@ function Detail() {
                     </div>
                 </div>
             </section>
+            {/*Book View Modal*/}
+            {isOpen && (
+                <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center">
+                    <div className="relative p-0 w-screen h-screen overflow-hidden flex flex-col">
+                        {/* Top full-width red close button bar */}
+                        <div className="bg-white w-full flex items-center justify-between py-4 px-4 mt-[8px] md:mt-0">
+                            <h4 className="text-[16px] text-prgcolor font-semibold">
+                                A Calculated Restraint
+                            </h4>
+                            <button
+                                onClick={() => setIsOpen(false)}
+                                className="text-graycolor hover:text-primary cursor-pointer"
+                                aria-label="Close modal"
+                            >
+                                <LuX size={28}/>
+                            </button>
+                        </div>
+
+                        {/* Two-column layout */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 h-full items-center flex-grow">
+                            {/* Slider (Left) */}
+                            <div className="col lg:col-span-7 flex items-center justify-center h-full relative">
+                                {/* Plus & Minus Icons */}
+                                <div className="absolute top-[10px] right-[20px] z-10 flex gap-2">
+                                    <button type='button'
+                                            className="cursor-pointer text-white hover:text-primary rounded-full shadow text-black">
+                                        <HiMagnifyingGlassMinus size={23}/>
+                                    </button>
+                                    <button type='button'
+                                            className="cursor-pointer text-white hover:text-primary rounded-full shadow text-black">
+                                        <HiMagnifyingGlassPlus size={23}/>
+                                    </button>
+                                </div>
+
+                                <div className="relative w-full max-w-full overflow-hidden h-[150px] md:h-[300px]">
+                                    <div
+                                        className="flex transition-transform duration-500 h-full"
+                                        style={{transform: `translateX(-${current * 100}%)`}}
+                                    >
+                                        {images.map((img, index) => (
+                                            <div key={index} className="w-full h-full flex-shrink-0">
+                                                <Image
+                                                    src={img}
+                                                    alt={`slide-${index}`}
+                                                    className="w-full h-full object-contain"
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    {/* Prev Button */}
+                                    <button
+                                        onClick={goPrev}
+                                        className="absolute top-1/2 left-3 transform -translate-y-1/2 border border-white hover:bg-primary p-2 rounded-full text-white cursor-pointer"
+                                    >
+                                        <LuChevronLeft size={24}/>
+                                    </button>
+
+                                    {/* Next Button */}
+                                    <button
+                                        onClick={goNext}
+                                        className="absolute top-1/2 right-3 transform -translate-y-1/2 border border-white hover:bg-primary p-2 rounded-full text-white cursor-pointer"
+                                    >
+                                        <LuChevronRight size={24}/>
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Right Content */}
+                            <div className="col lg:col-span-5 bg-white h-full text-gray-800 p-6">
+                                <h2 className="text-2xl font-bold mb-4">Slider Info</h2>
+                                <p className="mb-2">
+                                    This is the content section. You can put any product details, descriptions,
+                                    or actions here.
+                                </p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Image preview on left</li>
+                                    <li>Fully responsive modal</li>
+                                    <li>Custom content on the right</li>
+                                </ul>
+                                <button
+                                    className="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+                                    Take Action
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     )
         ;

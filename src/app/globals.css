@@ -185,6 +185,25 @@ input {
     height: 200px !important;
 }
 
+/* Modal */
+.modal_cntrl {
+    background: rgba(0, 0, 0, 0.3) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.modal_cntrl .flex {
+    background: rgba(0, 0, 0, 0.2) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.modal_body {
+    /*background: rgba(0, 0, 0, 0.8) !important;*/
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* Home page slider keyframe */
 @keyframes scrollLeft {
     0% {
