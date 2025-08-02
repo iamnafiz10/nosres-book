@@ -896,7 +896,7 @@ function Books() {
                     </div>
 
                     {/*Pagination*/}
-                    <div className="mt-10 flex justify-center items-center">
+                    <div className="mt-24 lg:mt-10 flex justify-center items-center">
                         <div
                             className="bg-white w-[350px] flex items-center justify-center border border-bordercolor rounded text-[14px] text-prgcolor">
                             {/* Left Arrows */}
