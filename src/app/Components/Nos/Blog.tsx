@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Checkbox, Label} from "flowbite-react";
 import {LuArrowDownWideNarrow, LuArrowLeftToLine, LuArrowRightToLine, LuTrash2} from "react-icons/lu";
 import Image from "next/image";
@@ -17,6 +17,29 @@ function Blog() {
             prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
         );
     };
+
+    // For Trier
+    // Dropdown close outside
+    const dropdownRef = useRef<HTMLDivElement>(null);
+    const trierRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            const target = event.target as Node;
+
+            if (dropdownRef.current && !dropdownRef.current.contains(target)) {
+                setOpen(false);
+            }
+
+            if (trierRef.current && !trierRef.current.contains(target)) {
+                setOpenTrier(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
     return (
         <>
             <section id="blog-section">
@@ -30,7 +53,7 @@ function Blog() {
                             </h4>
                         </div>
                         <div className="right_side">
-                            <div className="relative w-[275px]">
+                            <div ref={trierRef} className="relative w-[275px]">
                                 {/* Button */}
                                 <button
                                     onClick={() => {

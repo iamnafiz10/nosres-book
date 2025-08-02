@@ -89,7 +89,7 @@ function Header() {
                             <div className="one group">
                                 <Link href='/'
                                       className="group flex items-center justify-between gap-1 text-center text-gray-700 hover:text-primary transition relative">
-                                    Nos Livres
+                                    Nos livres
                                     <IoIosArrowDown className="icon transform group-hover:rotate-180 transition"/>
                                 </Link>
 
@@ -309,7 +309,7 @@ function Header() {
                         <details className="group pb-0 p-4">
                             <summary
                                 className="relative flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] font-normal focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
-                                Nos Livres
+                                Nos livres
                                 <IoIosArrowDown
                                     className="absolute right-0 top-1 h-4 w-4 stroke-slate-700 transition duration-300 group-open:rotate-180"/>
                             </summary>

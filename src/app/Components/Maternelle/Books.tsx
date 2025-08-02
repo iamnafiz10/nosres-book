@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Checkbox, Label} from "flowbite-react";
 import {
     LuArrowDownWideNarrow,
@@ -78,6 +78,21 @@ function Books() {
         );
     };
 
+    // Drpdown close clicked outside
+    const dropdownRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setOpenDropdown(null);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
         <>
             <section id="books-section">
@@ -85,7 +100,7 @@ function Books() {
                     {/* Flex One*/}
                     <div className="block lg:flex space-y-4 lg:space-y-0 gap-1 items-center justify-between">
                         <div className="one w-full">
-                            <div className="relative w-full m">
+                            <div ref={dropdownRef} className="relative w-full m">
                                 {/* Button */}
                                 <button
                                     onClick={() =>
@@ -184,7 +199,7 @@ function Books() {
                         </div>
 
                         <div className="two w-full">
-                            <div className="relative w-full m">
+                            <div ref={dropdownRef} className="relative w-full m">
                                 {/* Button */}
                                 <button
                                     onClick={() =>
@@ -267,7 +282,7 @@ function Books() {
                         </div>
 
                         <div className="three w-full">
-                            <div className="relative w-full m">
+                            <div ref={dropdownRef} className="relative w-full m">
                                 {/* Button */}
                                 <button
                                     onClick={() =>
@@ -420,7 +435,7 @@ function Books() {
                         </div>
 
                         <div className="four w-full">
-                            <div className="relative w-full m">
+                            <div ref={dropdownRef} className="relative w-full m">
                                 <button
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === 'Collection' ? null : 'Collection')
@@ -458,7 +473,7 @@ function Books() {
 
                                 {openDropdown === 'Collection' && (
                                     <div id="checkbox"
-                                         className="absolute mt-1 w-full bg-white border border-gray-300 rounded shadow z-10">
+                                         className="absolute mt-1 w-full md:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="catf1"
                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
                                             <Checkbox
@@ -498,7 +513,7 @@ function Books() {
                         </div>
 
                         <div className="five w-full">
-                            <div className="relative w-full m">
+                            <div ref={dropdownRef} className="relative w-full m">
                                 <button
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === 'Type' ? null : 'Type')
@@ -563,7 +578,7 @@ function Books() {
                         </div>
 
                         <div className="six w-full">
-                            <div className="relative w-full m">
+                            <div ref={dropdownRef} className="relative w-full m">
                                 <button
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === 'Format' ? null : 'Format')
@@ -620,7 +635,7 @@ function Books() {
                         </div>
 
                         <div className="right_side w-full">
-                            <div className="relative w-full m">
+                            <div ref={dropdownRef} className="relative w-full m">
                                 <button
                                     onClick={() =>
                                         setOpenDropdown(openDropdown === 'Trierpar' ? null : 'Trierpar')

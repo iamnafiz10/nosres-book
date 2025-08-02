@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Checkbox, Label} from "flowbite-react";
 import {
     LuArrowDownWideNarrow,
@@ -35,6 +35,44 @@ function Books() {
     const [tagTitleOne, setTagTitleOne] = useState(true);
     const [tagTitleTwo, setTagTitleTwo] = useState(true);
 
+    // Dropdown close outside
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            // @ts-ignore
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    // For Trier
+    const trierRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            const target = event.target as Node;
+
+            if (dropdownRef.current && !dropdownRef.current.contains(target)) {
+                setOpen(false);
+            }
+
+            if (trierRef.current && !trierRef.current.contains(target)) {
+                setOpenTrier(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (
         <>
             <section id="books-section">
@@ -42,7 +80,7 @@ function Books() {
                     {/* Flex One*/}
                     <div className="block lg:flex space-y-4 lg:space-y-0 items-center justify-between">
                         <div className="left_side">
-                            <div className="relative w-[170px]">
+                            <div ref={dropdownRef} className="relative w-[170px]">
                                 {/* Button */}
                                 <button
                                     onClick={() => {
@@ -131,7 +169,7 @@ function Books() {
                             </div>
                         </div>
                         <div className="right_side">
-                            <div className="relative w-[275px]">
+                            <div ref={trierRef} className="relative w-[275px]">
                                 {/* Button */}
                                 <button
                                     onClick={() => {
