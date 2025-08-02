@@ -150,6 +150,36 @@ input {
     border-radius: 3px !important;
 }
 
+/*------------------- Details Dropdown -------------------*/
+#details_dropdown {
+    top: 39px;
+    right: 10%;
+    width: 296px;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.show-details-dropdown {
+    visibility: visible !important;
+    height: 290px !important;
+}
+
+/*------------------- Share Dropdown -------------------*/
+#share_dropdown {
+    top: 39px;
+    right: 10%;
+    width: 195px;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.show-share-dropdown {
+    visibility: visible !important;
+    height: 200px !important;
+}
+
 /* Home page slider keyframe */
 @keyframes scrollLeft {
     0% {

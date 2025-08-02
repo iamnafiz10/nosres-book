@@ -3,16 +3,17 @@ import {IoIosArrowForward} from "react-icons/io";
 import Image from "next/image";
 import bookImg from '../../../../public/assets/images/book1.jpg';
 import {
-    LuArrowRight,
+    LuArrowRight, LuBarcode,
     LuBookmark,
-    LuBookOpenText,
+    LuBookOpenText, LuBuilding, LuCalendar1,
     LuCircleMinus,
-    LuCirclePlus, LuExternalLink,
-    LuInfo,
+    LuCirclePlus, LuExternalLink, LuFacebook, LuFile, LuGlobe,
+    LuInfo, LuLayoutGrid, LuLibraryBig, LuLink2, LuLinkedin, LuMail, LuRuler,
     LuShare,
-    LuStore,
+    LuStore, LuTwitter, LuWeight,
 } from "react-icons/lu";
-import React, {useState} from "react";
+import {LiaPinterest} from "react-icons/lia";
+import React, {useEffect, useRef, useState} from "react";
 import bookImgone from "../../../../public/assets/images/book1.jpg";
 import bookImgtwo from "../../../../public/assets/images/book2.jpg";
 import bookImgthree from "../../../../public/assets/images/book3.jpg";
@@ -24,11 +25,105 @@ function Detail() {
     // Show more eloges
     const [showMoreEloges, setShowMoreEloges] = useState(false);
 
-    // 👇️ Account (Icon)
+    // 👇️ Acheter (Button)
     const [isAcheterVisible, setAcheterVisible] = useState(false);
+    const dropdownACRef = useRef<HTMLDivElement>(null);
+
     const handleAcheterClick = () => {
         setAcheterVisible(!isAcheterVisible);
     };
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                dropdownACRef.current &&
+                !dropdownACRef.current.contains(event.target as Node)
+            ) {
+                setAcheterVisible(false);
+            }
+        };
+
+        if (isAcheterVisible) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isAcheterVisible]);
+
+    // 👇️ Details (Icon)
+    const [isDetailsVisible, setDetailsVisible] = useState(false);
+    const detailsRef = useRef<HTMLDivElement>(null);
+    const dropdownDetailsRef = useRef<HTMLDivElement>(null);
+    const handleDetailsClick = () => {
+        if (dropdownDetailsRef.current) {
+            if (isDetailsVisible) {
+                dropdownDetailsRef.current.classList.remove('show-details-dropdown');
+            } else {
+                dropdownDetailsRef.current.classList.add('show-details-dropdown');
+            }
+        }
+        setDetailsVisible(prev => !prev);
+    };
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            const target = event.target as Node;
+
+            if (
+                detailsRef.current &&
+                !detailsRef.current.contains(target)
+            ) {
+                if (dropdownDetailsRef.current?.classList.contains('show-details-dropdown')) {
+                    dropdownDetailsRef.current.classList.remove('show-details-dropdown');
+                    setDetailsVisible(false);
+                }
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    // 👇️ Share (Icon)
+    const [isShareVisible, setShareVisible] = useState(false);
+    const shareRef = useRef<HTMLDivElement>(null);
+    const dropdownShareRef = useRef<HTMLDivElement>(null);
+    const handleShareClick = () => {
+        if (dropdownShareRef.current) {
+            if (isShareVisible) {
+                dropdownShareRef.current.classList.remove('show-share-dropdown');
+            } else {
+                dropdownShareRef.current.classList.add('show-share-dropdown');
+            }
+        }
+        setShareVisible(prev => !prev);
+    };
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            const target = event.target as Node;
+
+            if (
+                shareRef.current &&
+                !shareRef.current.contains(target)
+            ) {
+                if (dropdownShareRef.current?.classList.contains('show-share-dropdown')) {
+                    dropdownShareRef.current.classList.remove('show-share-dropdown');
+                    setShareVisible(false);
+                }
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
 
     return (
         <>
@@ -98,15 +193,147 @@ function Detail() {
                             </div>
 
                             <div className="flex items-center justify-end gap-4 border-b border-bordercolor pb-4 mt-4">
-                                <span className="icon cursor-pointer">
-                                        <LuBookmark size={17} className="text-graycolor hover:text-primary"/>
-                                    </span>
-                                <span className="icon cursor-pointer">
-                                        <LuInfo size={17} className="text-graycolor hover:text-primary"/>
-                                    </span>
-                                <span className="icon cursor-pointer">
-                                        <LuShare size={16} className="text-graycolor hover:text-primary"/>
-                                    </span>
+                                <div className="icon cursor-pointer">
+                                    <LuBookmark size={17} className="text-graycolor hover:text-primary"/>
+                                </div>
+                                <div ref={detailsRef} className="icon cursor-pointer relative">
+                                    <LuInfo onClick={handleDetailsClick} size={17}
+                                            className="text-graycolor hover:text-primary"/>
+                                    <div ref={dropdownDetailsRef} id="details_dropdown"
+                                         className="detail-dropdown-menu absolute text-gray-700 pt-1 bg-white rounded border border-bordercolor">
+                                        <div className="container">
+                                            <div className="flex items-center gap-1 cursor-pointer">
+                                                        <span>
+                                                            <LuLayoutGrid size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    Enfants
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuBuilding size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    Harvard University Press
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuCalendar1 size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    May 6, 2025
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuLibraryBig size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-primary">
+                                                    The Charles Eliot Norton Lectures
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuGlobe size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    English
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuFile size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    352
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuBarcode size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    978-0674293649
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuWeight size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    1.15 pounds
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuRuler size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    5.5 x 0.87 x 8.25 inches
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ref={shareRef} className="icon cursor-pointer relative">
+                                    <LuShare onClick={handleShareClick} size={16}
+                                             className="text-graycolor hover:text-primary"/>
+                                    <div ref={dropdownShareRef} id="share_dropdown"
+                                         className="share-dropdown-menu absolute text-gray-700 pt-1 bg-white rounded border border-bordercolor">
+                                        <div className="container">
+                                            <div className="flex items-center gap-1 cursor-pointer">
+                                                        <span>
+                                                            <LuFacebook size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    Facebook
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuLinkedin size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    LinkedIn
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuTwitter size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    X
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LiaPinterest size={17} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    Pinterest
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuMail size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    Email
+                                                </h4>
+                                            </div>
+                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuLink2 size={15} className="text-primary"/>
+                                                        </span>
+                                                <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                    Link
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             {/*Book Description*/}
@@ -288,7 +515,7 @@ function Detail() {
                                     </div>
                                 </div>
 
-                                <div className="inline-block">
+                                <div ref={dropdownACRef} className="inline-block">
                                     <button
                                         onClick={handleAcheterClick}
                                         type="button"

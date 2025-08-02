@@ -29,7 +29,7 @@ function Biographie() {
                             <h4 className="text-prgcolor text-[18px] font-semibold">
                                 Biographie
                             </h4>
-                            <h4 className="mt-4 text-prgcolor text-[14px]">
+                            <h4 className="mt-4 text-prgcolor text-[16px]">
                                 Jane Doe is an award-winning novelist known for her evocative storytelling and lyrical
                                 prose. With over a decade of experience in the literary world, her works have
                                 captivated readers around the globe.
@@ -52,7 +52,7 @@ function Biographie() {
                             <div className="box bg-white border border-bordercolor rounded py-2 px-6">
                                 <details open className="group mt-4 pb-5 border-b border-bordercolor">
                                     <summary
-                                        className="relative flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
+                                        className="relative font-semibold flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
                                         Parcours général
                                         <RxPlus
                                             className="absolute hover:text-primary right-0 top-1 h-4 w-4 stroke-slate-700 transition duration-300 group-open:text-primary group-open:rotate-45"/>
@@ -107,7 +107,7 @@ function Biographie() {
 
                                 <details className="group mt-4 pb-5 border-b border-bordercolor">
                                     <summary
-                                        className="relative flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
+                                        className="relative font-semibold flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
                                         Crédits de publication
                                         <RxPlus
                                             className="absolute hover:text-primary right-0 top-1 h-4 w-4 stroke-slate-700 transition duration-300 group-open:text-primary group-open:rotate-45"/>
@@ -174,7 +174,7 @@ function Biographie() {
 
                                 <details className="group mt-4 pb-5 border-b border-bordercolor">
                                     <summary
-                                        className="relative flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
+                                        className="relative font-semibold flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
                                         Impact et reconnaissance
                                         <RxPlus
                                             className="absolute hover:text-primary right-0 top-1 h-4 w-4 stroke-slate-700 transition duration-300 group-open:text-primary group-open:rotate-45"/>
@@ -238,7 +238,7 @@ function Biographie() {
 
                                 <details className="group mt-4 pb-5">
                                     <summary
-                                        className="relative flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
+                                        className="relative font-semibold flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
                                         Outils et collaboration
                                         <RxPlus
                                             className="absolute hover:text-primary right-0 top-1 h-4 w-4 stroke-slate-700 transition duration-300 group-open:text-primary group-open:rotate-45"/>
@@ -291,7 +291,7 @@ function Biographie() {
                     <h4 className="text-prgcolor text-[18px] font-semibold mt-14">
                         Bibliographie
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 mt-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-6">
                         <div className="col">
                             <div className="relative">
                                 <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
@@ -328,6 +328,17 @@ function Biographie() {
                         <div className="col">
                             <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgthree"/>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                        <div className="col">
+                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
+                                   alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
                             </h4>
