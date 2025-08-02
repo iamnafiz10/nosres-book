@@ -4,7 +4,7 @@ import Detail from "@/app/Components/BookDetails/detail";
 function Page() {
     return (
         <>
-            <Detail/>
+            {/*<Detail/>*/}
         </>
     );
 }
