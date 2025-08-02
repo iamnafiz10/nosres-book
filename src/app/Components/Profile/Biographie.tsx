@@ -50,7 +50,7 @@ function Biographie() {
                         </div>
                         <div className="col">
                             <div className="box bg-white border border-bordercolor rounded py-2 px-6">
-                                <details className="group mt-4 pb-5 border-b border-bordercolor">
+                                <details open className="group mt-4 pb-5 border-b border-bordercolor">
                                     <summary
                                         className="relative flex cursor-pointer list-none text-gray-600 gap-4 pr-8 text-[14px] focus-visible:outline-none group-hover:text-slate-800 [&::-webkit-details-marker]:hidden">
                                         Parcours général
@@ -294,7 +294,7 @@ function Biographie() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 mt-6">
                         <div className="col">
                             <div className="relative">
-                                <Image src={bookImgone} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgone"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     À PARAÎTRE
@@ -310,7 +310,7 @@ function Biographie() {
                         </div>
                         <div className="col">
                             <div className="relative">
-                                <Image src={bookImgtwo} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgtwo} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgtwo"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     NOUVEAUTÉ
@@ -326,7 +326,7 @@ function Biographie() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgthree} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgthree"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -337,7 +337,7 @@ function Biographie() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgfour} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews

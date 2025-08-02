@@ -7,7 +7,7 @@ import {
     LuBookmark,
     LuBookOpenText,
     LuCircleMinus,
-    LuCirclePlus,
+    LuCirclePlus, LuExternalLink,
     LuInfo,
     LuShare,
     LuStore,
@@ -23,6 +23,13 @@ function Detail() {
     const [showMore, setShowMore] = useState(false);
     // Show more eloges
     const [showMoreEloges, setShowMoreEloges] = useState(false);
+
+    // 👇️ Account (Icon)
+    const [isAcheterVisible, setAcheterVisible] = useState(false);
+    const handleAcheterClick = () => {
+        setAcheterVisible(!isAcheterVisible);
+    };
+
     return (
         <>
             <section id="detail-section">
@@ -270,7 +277,8 @@ function Detail() {
 
                         </div>
                         <div className="col lg:col-span-3 ">
-                            <div className="box bg-[#E6E8EA] flex flex-col justify-center rounded-xl py-8 px-4">
+                            <div
+                                className="box relative bg-[#E6E8EA] flex flex-col justify-center rounded-xl py-8 px-4">
                                 <h4 className="text-[18px] font-semibold text-center">
                                     $35.00
                                 </h4>
@@ -279,13 +287,76 @@ function Detail() {
                                         <LuStore size={35} className="text-primary"/>
                                     </div>
                                 </div>
-                                <button type='button'
-                                        className="mt-3 py-2 px-4 cursor-pointer border border-primary hover:bg-white hover:text-primary flex items-center justify-center gap-2 text-white rounded bg-primary text-[14px]">
-                                    <span>
-                                        <LuArrowRight size={15}/>
-                                    </span>
-                                    Acheter ailleurs
-                                </button>
+
+                                <div className="inline-block">
+                                    <button
+                                        onClick={handleAcheterClick}
+                                        type="button"
+                                        className="mt-3 py-2 w-full px-4 cursor-pointer border border-primary hover:bg-white hover:text-primary flex items-center justify-center gap-2 text-white rounded bg-primary text-[14px]"
+                                    >
+                                        <span>
+                                          <LuArrowRight size={15}/>
+                                        </span>
+                                        Acheter ailleurs
+                                    </button>
+
+                                    {isAcheterVisible && (
+                                        <div
+                                            id="acheter_dropdown"
+                                            className="absolute w-full top-[350px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2 text-gray-700 pt-1 bg-white rounded shadow border border-bordercolor z-10"
+                                        >
+                                            <div className="h-[230px] lg:h-[250px] w-full px-4 pt-3">
+                                                <div className="title_box bg-[#E6E8EA] p-2 rounded">
+                                                    <h4 className="text-[14px] text-prgcolor">
+                                                        Nous vendons nos titres par
+                                                        l’intermédiaire d’autres sociétés.
+                                                    </h4>
+                                                </div>
+
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuExternalLink size={15} className="text-primary"/>
+                                                        </span>
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        IngramSpark
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuExternalLink size={15} className="text-primary"/>
+                                                        </span>
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Amazon
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuExternalLink size={15} className="text-primary"/>
+                                                        </span>
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Barnes and Noble
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuExternalLink size={15} className="text-primary"/>
+                                                        </span>
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Amazon
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                        <span>
+                                                            <LuExternalLink size={15} className="text-primary"/>
+                                                        </span>
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Barnes and Noble
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -297,7 +368,7 @@ function Detail() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 mt-6">
                         <div className="col">
                             <div className="relative">
-                                <Image src={bookImgone} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgone"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     À PARAÎTRE
@@ -313,7 +384,7 @@ function Detail() {
                         </div>
                         <div className="col">
                             <div className="relative">
-                                <Image src={bookImgtwo} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgtwo} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgtwo"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     NOUVEAUTÉ
@@ -329,7 +400,7 @@ function Detail() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgthree} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgthree"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -340,7 +411,7 @@ function Detail() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgfour} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -359,7 +430,7 @@ function Detail() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 mt-6">
                         <div className="col">
                             <div className="relative">
-                                <Image src={bookImgone} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgone"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     À PARAÎTRE
@@ -375,7 +446,7 @@ function Detail() {
                         </div>
                         <div className="col">
                             <div className="relative">
-                                <Image src={bookImgtwo} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgtwo} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgtwo"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     NOUVEAUTÉ
@@ -391,7 +462,7 @@ function Detail() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgthree} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgthree"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -402,7 +473,7 @@ function Detail() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgfour} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews

@@ -762,7 +762,7 @@ function Books() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-14">
                         <div className="col">
                             <div className="relative">
-                                <Image src={bookImgone} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgone"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     À PARAÎTRE
@@ -778,7 +778,7 @@ function Books() {
                         </div>
                         <div className="col">
                             <div className="relative">
-                                <Image src={bookImgtwo} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgtwo} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgtwo"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     NOUVEAUTÉ
@@ -794,7 +794,7 @@ function Books() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgthree} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgthree"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -805,7 +805,7 @@ function Books() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgfour} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -816,7 +816,7 @@ function Books() {
                             </h4>
                         </div>
                         <div className="col">
-                            <Image src={bookImgfive} className=" w-full h-full md:h-[300px] cursor-pointer"
+                            <Image src={bookImgfive} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgfive"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -827,9 +827,9 @@ function Books() {
                             </h4>
                         </div>
 
-                        <div className="col mt-8">
+                        <div className="col mt-0 lg:mt-8">
                             <div className="relative">
-                                <Image src={bookImgone} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgone"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     À PARAÎTRE
@@ -843,9 +843,9 @@ function Books() {
                                 Lichtman
                             </h4>
                         </div>
-                        <div className="col mt-8">
+                        <div className="col mt-0 lg:mt-8">
                             <div className="relative">
-                                <Image src={bookImgtwo} className=" w-full h-full md:h-[300px] cursor-pointer"
+                                <Image src={bookImgtwo} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgtwo"/>
                                 <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
                                     NOUVEAUTÉ
@@ -860,8 +860,8 @@ function Books() {
                                 Lichtman
                             </h4>
                         </div>
-                        <div className="col mt-8">
-                            <Image src={bookImgthree} className=" w-full h-full md:h-[300px] cursor-pointer"
+                        <div className="col mt-0 lg:mt-8">
+                            <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgthree"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -871,8 +871,8 @@ function Books() {
                                 Lichtman
                             </h4>
                         </div>
-                        <div className="col mt-8">
-                            <Image src={bookImgfour} className=" w-full h-full md:h-[300px] cursor-pointer"
+                        <div className="col mt-0 lg:mt-8">
+                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
@@ -882,8 +882,8 @@ function Books() {
                                 Lichtman
                             </h4>
                         </div>
-                        <div className="col mt-8">
-                            <Image src={bookImgfive} className=" w-full h-full md:h-[300px] cursor-pointer"
+                        <div className="col mt-0 lg:mt-8">
+                            <Image src={bookImgfive} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgfive"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
