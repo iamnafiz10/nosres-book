@@ -4,8 +4,7 @@ import Link from 'next/link'
 import {AiOutlineClose} from "react-icons/ai";
 import {IoIosArrowDown} from "react-icons/io";
 import {HiOutlineBars3} from "react-icons/hi2";
-// import LogoImg from '../../public/assets/images/logo.svg';
-import LogoImg from '../../public/assets/images/books-logo.svg';
+import LogoImg from '../../public/assets/images/books-logo-old.svg';
 import Image from "next/image";
 import {HiUserCircle} from "react-icons/hi";
 import {Modal, ModalBody} from "flowbite-react";
@@ -81,7 +80,8 @@ function Header() {
                     <div className="container flex items-center justify-between">
                         <div className="logo">
                             <Link href='/' className="flex items-center gap-2">
-                                <Image src={LogoImg} className="w-full h-[35px]" alt="LogoImg"/>
+                                <Image src={LogoImg} className="h-10 w-5 md:w-7 logo_header" alt="LogoImg"/>
+                                <span className="font-semibold text-[18px] md:text-[22px] uppercase text-primary">Nosres Books</span>
                             </Link>
                         </div>
 

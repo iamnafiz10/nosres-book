@@ -144,6 +144,59 @@ function Detail() {
     const goNext = () => {
         setCurrent(current === images.length - 1 ? 0 : current + 1);
     };
+
+    // Slider image zoom in out
+    const [zoomLevel, setZoomLevel] = useState(0); // 0 = normal, 1 = medium, 2 = max
+    const [currentTranslateY, setCurrentTranslateY] = useState(0);
+    const [currentTranslateX, setCurrentTranslateX] = useState(0);
+    const zoomDraggingRef = useRef({
+        isDragging: false,
+        startX: 0,
+        startY: 0,
+        initialTranslateX: 0,
+        initialTranslateY: 0,
+    });
+
+    // Define a state to track dragging
+    const [isDragging, setIsDragging] = useState(false);
+
+    // Reset drag position when zoom level is reset
+    useEffect(() => {
+        if (zoomLevel === 0) {
+            setCurrentTranslateX(0);
+            setCurrentTranslateY(0);
+        }
+    }, [zoomLevel]);
+    const handleZoomIn = () => {
+        setZoomLevel((prev) => Math.min(prev + 1, 2));
+    };
+
+    const handleZoomOut = () => {
+        if (zoomLevel > 0) {
+            const newLevel = zoomLevel - 1;
+            setZoomLevel(newLevel);
+            if (newLevel === 0) {
+                setCurrentTranslateY(0); // reset position when zoom is removed
+            }
+        }
+    };
+
+    // Right side slider change
+    const [selectedPageIndex, setSelectedPageIndex] = React.useState(0);
+    // Page scroll don't allow ehen modal is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        // Clean up on unmount to avoid stuck overflow
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isOpen]);
+
     return (
         <>
             <section id="detail-section">
@@ -611,7 +664,7 @@ function Detail() {
                     <h4 className="text-prgcolor text-[18px] font-semibold mt-14">
                         De cet (ces) auteur(s)
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 mt-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-6">
                         <div className="col">
                             <div className="relative">
                                 <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
@@ -667,13 +720,24 @@ function Detail() {
                                 Lichtman
                             </h4>
                         </div>
+                        <div className="col">
+                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
+                                   alt="colorBookImg"/>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
                     </div>
 
                     {/*Books*/}
                     <h4 className="text-prgcolor text-[18px] font-semibold mt-14">
                         Recommendations
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 mt-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-6">
                         <div className="col">
                             <div className="relative">
                                 <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
@@ -710,6 +774,17 @@ function Detail() {
                         <div className="col">
                             <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgthree"/>
+                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
+                                FDR and the Jews
+                            </h4>
+                            <h4 className="text-graycolor text-[12px]">
+                                Richard Breitman, Allan J.<br/>
+                                Lichtman
+                            </h4>
+                        </div>
+                        <div className="col">
+                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
+                                   alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
                                 FDR and the Jews
                             </h4>
@@ -753,69 +828,172 @@ function Detail() {
                         {/* Two-column layout */}
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 h-full items-center flex-grow">
                             {/* Slider (Left) */}
-                            <div className="col lg:col-span-7 flex items-center justify-center h-full relative">
+                            <div className="col lg:col-span-9 flex items-center justify-center h-full relative">
                                 {/* Plus & Minus Icons */}
-                                <div className="absolute top-[10px] right-[20px] z-10 flex gap-2">
-                                    <button type='button'
-                                            className="cursor-pointer text-white hover:text-primary rounded-full shadow text-black">
+                                <div className="absolute top-1 md:top-[10px] right-[20px] z-10 flex gap-2">
+                                    <button
+                                        type="button"
+                                        onClick={handleZoomOut}
+                                        disabled={zoomLevel === 0}
+                                        className={`cursor-pointer p-1 rounded-full shadow ${
+                                            zoomLevel === 0 ? "text-gray-400 cursor-not-allowed" : "text-white hover:text-primary"
+                                        }`}
+                                    >
                                         <HiMagnifyingGlassMinus size={23}/>
                                     </button>
-                                    <button type='button'
-                                            className="cursor-pointer text-white hover:text-primary rounded-full shadow text-black">
+                                    <button
+                                        type="button"
+                                        onClick={handleZoomIn}
+                                        disabled={zoomLevel === 2}
+                                        className={`cursor-pointer p-1 rounded-full shadow ${
+                                            zoomLevel === 2 ? "text-gray-400 cursor-not-allowed" : "text-white hover:text-primary"
+                                        }`}
+                                    >
                                         <HiMagnifyingGlassPlus size={23}/>
                                     </button>
                                 </div>
 
-                                <div className="relative w-full max-w-full overflow-hidden h-[150px] md:h-[300px]">
+                                <div className="relative w-full max-w-full overflow-hidden h-[150px]"
+                                     style={{height: zoomLevel === 0 ? '300px' : zoomLevel === 1 ? '350px' : '440px'}}
+                                >
                                     <div
                                         className="flex transition-transform duration-500 h-full"
                                         style={{transform: `translateX(-${current * 100}%)`}}
                                     >
                                         {images.map((img, index) => (
-                                            <div key={index} className="w-full h-full flex-shrink-0">
+                                            <div
+                                                key={index}
+                                                className="w-full h-full flex-shrink-0 relative overflow-hidden"
+                                                onPointerDown={(e) => {
+                                                    if (zoomLevel === 0) return;
+
+                                                    setIsDragging(true);
+                                                    zoomDraggingRef.current.isDragging = true;
+                                                    zoomDraggingRef.current.startX = e.clientX;
+                                                    zoomDraggingRef.current.startY = e.clientY;
+                                                    zoomDraggingRef.current.initialTranslateX = currentTranslateX;
+                                                    zoomDraggingRef.current.initialTranslateY = currentTranslateY;
+
+                                                    const handlePointerMove = (moveEvent: PointerEvent) => {
+                                                        if (!zoomDraggingRef.current.isDragging) return;
+
+                                                        const deltaX = moveEvent.clientX - zoomDraggingRef.current.startX;
+                                                        const deltaY = moveEvent.clientY - zoomDraggingRef.current.startY;
+
+                                                        const max = 100;
+                                                        const clampedX = Math.max(Math.min(zoomDraggingRef.current.initialTranslateX + deltaX, max), -max);
+                                                        const clampedY = Math.max(Math.min(zoomDraggingRef.current.initialTranslateY + deltaY, max), -max);
+
+                                                        setCurrentTranslateX(clampedX);
+                                                        setCurrentTranslateY(clampedY);
+                                                    };
+
+                                                    const handlePointerUp = () => {
+                                                        setIsDragging(false);
+                                                        zoomDraggingRef.current.isDragging = false;
+                                                        window.removeEventListener("pointermove", handlePointerMove);
+                                                        window.removeEventListener("pointerup", handlePointerUp);
+                                                    };
+
+                                                    window.addEventListener("pointermove", handlePointerMove);
+                                                    window.addEventListener("pointerup", handlePointerUp);
+                                                }}
+                                                style={{
+                                                    cursor: zoomLevel === 0 ? 'auto' : isDragging ? 'grabbing' : 'grab',
+                                                    userSelect: isDragging ? 'none' : 'auto',
+                                                }}
+                                            >
                                                 <Image
                                                     src={img}
                                                     alt={`slide-${index}`}
-                                                    className="w-full h-full object-contain"
+                                                    className="w-full h-full object-contain pointer-events-none"
+                                                    style={{
+                                                        transform: `scale(${1 + zoomLevel * 0.3}) translate(${currentTranslateX}px, ${currentTranslateY}px)`,
+                                                        transition: !isDragging ? 'transform 0.3s ease-out' : 'none',
+                                                    }}
                                                 />
                                             </div>
                                         ))}
                                     </div>
 
                                     {/* Prev Button */}
-                                    <button
-                                        onClick={goPrev}
-                                        className="absolute top-1/2 left-3 transform -translate-y-1/2 border border-white hover:bg-primary p-2 rounded-full text-white cursor-pointer"
-                                    >
-                                        <LuChevronLeft size={24}/>
-                                    </button>
+                                    {zoomLevel === 0 && (
+                                        <button
+                                            onClick={goPrev}
+                                            className="absolute top-1/2 left-3 transform -translate-y-1/2 border border-white hover:bg-primary p-2 rounded-full text-white cursor-pointer"
+                                        >
+                                            <LuChevronLeft size={24}/>
+                                        </button>
+                                    )}
 
                                     {/* Next Button */}
-                                    <button
-                                        onClick={goNext}
-                                        className="absolute top-1/2 right-3 transform -translate-y-1/2 border border-white hover:bg-primary p-2 rounded-full text-white cursor-pointer"
-                                    >
-                                        <LuChevronRight size={24}/>
-                                    </button>
+
+                                    {zoomLevel === 0 && (
+                                        <button
+                                            onClick={goNext}
+                                            className="absolute top-1/2 right-3 transform -translate-y-1/2 border border-white hover:bg-primary p-2 rounded-full text-white cursor-pointer"
+                                        >
+                                            <LuChevronRight size={24}/>
+                                        </button>
+                                    )}
                                 </div>
                             </div>
 
                             {/* Right Content */}
-                            <div className="col lg:col-span-5 bg-white h-full text-gray-800 p-6">
-                                <h2 className="text-2xl font-bold mb-4">Slider Info</h2>
-                                <p className="mb-2">
-                                    This is the content section. You can put any product details, descriptions,
-                                    or actions here.
-                                </p>
-                                <ul className="list-disc pl-5 space-y-1">
-                                    <li>Image preview on left</li>
-                                    <li>Fully responsive modal</li>
-                                    <li>Custom content on the right</li>
+                            <div className="col lg:col-span-3 bg-white h-full">
+                                <div className="bg-primary py-2 px-6 mt-[0px]">
+                                    <h4 className="text-[16px] font-semibold text-white">
+                                        Pages
+                                    </h4>
+                                </div>
+
+                                <ul className="px-6 py-2 space-y-2 text-[14px]">
+                                    <li
+                                        className={`cursor-pointer border-b border-bordercolor pb-2 ${
+                                            selectedPageIndex === 0 ? 'text-primary' : 'text-prgcolor hover:text-primary'
+                                        }`}
+                                        onClick={() => {
+                                            setSelectedPageIndex(0);
+                                            setCurrent(0);
+                                            setZoomLevel(0);
+                                            setCurrentTranslateX(0);
+                                            setCurrentTranslateY(0);
+                                            setIsDragging(false);
+                                        }}
+                                    >
+                                        Page de couverture
+                                    </li>
+                                    <li
+                                        className={`cursor-pointer border-b border-bordercolor pb-2 ${
+                                            selectedPageIndex === 1 ? 'text-primary' : 'text-prgcolor hover:text-primary'
+                                        }`}
+                                        onClick={() => {
+                                            setSelectedPageIndex(1);
+                                            setCurrent(1);
+                                            setZoomLevel(0);
+                                            setCurrentTranslateX(0);
+                                            setCurrentTranslateY(0);
+                                            setIsDragging(false);
+                                        }}
+                                    >
+                                        Table des matières
+                                    </li>
+                                    <li
+                                        className={`cursor-pointer ${
+                                            selectedPageIndex === 2 ? 'text-primary' : 'text-prgcolor hover:text-primary'
+                                        }`}
+                                        onClick={() => {
+                                            setSelectedPageIndex(2);
+                                            setCurrent(2);
+                                            setZoomLevel(0);
+                                            setCurrentTranslateX(0);
+                                            setCurrentTranslateY(0);
+                                            setIsDragging(false);
+                                        }}
+                                    >
+                                        Unité 1
+                                    </li>
                                 </ul>
-                                <button
-                                    className="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                                    Take Action
-                                </button>
                             </div>
                         </div>
                     </div>
