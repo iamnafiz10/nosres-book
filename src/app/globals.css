@@ -69,6 +69,38 @@ p {
     color: #828d9e !important;
 }
 
+/* Slider Button */
+.swiper-button-next {
+    background: #4D7FB8 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 100px !important;
+    color: white !important;
+}
+
+.swiper-button-prev {
+    background: #4D7FB8 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 100px !important;
+    color: white !important;
+}
+
+.swiper-button-disabled {
+    background: transparent !important;
+    border: 1px solid darkgray !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 100px !important;
+    color: darkgray !important;
+    opacity: 1 !important;
+}
+
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 22px !important;
+}
+
 /* Sub Heading */
 header h2 {
     font-size: 14px !important;

@@ -4,10 +4,10 @@ import Image from "next/image";
 import {
     LuArrowRight, LuBarcode,
     LuBookmark,
-    LuBookOpenText, LuBuilding, LuCalendar1, LuChevronLeft, LuChevronRight,
+    LuBookOpenText, LuBuilding, LuCalendar1,
     LuCircleMinus,
     LuCirclePlus, LuExternalLink, LuFacebook, LuFile, LuGlobe,
-    LuInfo, LuLayoutGrid, LuLibraryBig, LuLink2, LuLinkedin, LuMail, LuRuler,
+    LuInfo, LuLayoutGrid, LuLibraryBig, LuLink2, LuLinkedin, LuMail, LuMenu, LuRuler,
     LuShare,
     LuStore, LuTwitter, LuWeight, LuX,
 } from "react-icons/lu";
@@ -24,8 +24,19 @@ import sliderTwo from '../../../../public/assets/images/slider2.jpg'
 import sliderThree from '../../../../public/assets/images/slider5.jpg'
 import sliderFour from '../../../../public/assets/images/slider4.jpg'
 import {HiMagnifyingGlassMinus, HiMagnifyingGlassPlus} from "react-icons/hi2";
+import Link from "next/link";
 
-// @ts-ignore
+
+// Import Swiper React components
+import {Swiper, SwiperSlide} from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+// import required modules
+import {Navigation, Pagination} from 'swiper/modules';
+import 'swiper/css/navigation';
+import {FcMenu} from "react-icons/fc";
+
 function Detail() {
     // Show more description
     const [showMore, setShowMore] = useState(false);
@@ -133,69 +144,41 @@ function Detail() {
 
     // Book view slider
     const [isOpen, setIsOpen] = useState(false);
-    const [current, setCurrent] = useState(0);
 
-    const images = [sliderOne, sliderTwo, sliderThree, sliderFour];
+    // Slider Image Zoom in/out
+    const [activeIndex, setActiveIndex] = useState(0);
 
-    const goPrev = () => {
-        setCurrent(current === 0 ? images.length - 1 : current - 1);
-    };
+    const [zoomIndex, setZoomIndex] = useState(0); // Starts at 1x
+    const ZOOM_LEVELS = [1, 2.1, 3.1]; // 3 fixed levels
 
-    const goNext = () => {
-        setCurrent(current === images.length - 1 ? 0 : current + 1);
-    };
-
-    // Slider image zoom in out
-    const [zoomLevel, setZoomLevel] = useState(0); // 0 = normal, 1 = medium, 2 = max
-    const [currentTranslateY, setCurrentTranslateY] = useState(0);
-    const [currentTranslateX, setCurrentTranslateX] = useState(0);
-    const zoomDraggingRef = useRef({
-        isDragging: false,
-        startX: 0,
-        startY: 0,
-        initialTranslateX: 0,
-        initialTranslateY: 0,
-    });
-
-    // Define a state to track dragging
-    const [isDragging, setIsDragging] = useState(false);
-
-    // Reset drag position when zoom level is reset
-    useEffect(() => {
-        if (zoomLevel === 0) {
-            setCurrentTranslateX(0);
-            setCurrentTranslateY(0);
-        }
-    }, [zoomLevel]);
     const handleZoomIn = () => {
-        setZoomLevel((prev) => Math.min(prev + 1, 2));
+        setZoomIndex((prev) => Math.min(prev + 1, ZOOM_LEVELS.length - 1));
     };
 
     const handleZoomOut = () => {
-        if (zoomLevel > 0) {
-            const newLevel = zoomLevel - 1;
-            setZoomLevel(newLevel);
-            if (newLevel === 0) {
-                setCurrentTranslateY(0); // reset position when zoom is removed
-            }
-        }
+        setZoomIndex((prev) => Math.max(prev - 1, 0));
     };
 
-    // Right side slider change
-    const [selectedPageIndex, setSelectedPageIndex] = React.useState(0);
-    // Page scroll don't allow ehen modal is open
+    // Modal open page scroll off
     useEffect(() => {
         if (isOpen) {
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('overflow-hidden');
         } else {
-            document.body.style.overflow = '';
+            document.body.classList.remove('overflow-hidden');
         }
 
-        // Clean up on unmount to avoid stuck overflow
+        // Clean up just in case
         return () => {
-            document.body.style.overflow = '';
+            document.body.classList.remove('overflow-hidden');
         };
     }, [isOpen]);
+
+    // List change the slider image
+    const [selectedPageIndex, setSelectedPageIndex] = useState(0);
+    const swiperRef = useRef<any>(null);
+
+    // Mobile menu for slider
+    const [isPanelOpen, setIsPanelOpen] = useState(false);
 
     return (
         <>
@@ -236,172 +219,170 @@ function Detail() {
                             </button>
                         </div>
                         <div className="col lg:col-span-6">
-                            <h4 className="text-prgcolor text-[18px] font-semibold">
+                            <h4 className="text-prgcolor text-[24px] font-semibold">
                                 A Calculated Restrain
                             </h4>
-                            <p>
+                            <h4 className="text-[16px] text-graycolor">
                                 What Allied Leaders Said about the Holocaust
-                            </p>
+                            </h4>
                             <h4 className="text-[14px] mt-4">
-                                Auteur (s): <span className="text-primary">John Doe</span>,<span
-                                className="text-primary">Joan Appleseed</span>,<span className="text-primary">Joan Appleseed</span>
+                                Auteur (s): <Link href='#' className="text-primary hover:underline">John Doe</Link>,
+                                <Link href='#' className="text-primary hover:underline"> Joan Appleseed</Link>, <Link
+                                href='#' className="text-primary hover:underline">Joan Appleseed</Link>
                             </h4>
 
                             <div
-                                className="flex items-center justify-between gap-4 text-[14px] mt-2">
+                                className="flex items-center justify-between gap-4 text-[14px] mt-2 border-b border-bordercolor pb-1">
                                 <h4>
                                     Date de parution: <span className="text-graycolor">May 6, 2025</span>
                                 </h4>
-                                <h4>
-                                    ISBN: <span className="text-graycolor">9780674293649</span>
-                                </h4>
-
                                 <div className="flex items-center gap-4">
                                     <button type='button'
                                             className=" cursor-pointer py-1 px-6 text-[12px] rounded-full bg-[#F4F4F4]">
                                         Papier
                                     </button>
                                 </div>
-                            </div>
 
-                            <div className="flex items-center justify-end gap-4 border-b border-bordercolor pb-4 mt-4">
-                                <div className="icon cursor-pointer">
-                                    <LuBookmark size={17} className="text-graycolor hover:text-primary"/>
-                                </div>
-                                <div ref={detailsRef} className="icon cursor-pointer relative">
-                                    <LuInfo onClick={handleDetailsClick} size={17}
-                                            className="text-graycolor hover:text-primary"/>
-                                    <div ref={dropdownDetailsRef} id="details_dropdown"
-                                         className="detail-dropdown-menu absolute text-gray-700 pt-1 bg-white rounded border border-bordercolor">
-                                        <div className="container">
-                                            <div className="flex items-center gap-1 cursor-pointer">
+                                <div
+                                    className="flex items-center justify-end gap-4 pb-4 mt-4">
+                                    <div className="icon cursor-pointer">
+                                        <LuBookmark size={17} className="text-graycolor hover:text-primary"/>
+                                    </div>
+                                    <div ref={detailsRef} className="icon cursor-pointer relative">
+                                        <LuInfo onClick={handleDetailsClick} size={17}
+                                                className="text-graycolor hover:text-primary"/>
+                                        <div ref={dropdownDetailsRef} id="details_dropdown"
+                                             className="detail-dropdown-menu z-10 absolute text-gray-700 pt-1 bg-white rounded border border-bordercolor">
+                                            <div className="container">
+                                                <div className="flex items-center gap-1 cursor-pointer">
                                                         <span>
                                                             <LuLayoutGrid size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    Enfants
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Enfants
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuBuilding size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    Harvard University Press
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Harvard University Press
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuCalendar1 size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    May 6, 2025
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        May 6, 2025
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuLibraryBig size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-primary">
-                                                    The Charles Eliot Norton Lectures
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-primary">
+                                                        The Charles Eliot Norton Lectures
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuGlobe size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    English
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        English
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuFile size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    352
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        352
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuBarcode size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    978-0674293649
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        978-0674293649
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuWeight size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    1.15 pounds
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        1.15 pounds
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuRuler size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    5.5 x 0.87 x 8.25 inches
-                                                </h4>
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        5.5 x 0.87 x 8.25 inches
+                                                    </h4>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div ref={shareRef} className="icon cursor-pointer relative">
-                                    <LuShare onClick={handleShareClick} size={16}
-                                             className="text-graycolor hover:text-primary"/>
-                                    <div ref={dropdownShareRef} id="share_dropdown"
-                                         className="share-dropdown-menu absolute text-gray-700 pt-1 bg-white rounded border border-bordercolor">
-                                        <div className="container">
-                                            <div className="flex items-center gap-1 cursor-pointer">
+                                    <div ref={shareRef} className="icon cursor-pointer relative">
+                                        <LuShare onClick={handleShareClick} size={16}
+                                                 className="text-graycolor hover:text-primary"/>
+                                        <div ref={dropdownShareRef} id="share_dropdown"
+                                             className="share-dropdown-menu z-10 absolute text-gray-700 pt-1 bg-white rounded border border-bordercolor">
+                                            <div className="container">
+                                                <div className="flex items-center gap-1 cursor-pointer">
                                                         <span>
                                                             <LuFacebook size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    Facebook
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Facebook
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuLinkedin size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    LinkedIn
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        LinkedIn
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuTwitter size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    X
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        X
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LiaPinterest size={17} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    Pinterest
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Pinterest
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuMail size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    Email
-                                                </h4>
-                                            </div>
-                                            <div className="flex items-center gap-1 mt-2 cursor-pointer">
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Email
+                                                    </h4>
+                                                </div>
+                                                <div className="flex items-center gap-1 mt-2 cursor-pointer">
                                                         <span>
                                                             <LuLink2 size={15} className="text-primary"/>
                                                         </span>
-                                                <h4 className="hover:underline text-[14px] text-prgcolor">
-                                                    Link
-                                                </h4>
+                                                    <h4 className="hover:underline text-[14px] text-prgcolor">
+                                                        Link
+                                                    </h4>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -414,37 +395,49 @@ function Detail() {
                                     Description
                                 </h4>
 
-                                {/*Default description*/}
-                                <h4 className="mt-2 text-[14px] text-prgcolor">
-                                    <b>
-                                        An eminent historian of the Holocaust examines why Churchill, Roosevelt, and
-                                        Stalin, though faced with mounting evidence of the Nazi extermination of Jews,
-                                        were reluctant to speak out against the atrocities.
-                                    </b>
-                                    <br/>
-                                    <br/>
-                                    The Allied leaders rarely spoke directly about the Holocaust in public. When
-                                    Churchill and Stalin alluded to Nazi mass murder of civilians in early speeches,
-                                    they
-                                    said much less than they knew. Not until December 1942 did Allied governments
-                                    issue a joint statement about Nazi Germany’s policy of exterminating the Jews of
-                                    Europe. Roosevelt deferred his own public statement until March 1944. Why didn’t
-                                    these leaders speak up sooner?
-                                </h4>
-
-                                {/*See more description*/}
-                                {showMore && (
+                                <div className="relative overflow-hidden">
+                                    {/*Default description*/}
                                     <h4 className="mt-2 text-[14px] text-prgcolor">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at deleniti dolores
-                                        eaque id iure mollitia similique. Earum error et illo unde veniam. Amet culpa
-                                        esse
-                                        nam nesciunt odio quisquam repellendus? Architecto ducimus enim id ipsam iure
-                                        libero
-                                        nesciunt odio officiis perferendis, quasi rerum sunt vitae voluptas. Cum
-                                        eveniet,
-                                        facere.
+                                        <b>
+                                            An eminent historian of the Holocaust examines why Churchill, Roosevelt, and
+                                            Stalin, though faced with mounting evidence of the Nazi extermination of
+                                            Jews,
+                                            were reluctant to speak out against the atrocities.
+                                        </b>
+                                        <br/>
+                                        <br/>
+                                        The Allied leaders rarely spoke directly about the Holocaust in public. When
+                                        Churchill and Stalin alluded to Nazi mass murder of civilians in early speeches,
+                                        they
+                                        said much less than they knew. Not until December 1942 did Allied governments
+                                        issue a joint statement about Nazi Germany’s policy of exterminating the Jews of
+                                        Europe. Roosevelt deferred his own public statement until March 1944. Why didn’t
+                                        these leaders speak up sooner?
                                     </h4>
-                                )}
+
+                                    {/* White fade overlay */}
+                                    {!showMore && (
+                                        <div
+                                            className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                                    )}
+
+                                    {/*See more description*/}
+                                    {showMore && (
+                                        <h4 className="mt-2 text-[14px] text-prgcolor">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at deleniti
+                                            dolores
+                                            eaque id iure mollitia similique. Earum error et illo unde veniam. Amet
+                                            culpa
+                                            esse
+                                            nam nesciunt odio quisquam repellendus? Architecto ducimus enim id ipsam
+                                            iure
+                                            libero
+                                            nesciunt odio officiis perferendis, quasi rerum sunt vitae voluptas. Cum
+                                            eveniet,
+                                            facere.
+                                        </h4>
+                                    )}
+                                </div>
 
                                 {/* See more / See less icon */}
                                 <div
@@ -535,42 +528,38 @@ function Detail() {
                                 Détails du livre
                             </h4>
                             <div className="wrap mt-1 space-y-2">
-                                <h4 className="text-[14px] text-prgcolor">
+                                <h4 className="text-[14px] text-prgcolor font-semibold">
                                     Catégorie (s) :
-                                    <span className="text-graycolor"> Enfants</span>
+                                    <span className="text-graycolor font-normal"> Enfants</span>
                                 </h4>
-                                <h4 className="text-[14px] text-prgcolor">
+                                <h4 className="text-[14px] text-prgcolor font-semibold">
                                     Maison d’édition :
-                                    <span className="text-graycolor"> Harvard University Press</span>
+                                    <span className="text-graycolor font-normal"> Harvard University Press</span>
                                 </h4>
-                                <h4 className="text-[14px] text-prgcolor">
+                                <h4 className="text-[14px] text-prgcolor font-semibold">
                                     Date de parution :
-                                    <span className="text-graycolor"> May 6, 2025</span>
+                                    <span className="text-graycolor font-normal"> May 6, 2025</span>
                                 </h4>
-                                <h4 className="text-[14px] text-prgcolor">
+                                <h4 className="text-[14px] text-prgcolor font-semibold">
                                     Collection
                                     <span
-                                        className="text-primary cursor-pointer"> The Charles Eliot Norton Lectures</span>
+                                        className="text-primary cursor-pointer font-normal"> The Charles Eliot Norton Lectures</span>
                                 </h4>
-                                <h4 className="text-[14px] text-prgcolor">
+                                <h4 className="text-[14px] text-prgcolor font-semibold">
                                     Langue :
-                                    <span className="text-graycolor"> English</span>
+                                    <span className="text-graycolor font-normal"> English</span>
                                 </h4>
-                                <h4 className="text-[14px] text-prgcolor">
+                                <h4 className="text-[14px] text-prgcolor font-semibold">
                                     Nombre de pages :
-                                    <span className="text-graycolor"> 352 pages</span>
+                                    <span className="text-graycolor font-normal"> 352 pages</span>
                                 </h4>
-                                <h4 className="text-[14px] text-prgcolor">
-                                    ISBN :
-                                    <span className="text-graycolor"> 978-0674293649</span>
-                                </h4>
-                                <h4 className="text-[14px] text-prgcolor">
+                                <h4 className="text-[14px] text-prgcolor font-semibold">
                                     Poids :
-                                    <span className="text-graycolor"> 1.15 pounds</span>
+                                    <span className="text-graycolor font-normal"> 1.15 pounds</span>
                                 </h4>
-                                <h4 className="text-[14px] text-prgcolor">
+                                <h4 className="text-[14px] text-prgcolor font-semibold">
                                     Dimensions :
-                                    <span className="text-graycolor"> 5.5 x 0.87 x 8.25 inches</span>
+                                    <span className="text-graycolor font-normal"> 5.5 x 0.87 x 8.25 inches</span>
                                 </h4>
                             </div>
 
@@ -809,138 +798,76 @@ function Detail() {
             </section>
             {/*Book View Modal*/}
             {isOpen && (
-                <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center">
+                <div className="fixed inset-0 z-50 bg-[#4D4C4C] flex items-center justify-center">
                     <div className="relative p-0 w-screen h-screen overflow-hidden flex flex-col">
-                        {/* Top full-width red close button bar */}
-                        <div className="bg-white w-full flex items-center justify-between py-4 px-4 mt-[8px] md:mt-0">
+                        {/* Top full-width close button bar */}
+                        <div
+                            className="bg-white absolute left-0 top-0 z-10 w-full flex items-center justify-between py-4 px-4 mt-[8px] md:mt-0">
                             <h4 className="text-[16px] text-prgcolor font-semibold">
                                 A Calculated Restraint
                             </h4>
-                            <button
-                                onClick={() => setIsOpen(false)}
-                                className="text-graycolor hover:text-primary cursor-pointer"
-                                aria-label="Close modal"
-                            >
-                                <LuX size={28}/>
-                            </button>
+                            <div className="wrap flex items-center gap-4">
+                                <button onClick={() => setIsPanelOpen(prev => !prev)}
+                                        className="block lg:hidden text-graycolor hover:text-primary cursor-pointer"
+                                >
+                                    <LuMenu size={25}/>
+                                </button>
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-graycolor hover:text-primary cursor-pointer"
+                                    aria-label="Close modal"
+                                >
+                                    <LuX size={28}/>
+                                </button>
+                            </div>
                         </div>
 
                         {/* Two-column layout */}
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 h-full items-center flex-grow">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center flex-grow">
                             {/* Slider (Left) */}
-                            <div className="col lg:col-span-9 flex items-center justify-center h-full relative">
-                                {/* Plus & Minus Icons */}
-                                <div className="absolute top-1 md:top-[10px] right-[20px] z-10 flex gap-2">
-                                    <button
-                                        type="button"
-                                        onClick={handleZoomOut}
-                                        disabled={zoomLevel === 0}
-                                        className={`cursor-pointer p-1 rounded-full shadow ${
-                                            zoomLevel === 0 ? "text-gray-400 cursor-not-allowed" : "text-white hover:text-primary"
-                                        }`}
-                                    >
-                                        <HiMagnifyingGlassMinus size={23}/>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={handleZoomIn}
-                                        disabled={zoomLevel === 2}
-                                        className={`cursor-pointer p-1 rounded-full shadow ${
-                                            zoomLevel === 2 ? "text-gray-400 cursor-not-allowed" : "text-white hover:text-primary"
-                                        }`}
-                                    >
-                                        <HiMagnifyingGlassPlus size={23}/>
-                                    </button>
-                                </div>
-
-                                <div className="relative w-full max-w-full overflow-hidden h-[150px]"
-                                     style={{height: zoomLevel === 0 ? '300px' : zoomLevel === 1 ? '350px' : '440px'}}
+                            <div className="col lg:col-span-9 h-full flex flex-grow">
+                                <Swiper
+                                    onBeforeInit={(swiper) => {
+                                        swiperRef.current = swiper;
+                                    }}
+                                    slidesPerView={2}
+                                    allowTouchMove={false}
+                                    centeredSlides={true}
+                                    spaceBetween={30}
+                                    // pagination={{type: 'fraction'}}
+                                    navigation={zoomIndex === 0}
+                                    modules={[Navigation, Pagination]}
+                                    className="mySwiper"
+                                    onSlideChange={(swiper) => {
+                                        setActiveIndex(swiper.activeIndex);
+                                        setSelectedPageIndex(swiper.activeIndex);
+                                    }}
                                 >
-                                    <div
-                                        className="flex transition-transform duration-500 h-full"
-                                        style={{transform: `translateX(-${current * 100}%)`}}
-                                    >
-                                        {images.map((img, index) => (
+                                    {[sliderOne, sliderTwo, sliderThree, sliderFour].map((imgSrc, index) => (
+                                        <SwiperSlide
+                                            key={index}
+                                            className={`${index === activeIndex ? 'z-50 relative' : 'z-10 relative'}`}
+                                        >
                                             <div
-                                                key={index}
-                                                className="w-full h-full flex-shrink-0 relative overflow-hidden"
-                                                onPointerDown={(e) => {
-                                                    if (zoomLevel === 0) return;
-
-                                                    setIsDragging(true);
-                                                    zoomDraggingRef.current.isDragging = true;
-                                                    zoomDraggingRef.current.startX = e.clientX;
-                                                    zoomDraggingRef.current.startY = e.clientY;
-                                                    zoomDraggingRef.current.initialTranslateX = currentTranslateX;
-                                                    zoomDraggingRef.current.initialTranslateY = currentTranslateY;
-
-                                                    const handlePointerMove = (moveEvent: PointerEvent) => {
-                                                        if (!zoomDraggingRef.current.isDragging) return;
-
-                                                        const deltaX = moveEvent.clientX - zoomDraggingRef.current.startX;
-                                                        const deltaY = moveEvent.clientY - zoomDraggingRef.current.startY;
-
-                                                        const max = 100;
-                                                        const clampedX = Math.max(Math.min(zoomDraggingRef.current.initialTranslateX + deltaX, max), -max);
-                                                        const clampedY = Math.max(Math.min(zoomDraggingRef.current.initialTranslateY + deltaY, max), -max);
-
-                                                        setCurrentTranslateX(clampedX);
-                                                        setCurrentTranslateY(clampedY);
-                                                    };
-
-                                                    const handlePointerUp = () => {
-                                                        setIsDragging(false);
-                                                        zoomDraggingRef.current.isDragging = false;
-                                                        window.removeEventListener("pointermove", handlePointerMove);
-                                                        window.removeEventListener("pointerup", handlePointerUp);
-                                                    };
-
-                                                    window.addEventListener("pointermove", handlePointerMove);
-                                                    window.addEventListener("pointerup", handlePointerUp);
-                                                }}
+                                                className="w-full h-full flex items-center justify-center transition-transform duration-300 ease-in-out"
                                                 style={{
-                                                    cursor: zoomLevel === 0 ? 'auto' : isDragging ? 'grabbing' : 'grab',
-                                                    userSelect: isDragging ? 'none' : 'auto',
+                                                    transform: index === activeIndex ? `scale(${ZOOM_LEVELS[zoomIndex]})` : 'scale(1)',
+                                                    transformOrigin: 'center center',
                                                 }}
                                             >
                                                 <Image
-                                                    src={img}
+                                                    src={imgSrc}
                                                     alt={`slide-${index}`}
-                                                    className="w-full h-full object-contain pointer-events-none"
-                                                    style={{
-                                                        transform: `scale(${1 + zoomLevel * 0.3}) translate(${currentTranslateX}px, ${currentTranslateY}px)`,
-                                                        transition: !isDragging ? 'transform 0.3s ease-out' : 'none',
-                                                    }}
+                                                    className="w-auto max-w-full max-h-full object-cover"
                                                 />
                                             </div>
-                                        ))}
-                                    </div>
-
-                                    {/* Prev Button */}
-                                    {zoomLevel === 0 && (
-                                        <button
-                                            onClick={goPrev}
-                                            className="absolute top-1/2 left-3 transform -translate-y-1/2 border border-white hover:bg-primary p-2 rounded-full text-white cursor-pointer"
-                                        >
-                                            <LuChevronLeft size={24}/>
-                                        </button>
-                                    )}
-
-                                    {/* Next Button */}
-
-                                    {zoomLevel === 0 && (
-                                        <button
-                                            onClick={goNext}
-                                            className="absolute top-1/2 right-3 transform -translate-y-1/2 border border-white hover:bg-primary p-2 rounded-full text-white cursor-pointer"
-                                        >
-                                            <LuChevronRight size={24}/>
-                                        </button>
-                                    )}
-                                </div>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
                             </div>
 
                             {/* Right Content */}
-                            <div className="col lg:col-span-3 bg-white h-full">
+                            <div className="col lg:col-span-3 bg-white h-full hidden lg:block mt-[120px]">
                                 <div className="bg-primary py-2 px-6 mt-[0px]">
                                     <h4 className="text-[16px] font-semibold text-white">
                                         Pages
@@ -948,52 +875,77 @@ function Detail() {
                                 </div>
 
                                 <ul className="px-6 py-2 space-y-2 text-[14px]">
-                                    <li
-                                        className={`cursor-pointer border-b border-bordercolor pb-2 ${
-                                            selectedPageIndex === 0 ? 'text-primary' : 'text-prgcolor hover:text-primary'
-                                        }`}
-                                        onClick={() => {
-                                            setSelectedPageIndex(0);
-                                            setCurrent(0);
-                                            setZoomLevel(0);
-                                            setCurrentTranslateX(0);
-                                            setCurrentTranslateY(0);
-                                            setIsDragging(false);
-                                        }}
-                                    >
-                                        Page de couverture
-                                    </li>
-                                    <li
-                                        className={`cursor-pointer border-b border-bordercolor pb-2 ${
-                                            selectedPageIndex === 1 ? 'text-primary' : 'text-prgcolor hover:text-primary'
-                                        }`}
-                                        onClick={() => {
-                                            setSelectedPageIndex(1);
-                                            setCurrent(1);
-                                            setZoomLevel(0);
-                                            setCurrentTranslateX(0);
-                                            setCurrentTranslateY(0);
-                                            setIsDragging(false);
-                                        }}
-                                    >
-                                        Table des matières
-                                    </li>
-                                    <li
-                                        className={`cursor-pointer ${
-                                            selectedPageIndex === 2 ? 'text-primary' : 'text-prgcolor hover:text-primary'
-                                        }`}
-                                        onClick={() => {
-                                            setSelectedPageIndex(2);
-                                            setCurrent(2);
-                                            setZoomLevel(0);
-                                            setCurrentTranslateX(0);
-                                            setCurrentTranslateY(0);
-                                            setIsDragging(false);
-                                        }}
-                                    >
-                                        Unité 1
-                                    </li>
+                                    {['Page de couverture', 'Table des matières', 'Unité 1'].map((label, index) => (
+                                        <li
+                                            key={index}
+                                            onClick={() => {
+                                                setSelectedPageIndex(index);
+                                                setActiveIndex(index); // update Swiper's index
+                                                swiperRef.current?.slideTo(index); // move Swiper
+                                                setZoomIndex(0);
+                                            }}
+                                            className={`cursor-pointer border-b border-bordercolor pb-2 ${
+                                                selectedPageIndex === index ? 'text-primary' : 'text-prgcolor hover:text-primary'
+                                            }`}
+                                        >
+                                            {label}
+                                        </li>
+                                    ))}
                                 </ul>
+                            </div>
+
+                            {/*Right content mobile*/}
+                            <div
+                                className={`wrapper z-10 h-full bg-white absolute top-[68px] transition-all duration-300 ease-in-out ${
+                                    isPanelOpen ? 'right-0' : '-right-[800px]'
+                                }`}>
+                                <div className="bg-primary py-2 px-6 mt-[0px]">
+                                    <h4 className="text-[16px] font-semibold text-white">
+                                        Nafiz
+                                    </h4>
+                                </div>
+                                <ul className="px-6 py-2 space-y-2 text-[14px]">
+                                    {['Page de couverture', 'Table des matières', 'Unité 1'].map((label, index) => (
+                                        <li
+                                            key={index}
+                                            onClick={() => {
+                                                setSelectedPageIndex(index);
+                                                setActiveIndex(index); // update Swiper's index
+                                                swiperRef.current?.slideTo(index); // move Swiper
+                                                setZoomIndex(0);
+                                            }}
+                                            className={`cursor-pointer border-b border-bordercolor pb-2 ${
+                                                selectedPageIndex === index ? 'text-primary' : 'text-prgcolor hover:text-primary'
+                                            }`}
+                                        >
+                                            {label}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div
+                            className="bg-[#2E2E2E] absolute z-10 left-0 bottom-0 w-full lg:w-[75%] flex items-center justify-between py-4 px-4 mt-[8px] md:mt-0">
+                            <h4 className="text-[16px] text-white font-semibold">
+                                {/*A Calculated Restraint*/}
+                            </h4>
+
+                            <div className="zoom_icons flex items-center gap-2">
+                                <HiMagnifyingGlassMinus
+                                    size={23}
+                                    className={`cursor-pointer ${
+                                        zoomIndex === 0 ? 'text-gray-400 cursor-not-allowed' : 'text-white'
+                                    }`}
+                                    onClick={zoomIndex === 0 ? undefined : handleZoomOut}
+                                />
+                                <HiMagnifyingGlassPlus
+                                    size={23}
+                                    className={`cursor-pointer ${
+                                        zoomIndex === ZOOM_LEVELS.length - 1 ? 'text-gray-400 cursor-not-allowed' : 'text-white'
+                                    }`}
+                                    onClick={zoomIndex === ZOOM_LEVELS.length - 1 ? undefined : handleZoomIn}
+                                />
                             </div>
                         </div>
                     </div>
