@@ -12,13 +12,13 @@ function Hero() {
                         <p className="text-[16px] mt-2">
                             Nosres Books s’adresse à tous ceux qui font vivre l’éducation au quotidien : auteurs
                             engagés, enseignants<br/>
-                            passionnés, institutions éducatives et clients à la recherche de ressources pédagogiques de
-                            qualité.
+                            passionnés, institutions éducatives et clients à la recherche de ressources pédagogiques
+                            innovantes.
                             <br/>
                             <br/>
                             Nous vous accompagnons à chaque étape, de la création à la transmission, avec des ouvrages
                             conçus<br/>
-                            pour apprendre, inspirer et transformer.
+                            pour éclairer, inspirer et transformer.
                         </p>
                     </div>
                 </div>

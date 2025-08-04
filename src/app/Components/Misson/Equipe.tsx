@@ -5,7 +5,6 @@ import Image from "next/image";
 import {Modal, ModalBody, ModalHeader} from 'flowbite-react';
 import {useState} from 'react';
 import {LuCircleArrowRight} from "react-icons/lu";
-import Link from "next/link";
 
 function Equipe() {
     const [openModal, setOpenModal] = useState(false);
@@ -24,8 +23,8 @@ function Equipe() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
                         <div data-aos="zoom-in" data-aos-duration="1000" onClick={() => setOpenModal(true)}
-                             className="hover:-translate-y-2 duration-1000 col cursor-pointer image-box bg-white rounded">
-                            <Image src={teamImg1} className="w-full h-52 rounded rounded-b-none" alt="teamImg"/>
+                             className="hover:-translate-y-2 duration-1000 col cursor-pointer image-box bg-white rounded-xl">
+                            <Image src={teamImg1} className="w-full h-52 rounded-xl rounded-b-none" alt="teamImg"/>
                             <div className="content px-4 py-4">
                                 <h3 className="font-semibold text-primary text-[16px]">
                                     John Doe
@@ -37,8 +36,8 @@ function Equipe() {
                         </div>
 
                         <div data-aos="zoom-in" data-aos-duration="1000" onClick={() => setOpenModal(true)}
-                             className="hover:-translate-y-2 duration-1000 col cursor-pointer image-box bg-white rounded">
-                            <Image src={teamImg1} className="w-full h-52 rounded rounded-b-none" alt="teamImg"/>
+                             className="hover:-translate-y-2 duration-1000 col cursor-pointer image-box bg-white rounded-xl">
+                            <Image src={teamImg1} className="w-full h-52 rounded-xl rounded-b-none" alt="teamImg"/>
                             <div className="content px-4 py-4">
                                 <h3 className="font-semibold text-primary text-[16px]">
                                     John Doe
@@ -50,8 +49,8 @@ function Equipe() {
                         </div>
 
                         <div data-aos="zoom-in" data-aos-duration="1000" onClick={() => setOpenModal(true)}
-                             className="hover:-translate-y-2 duration-1000 col cursor-pointer image-box bg-white rounded">
-                            <Image src={teamImg1} className="w-full h-52 rounded rounded-b-none" alt="teamImg"/>
+                             className="hover:-translate-y-2 duration-1000 col cursor-pointer image-box bg-white rounded-xl">
+                            <Image src={teamImg1} className="w-full h-52 rounded-xl rounded-b-none" alt="teamImg"/>
                             <div className="content px-4 py-4">
                                 <h3 className="font-semibold text-primary text-[16px]">
                                     John Doe
@@ -63,8 +62,8 @@ function Equipe() {
                         </div>
 
                         <div data-aos="zoom-in" data-aos-duration="1000" onClick={() => setOpenModal(true)}
-                             className="hover:-translate-y-2 duration-1000 col cursor-pointer image-box bg-white rounded">
-                            <Image src={teamImg1} className="w-full h-52 rounded rounded-b-none" alt="teamImg"/>
+                             className="hover:-translate-y-2 duration-1000 col cursor-pointer image-box bg-white rounded-xl">
+                            <Image src={teamImg1} className="w-full h-52 rounded-xl rounded-b-none" alt="teamImg"/>
                             <div className="content px-4 py-4">
                                 <h3 className="font-semibold text-primary text-[16px]">
                                     John Doe

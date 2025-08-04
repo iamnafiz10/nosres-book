@@ -163,32 +163,32 @@ function Blog() {
                     <div className="blog_wrap mt-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             <div data-aos="zoom-in" data-aos-duration="1000"
-                                 className="hover:-translate-y-2 duration-1000 border border-bordercolor col cursor-pointer image-box bg-white rounded aos-init aos-animate">
-                                <Image src={colorBookImg} className="rounded-t w-full" alt="colorBookImg"/>
+                                 className="hover:-translate-y-2 duration-1000 border border-bordercolor col cursor-pointer image-box bg-white rounded-xl aos-init aos-animate">
+                                <Image src={colorBookImg} className="rounded-t-xl w-full" alt="colorBookImg"/>
                                 <div className="content px-4 py-4">
                                     <h3 className="font-semibold text-primary text-[16px]">John Doe</h3>
                                 </div>
                             </div>
 
                             <div data-aos="zoom-in" data-aos-duration="1000"
-                                 className="hover:-translate-y-2 duration-1000 border border-bordercolor col cursor-pointer image-box bg-white rounded aos-init aos-animate">
-                                <Image src={colorBookImg} className="rounded-t w-full" alt="colorBookImg"/>
+                                 className="hover:-translate-y-2 duration-1000 border border-bordercolor col cursor-pointer image-box bg-white rounded-xl aos-init aos-animate">
+                                <Image src={colorBookImg} className="rounded-t-xl w-full" alt="colorBookImg"/>
                                 <div className="content px-4 py-4">
                                     <h3 className="font-semibold text-primary text-[16px]">John Doe</h3>
                                 </div>
                             </div>
 
                             <div data-aos="zoom-in" data-aos-duration="1000"
-                                 className="hover:-translate-y-2 duration-1000 border border-bordercolor col cursor-pointer image-box bg-white rounded aos-init aos-animate">
-                                <Image src={colorBookImg} className="rounded-t w-full" alt="colorBookImg"/>
+                                 className="hover:-translate-y-2 duration-1000 border border-bordercolor col cursor-pointer image-box bg-white rounded-xl aos-init aos-animate">
+                                <Image src={colorBookImg} className="rounded-t-xl w-full" alt="colorBookImg"/>
                                 <div className="content px-4 py-4">
                                     <h3 className="font-semibold text-primary text-[16px]">John Doe</h3>
                                 </div>
                             </div>
 
                             <div data-aos="zoom-in" data-aos-duration="1000"
-                                 className="hover:-translate-y-2 duration-1000 border border-bordercolor col cursor-pointer image-box bg-white rounded aos-init aos-animate">
-                                <Image src={colorBookImg} className="rounded-t w-full" alt="colorBookImg"/>
+                                 className="hover:-translate-y-2 duration-1000 border border-bordercolor col cursor-pointer image-box bg-white rounded-xl aos-init aos-animate">
+                                <Image src={colorBookImg} className="rounded-t-xl w-full" alt="colorBookImg"/>
                                 <div className="content px-4 py-4">
                                     <h3 className="font-semibold text-primary text-[16px]">John Doe</h3>
                                 </div>
