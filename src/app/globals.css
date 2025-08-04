@@ -236,6 +236,16 @@ input {
     padding: 0 !important;
 }
 
+.rounded-lg button {
+    outline: none !important;
+    cursor: pointer !important;
+}
+
+/* Gradient Background */
+.future-section {
+    background-image: linear-gradient(90deg, #ced8e2b3, #e5e4e1e6);
+}
+
 /* Home page slider keyframe */
 @keyframes scrollLeft {
     0% {

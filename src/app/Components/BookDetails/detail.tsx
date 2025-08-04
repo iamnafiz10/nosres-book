@@ -232,7 +232,7 @@ function Detail() {
                             </h4>
 
                             <div
-                                className="flex items-center justify-between gap-4 text-[14px] mt-2 border-b border-bordercolor pb-1">
+                                className="flex items-center justify-between gap-4 text-[14px] mt-0 border-b border-bordercolor pb-1">
                                 <h4>
                                     Date de parution: <span className="text-graycolor">May 6, 2025</span>
                                 </h4>

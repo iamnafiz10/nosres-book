@@ -155,7 +155,7 @@ function Footer() {
                         {/* Mobile footer */}
                         <div className="block lg:hidden">
                             <div className="col pb-8">
-                                <div className="logo">
+                                <div className="logo hidden lg:block">
                                     <Link href='/' className="flex items-center gap-2">
                                         <Image width={1000} height={500} src="/assets/images/logo.svg"
                                                className="h-10 w-7"
