@@ -63,7 +63,7 @@ function Approche() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div data-aos="zoom-in" className="col">
                                 <div
-                                    className="h-full md:h-[190px] bg-[#fafafa38] py-4 px-8 rounded-xl">
+                                    className="h-full bg-[#fafafa38] py-4 px-8 rounded-xl">
                                     <div className="text mt-2">
                                         <h4 className="text-[18px] text-prgcolor font-semibold">
                                             Une initiative de Nosres Education

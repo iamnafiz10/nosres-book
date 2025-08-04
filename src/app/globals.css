@@ -241,6 +241,11 @@ input {
     cursor: pointer !important;
 }
 
+/* Custom Table */
+.custom_table table td {
+    color: #39393b;
+}
+
 /* Gradient Background */
 .future-section {
     background-image: linear-gradient(90deg, #ced8e2b3, #e5e4e1e6);
