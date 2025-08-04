@@ -3,7 +3,7 @@ import React from 'react';
 function Hero() {
     return (
         <>
-            <section id="banner-section" className="bg-[#F4F4F4] pt-[5.7rem] pb-[3rem]">
+            <section id="banner-section" className="bg-[#DAE1E7] h-[300px] md:h-[400px] pt-[6.5rem] md:pt-[8.5rem]">
                 <div className="container text-center">
                     <h4 className="text-[24px] text-prgcolor">
                         Notre mission
