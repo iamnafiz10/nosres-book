@@ -764,7 +764,7 @@ function Page() {
                     <div className="mt-4 box flex flex-col items-center justify-center">
                         <MdOutlineExploreOff size={100} className="text-center text-gray-400"/>
                         <h4 className="text-[20px] mt-4 text-center">
-                            Aucune collection n’est actuellement disponible.
+                            Aucun livre n’est actuellement disponible.
                         </h4>
                         <p className="mt-2">
                             N’hésitez pas à revenir ultérieurement.
