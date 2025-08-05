@@ -1,22 +1,11 @@
 "use client";
 import React, {useEffect, useRef, useState} from 'react';
 import {Checkbox, Label} from "flowbite-react";
-import {
-    LuArrowDownWideNarrow,
-    LuArrowLeftToLine,
-    LuArrowRightToLine,
-    LuTrash2
-} from "react-icons/lu";
+import {LuArrowDownWideNarrow, LuTrash2} from "react-icons/lu";
 import {RxCross1} from "react-icons/rx";
-import Image from "next/image";
-import bookImgone from "../../../../public/assets/images/book1.jpg";
-import bookImgtwo from "../../../../public/assets/images/book2.jpg";
-import bookImgthree from "../../../../public/assets/images/book3.jpg";
-import bookImgfour from "../../../../public/assets/images/book4.jpg";
-import bookImgfive from "../../../../public/assets/images/book5.jpg";
-import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from "react-icons/md";
+import {MdOutlineExploreOff} from "react-icons/md";
 
-function Books() {
+function Page() {
     // Select Left side (One)
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const [selected, setSelected] = useState<string[]>([]);
@@ -110,9 +99,19 @@ function Books() {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
-
     return (
         <>
+            <section id="banner-section" className="bg-[#F4F4F4] pt-[5.7rem] pb-[3rem]">
+                <div className="container">
+                    <h1 className="text-2xl md:text-[38px] leading-0 md:leading-10 text-prgcolor font-bold md:font-medium mb-4">
+                        Maternelle
+                    </h1>
+                    <p>
+                        Les nouveautés et l’ensemble de nos manuels scolaires pour la maternelle.
+                    </p>
+                </div>
+            </section>
+
             <section id="books-section">
                 <div className="container pt-16">
                     {/* Flex One*/}
@@ -757,181 +756,19 @@ function Books() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    {/*Books*/}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-14">
-                        <div className="col hover:-translate-y-2 duration-200">
-                            <div className="relative">
-                                <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                       alt="bookImgone"/>
-                                <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
-                                    À PARAÎTRE
-                                </h4>
-                            </div>
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                        <div className="col hover:-translate-y-2 duration-200">
-                            <div className="relative">
-                                <Image src={bookImgtwo} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                       alt="bookImgtwo"/>
-                                <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
-                                    NOUVEAUTÉ
-                                </h4>
-                            </div>
-
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                        <div className="col hover:-translate-y-2 duration-200">
-                            <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                   alt="bookImgthree"/>
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                        <div className="col hover:-translate-y-2 duration-200">
-                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                   alt="colorBookImg"/>
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                        <div className="col hover:-translate-y-2 duration-200">
-                            <Image src={bookImgfive} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                   alt="bookImgfive"/>
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-
-                        <div className="col hover:-translate-y-2 duration-200 mt-0 lg:mt-8">
-                            <div className="relative">
-                                <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                       alt="bookImgone"/>
-                                <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
-                                    À PARAÎTRE
-                                </h4>
-                            </div>
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                        <div className="col hover:-translate-y-2 duration-200 mt-0 lg:mt-8">
-                            <div className="relative">
-                                <Image src={bookImgtwo} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                       alt="bookImgtwo"/>
-                                <h4 className="absolute -top-[9px] left-1/2 transform -translate-x-1/2 text-[12px] text-white bg-primary rounded text-center w-[100px]">
-                                    NOUVEAUTÉ
-                                </h4>
-                            </div>
-
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                        <div className="col hover:-translate-y-2 duration-200 mt-0 lg:mt-8">
-                            <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                   alt="bookImgthree"/>
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                        <div className="col hover:-translate-y-2 duration-200 mt-0 lg:mt-8">
-                            <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                   alt="colorBookImg"/>
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                        <div className="col hover:-translate-y-2 duration-200 mt-0 lg:mt-8">
-                            <Image src={bookImgfive} className="w-full h-[600px] md:h-[300px] cursor-pointer"
-                                   alt="bookImgfive"/>
-                            <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
-                                FDR and the Jews
-                            </h4>
-                            <h4 className="text-graycolor text-[12px]">
-                                Richard Breitman, Allan J.<br/>
-                                Lichtman
-                            </h4>
-                        </div>
-                    </div>
-
-                    {/*Pagination*/}
-                    <div className="mt-24 lg:mt-10 flex justify-center items-center">
-                        <div
-                            className="bg-white w-[350px] flex items-center justify-center border border-bordercolor rounded text-[14px] text-prgcolor">
-                            {/* Left Arrows */}
-                            <button type='button' className="mx-2 text-graycolor">
-                                <LuArrowLeftToLine size={16}/>
-                            </button>
-                            <button type='button' className="mx-2 text-graycolor">
-                                <MdKeyboardArrowLeft size={22}/>
-                            </button>
-
-                            {/* Page Numbers */}
-                            {[1, 2, 3, 4].map((num) => (
-                                <React.Fragment key={num}>
-                                    <button
-                                        type="button"
-                                        className={`px-4 py-2 ${
-                                            num === 1
-                                                ? 'border-b-3 text-prgcolor border-primary'
-                                                : 'text-graycolor cursor-pointer'
-                                        }`}
-                                    >
-                                        {num}
-                                    </button>
-                                    {num === 4 && <span className="text-graycolor -ml-[10px] font-semibold">...</span>}
-                                </React.Fragment>
-                            ))}
-
-                            {/* Right Arrows */}
-                            <button type='button' className="mx-2 py-1 hover:text-primary text-prgcolor cursor-pointer">
-                                <MdKeyboardArrowRight size={22}/>
-                            </button>
-                            <button type='button' className="mx-2 py-1 hover:text-primary text-prgcolor cursor-pointer">
-                                <LuArrowRightToLine size={16}/>
-                            </button>
-                        </div>
+            <section id="aucune-section">
+                <div className="container">
+                    <div className="mt-4 box flex flex-col items-center justify-center">
+                        <MdOutlineExploreOff size={100} className="text-center text-gray-400"/>
+                        <h4 className="text-[20px] mt-4 text-center">
+                            Aucune collection n’est actuellement disponible.
+                        </h4>
+                        <p className="mt-2">
+                            N’hésitez pas à revenir ultérieurement.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -939,4 +776,4 @@ function Books() {
     );
 }
 
-export default Books;
+export default Page;

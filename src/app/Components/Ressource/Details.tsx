@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {
     LuBookOpen,
     LuBookOpenText, LuCircleArrowRight,
@@ -21,6 +21,18 @@ function Details() {
         }
     }, [isOpenOne]);
     const [activeTab, setActiveTab] = useState<'a' | 'b' | 'c'>('a');
+    const tabCScrollRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (activeTab === 'c' && tabCScrollRef.current) {
+            // Use timeout to wait for tab content to render
+            setTimeout(() => {
+                tabCScrollRef.current?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }, 50);
+        }
+    }, [activeTab]);
 
     // Popup Tab Two
     const [isOpenTwo, setIsOpenTwo] = useState(false);
@@ -32,6 +44,20 @@ function Details() {
         }
     }, [isOpenTwo]);
     const [activeTabTwo, setActiveTabTwo] = useState<'a' | 'b' | 'c'>('a');
+
+    const tabCScrollRefTwo = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        if (activeTabTwo === 'c' && tabCScrollRefTwo.current) {
+            // Use timeout to wait for tab content to render
+            setTimeout(() => {
+                tabCScrollRefTwo.current?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }, 50);
+        }
+    }, [activeTabTwo]);
+
 
     // Popup Tab Three
     const [isOpenThree, setIsOpenThree] = useState(false);
@@ -241,7 +267,7 @@ function Details() {
                                     className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
                                     style={{backgroundColor: 'rgba(0,0,0,0.3)'}}
                                 >
-                                    <div className="flex justify-center">
+                                    <div ref={tabCScrollRef} className="flex justify-center">
                                         <div className="relative w-full md:max-w-4xl mt-20 mb-10 mx-6 md:mx-0">
                                             {/* Close Button outside top-right corner of popup */}
                                             <button
@@ -386,8 +412,13 @@ function Details() {
                                                                     Questions fréquentes
                                                                 </h4>
                                                                 <h4 className="text-[14px] text-prgcolor mt-3">
-                                                                    Consultez notre <Link href='#'
-                                                                                          className="text-primary hover:underline">FAQ
+                                                                    Consultez notre <Link
+                                                                    onClick={(e) => {
+                                                                        e.preventDefault();
+                                                                        setActiveTab('c');
+                                                                    }}
+                                                                    href='#'
+                                                                    className="text-primary hover:underline">FAQ
                                                                     auteurs</Link> pour en savoir plus sur les droits
                                                                     d’auteur, la rémunération ou les délais de<br/>
                                                                     publication.
@@ -709,7 +740,7 @@ function Details() {
                                     className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
                                     style={{backgroundColor: 'rgba(0,0,0,0.3)'}}
                                 >
-                                    <div className="flex justify-center">
+                                    <div ref={tabCScrollRefTwo} className="flex justify-center">
                                         <div className="relative w-full md:max-w-4xl mt-20 mb-10 mx-6 md:mx-0">
                                             {/* Close Button outside top-right corner of popup */}
                                             <button
@@ -801,8 +832,9 @@ function Details() {
                                                                     </li>
                                                                 </ul>
                                                                 <h4 className="text-[14px] text-prgcolor mt-3">
-                                                                    Consultez la section <Link href='#'
-                                                                                               className="text-primary hover:underline">Droits
+                                                                    Consultez la section <Link
+                                                                    onClick={() => setActiveTabTwo('c')} href='#'
+                                                                    className="text-primary hover:underline">Droits
                                                                     et royalties</Link> pour en
                                                                     savoir plus sur les droits d’auteur et la
                                                                     rémunération.
@@ -1108,7 +1140,7 @@ function Details() {
 
                                                                             {/* MATERNELLE */}
                                                                             <tr>
-                                                                                <td className="border border-b-2 border-primary p-2"
+                                                                                <td className="border border-b-2 border-primary font-semibold p-2"
                                                                                     rowSpan={3}>MATERNELLE
                                                                                 </td>
                                                                                 <td className="border border-primary p-2">Petite

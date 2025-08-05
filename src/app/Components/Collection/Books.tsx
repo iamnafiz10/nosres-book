@@ -301,63 +301,63 @@ function Books() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={colorBookImg} className="rounded-xl w-full h-[180px] cursor-pointer"
                                    alt="colorBookImg"/>
                         </div>

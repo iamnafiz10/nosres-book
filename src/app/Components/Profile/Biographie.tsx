@@ -292,7 +292,7 @@ function Biographie() {
                         Bibliographie
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-6">
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <div className="relative">
                                 <Image src={bookImgone} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgone"/>
@@ -308,7 +308,7 @@ function Biographie() {
                                 Lichtman
                             </h4>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <div className="relative">
                                 <Image src={bookImgtwo} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                        alt="bookImgtwo"/>
@@ -325,7 +325,7 @@ function Biographie() {
                                 Lichtman
                             </h4>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={bookImgthree} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="bookImgthree"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
@@ -336,7 +336,7 @@ function Biographie() {
                                 Lichtman
                             </h4>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
@@ -347,7 +347,7 @@ function Biographie() {
                                 Lichtman
                             </h4>
                         </div>
-                        <div className="col">
+                        <div className="col hover:-translate-y-2 duration-200">
                             <Image src={bookImgfour} className="w-full h-[600px] md:h-[300px] cursor-pointer"
                                    alt="colorBookImg"/>
                             <h4 className="text-prgcolor text-[14px] hover:underline mt-3 cursor-pointer">
