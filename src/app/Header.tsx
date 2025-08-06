@@ -72,7 +72,7 @@ function Header() {
         <>
             <section id="header-section" className="relative">
                 <header
-                    className="py-4 lg:py-2 flex items-center h-[50px] shadow-sm bg-white w-full lg:relative z-50"
+                    className="py-4 lg:py-2 flex items-center h-[50px] shadow-xs bg-white w-full lg:relative z-50"
                     style={{
                         position: 'fixed',
                     }}
