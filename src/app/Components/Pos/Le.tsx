@@ -4,7 +4,6 @@ import bookImg from "../../../../public/assets/images/color-book.png";
 import Image from "next/image";
 import Link from "next/link";
 import {LuX} from "react-icons/lu";
-import {XIcon} from "flowbite-react";
 
 const Le = () => {
     // Popup Tab One
@@ -176,7 +175,7 @@ const Le = () => {
                                 </h2>
 
                                 <h4 className="text-[16px] text-prgcolor mt-1">
-                                    Votre compagnon d’enseignement complet
+                                    <span className="text-graycolor">Votre compagnon d’enseignement complet</span>
                                     <br/>
                                     <br/>
                                     Le livre du professeur fournit aux enseignants un accompagnement structuré, avec des
@@ -247,7 +246,13 @@ const Le = () => {
                                             </button>
 
                                             {/* White Popup Box */}
-                                            <div className="bg-white rounded-[1rem] p-6 shadow-lg">
+                                            <div
+                                                className="bg-white rounded-[1rem] p-4 shadow-lg max-h-[80vh] overflow-y-auto relative"
+                                                style={{
+                                                    scrollbarWidth: "thin",
+                                                    scrollbarColor: "#ccc transparent",
+                                                }}
+                                            >
                                                 <div className="mt-8 mx-8">
                                                     {/* Table */}
                                                     <div className="overflow-x-auto">
@@ -261,7 +266,7 @@ const Le = () => {
                                                             </tr>
                                                             </thead>
                                                             <tbody>
-                                                            {[...Array(8)].map((_, i) => (
+                                                            {[...Array(22)].map((_, i) => (
                                                                 <tr key={i} className="hover:bg-gray-50 text-[14px]">
                                                                     <td className="p-3 border border-bordercolor text-primary hover:underline">
                                                                         <Link href="#">Voyage méthode syllabique

@@ -26,7 +26,7 @@ function Hero() {
                                 <Image
                                     src={profileImg}
                                     alt="profileImg"
-                                    className="w-full h-full"
+                                    className="w-full md:w-[250px] h-full md:h-[200px]"
                                 />
                             </div>
                         </div>
