@@ -60,10 +60,10 @@ const Pour = () => {
                         </div>
                     </div>
 
-                    <h4 className="text-[16px] mt-8 text-black font-[600]">
+                    <h4 className="text-[24px] mt-8 text-black font-[600]">
                         Tarification avec remise éducative
                     </h4>
-                    <p className="text-[14px] text-prgcolor mt-2">
+                    <p className="text-[16px] text-prgcolor mt-2">
                         Nous offrons des réductions spéciales aux établissements éducatifs, enseignants, étudiants et
                         personnel afin de<br/>
                         rendre nos produits et services plus abordables. Une vérification de l’éligibilité, telle qu’une

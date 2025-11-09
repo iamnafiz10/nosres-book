@@ -12,7 +12,7 @@ const Prode = () => {
                             À propos de Voyage méthode de lecture
                         </h2>
 
-                        <p className="text-prgcolor text-[14px]">
+                        <p className="text-prgcolor text-[16px]">
                             Voyage méthode de lecture est une série progressive en 5 niveaux, conçue pour guider les
                             jeunes enfants dans leurs premiers pas en français. Basée sur une méthode phonétique et
                             syllabique, elle accompagne les jeunes lecteurs pas à pas à travers un univers ludique,
@@ -27,23 +27,23 @@ const Prode = () => {
                         {/* Tags */}
                         <div className="flex flex-wrap gap-3 mt-4">
                             <span
-                                className="bg-gray-100 cursor-pointer hover:underline hover:text-primary border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
+                                className="bg-gray-100  border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
                               Maternelle
                             </span>
                             <span
-                                className="bg-gray-100 cursor-pointer hover:underline hover:text-primary border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
+                                className="bg-gray-100  border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
                               CP
                             </span>
                             <span
-                                className="bg-gray-100 cursor-pointer hover:underline hover:text-primary border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
+                                className="bg-gray-100  border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
                               Papier
                             </span>
                             <span
-                                className="bg-gray-100 cursor-pointer hover:underline hover:text-primary border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
+                                className="bg-gray-100  border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
                               5 niveaux
                             </span>
                             <span
-                                className="bg-gray-100 cursor-pointer hover:underline hover:text-primary border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
+                                className="bg-gray-100  border border-bordercolor text-prgcolor px-4 py-1 rounded-full text-[12px]">
                                 Débutant
                             </span>
                         </div>
