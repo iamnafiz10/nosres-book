@@ -6,6 +6,8 @@ import Le from "@/app/Components/Pos/Le";
 import Pour from "@/app/Components/Pos/Pour";
 import SubHeader from "@/app/Components/Pos/SubHeader";
 import Ense from "@/app/Components/Pos/Ense";
+import Parents from "@/app/Components/Pos/Parents";
+import Eleves from "@/app/Components/Pos/Eleves";
 
 const Page: React.FC = () => {
     const [activeTab, setActiveTab] = useState<string>("Information");
@@ -78,17 +80,9 @@ const Page: React.FC = () => {
             case "Enseignants":
                 return <Ense/>;
             case "Élèves":
-                return (
-                    <div className="p-10 text-center text-gray-500">
-                        Élèves content coming soon
-                    </div>
-                );
+                return <Eleves/>;
             case "Parents":
-                return (
-                    <div className="p-10 text-center text-gray-500">
-                        Parents content coming soon
-                    </div>
-                );
+                return <Parents/>;
             default:
                 return null;
         }
@@ -99,7 +93,7 @@ const Page: React.FC = () => {
             {/* SubHeader position control */}
             <div
                 className={`fixed left-0 w-full z-30 transition-all duration-300 ${
-                    hideHeader ? "top-0" : "top-[48px]"
+                    hideHeader ? "top-0" : "top-[50px]"
                 }`}
             >
                 <SubHeader activeTab={activeTab} setActiveTab={setActiveTab}/>

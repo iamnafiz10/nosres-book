@@ -6,7 +6,7 @@ function Hero() {
     return (
         <>
             <section id="banner-section">
-                <div className="content_wrap bg-[#F4F4F4] py-[15px]">
+                <div className="content_wrap bg-[#F4F4F4] pt-[50px] md:pt-[10px] pb-[13px]">
                     <div className="container py-0">
                         <div className="block lg:flex items-center justify-between">
                             <div className="wrap">

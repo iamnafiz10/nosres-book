@@ -5,7 +5,7 @@ import {
     LuDownload, LuX,
 } from "react-icons/lu";
 
-const Ense = () => {
+const Parents = () => {
     // Popup Tab One
     const [isOpenOne, setIsOpenOne] = useState(false);
     useEffect(() => {
@@ -103,14 +103,13 @@ const Ense = () => {
                 <div className="container pt-16">
                     <div className="wrap text-left">
                         <h4 className="text-[24px] font-semibold">
-                            Pour les enseignants
+                            Pour les parents
                         </h4>
                         <p className="text-[16px] mt-2">
-                            Dans cette section, vous découvrirez une variété de ressources pédagogiques, notamment des
-                            pistes audio, du matériel
-                            d'évaluation et des outils supplémentaires, soigneusement conçus pour soutenir votre cours,
-                            enrichir les activités en classe
-                            et vous aider à utiliser au mieux Voyage méthode de lecture avec vos élèves.
+                            Dans cette section, vous trouverez une lettre destinée aux parents, des cartes imagées, des
+                            cartes de phonèmes, ainsi que
+                            des pistes audio, pour accompagner simplement et efficacement l’apprentissage de votre
+                            enfant à la maison.
                         </p>
                     </div>
                 </div>
@@ -128,14 +127,12 @@ const Ense = () => {
                         <div data-aos="zoom-in" className="col bg-[#F4F4F4] p-8 rounded-xl">
                             <h4 onClick={() => setIsOpenOne(true)}
                                 className="cursor-pointer hover:underline text-[16px] text-primary font-[600]">
-                                Fichiers audio (MP3)
+                                Lettre aux parents
                             </h4>
                             <p className="text-[14px] mt-4 text-left text-prgcolor">
-                                Accédez à l’ensemble complet des fichiers
-                                audio MP3 pour chaque niveau de Voyage
-                                methode de lecture, comprenant des activités
-                                d’écoute, des chants et des chansons et des
-                                histoires.
+                                Dans cette lettre, nous proposons des idées
+                                pour vous impliquer dans les cours de français
+                                de votre enfant.
                             </p>
                         </div>
 
@@ -170,42 +167,14 @@ const Ense = () => {
                         <div data-aos="zoom-in" className="col bg-[#F4F4F4] p-8 rounded-xl">
                             <h4 onClick={() => setIsOpenFour(true)}
                                 className="cursor-pointer hover:underline text-[16px] text-primary font-[600]">
-                                Test de placement
+                                Fichiers audio (MP3)
                             </h4>
                             <p className="text-[14px] mt-4 text-left text-prgcolor">
-                                Le test de placement évalue la maîtrise des
-                                sons, des lettres, des mots et de la lecture de
-                                base. Il aide à déterminer par quel niveau
-                                commencer pour assurer un apprentissage
-                                adapté et progressif.
-                            </p>
-                        </div>
-
-                        <div data-aos="zoom-in" className="col bg-[#F4F4F4] p-8 rounded-xl">
-                            <h4 onClick={() => setIsOpenFive(true)}
-                                className="cursor-pointer hover:underline text-[16px] text-primary font-[600]">
-                                Tests
-                            </h4>
-                            <p className="text-[14px] mt-4 text-left text-prgcolor">
-                                Chaque niveau de Voyage methode de lecture
-                                comprend des tests d’unité, de mi-parcours et
-                                de fin de niveau pour évaluer les progrès de
-                                l’enfant. Les corrigés fournissent les réponses
-                                à toutes les questions.
-                            </p>
-                        </div>
-
-                        <div data-aos="zoom-in" className="col bg-[#F4F4F4] p-8 rounded-xl">
-                            <h4 onClick={() => setIsOpenSix(true)}
-                                className="cursor-pointer hover:underline text-[16px] text-primary font-[600]">
-                                Guides pédagogiques
-                            </h4>
-                            <p className="text-[14px] mt-4 text-left text-prgcolor">
-                                Téléchargez le guide pédagogique, en français
-                                et en anglais, pour tous les niveaux de Oxford
-                                Phonics World. Il contient un message de
-                                l’auteur, des jeux ludiques et des instructions
-                                claires pour chaque leçon.
+                                Accédez à l’ensemble complet des fichiers
+                                audio MP3 pour chaque niveau de Voyage
+                                methode de lecture, comprenant des activités
+                                d’écoute, des chants et des chansons et des
+                                histoires.
                             </p>
                         </div>
                     </div>
@@ -230,6 +199,262 @@ const Ense = () => {
                                             {/* Close Button outside top-right corner of popup */}
                                             <button
                                                 onClick={() => setIsOpenOne(false)}
+                                                className="absolute -top-[50px] md:-top-[40px] right-0 md:-right-[55px] cursor-pointer text-prgcolor hover:text-primary bg-white text-black p-1 rounded-full shadow-md hover:bg-gray-100 z-10"
+                                            >
+                                                <LuX size={32}/>
+                                            </button>
+
+                                            {/* White Popup Box */}
+                                            <div className="bg-white rounded-[1rem] p-6 shadow-lg">
+                                                <div className="text-center">
+                                                    <h4 className="text-[22px] text-prgcolor font-semibold mb-6">
+                                                        Lettre aux parents
+                                                    </h4>
+                                                </div>
+                                                {/*Tab One Content*/}
+                                                <div className="tab_one_content_a">
+                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Lettre aux parents
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    PDF (5 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Modal Two */}
+            <div className="modal_two">
+                {isOpenTwo && (
+                    <div
+                        className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
+                        style={{backgroundColor: 'rgba(0,0,0,0.8)'}}
+                    >
+                        <div className="flex justify-center relative">
+                            {isOpenTwo && (
+                                <div
+                                    className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
+                                    style={{backgroundColor: 'rgba(0,0,0,0.3)'}}
+                                >
+                                    <div ref={tabCScrollRefTwo} className="flex justify-center">
+                                        <div className="relative w-full md:max-w-4xl mt-20 mb-10 mx-6 md:mx-0">
+                                            {/* Close Button outside top-right corner of popup */}
+                                            <button
+                                                onClick={() => setIsOpenTwo(false)}
+                                                className="absolute -top-[50px] md:-top-[40px] right-0 md:-right-[55px] cursor-pointer text-prgcolor hover:text-primary bg-white text-black p-1 rounded-full shadow-md hover:bg-gray-100 z-10"
+                                            >
+                                                <LuX size={32}/>
+                                            </button>
+
+                                            {/* White Popup Box */}
+                                            <div className="bg-white rounded-[1rem] p-6 shadow-lg">
+                                                <div className="text-center">
+                                                    <h4 className="text-[22px] text-prgcolor font-semibold mb-6">
+                                                        Cartes imagées
+                                                    </h4>
+                                                </div>
+                                                {/*Tab One Content*/}
+                                                <div className="tab_one_content_a">
+                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes imagées
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    PDF (5 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes imagées
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    PDF (5 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes imagées
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    PDF (5 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes imagées
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    PDF (5 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes imagées
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    PDF (5 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Modal Three */}
+            <div className="modal_three">
+                {isOpenThree && (
+                    <div
+                        className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
+                        style={{backgroundColor: 'rgba(0,0,0,0.8)'}}
+                    >
+                        <div className="flex justify-center relative">
+                            {isOpenThree && (
+                                <div
+                                    className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
+                                    style={{backgroundColor: 'rgba(0,0,0,0.3)'}}
+                                >
+                                    <div className="flex justify-center">
+                                        <div className="relative w-full md:max-w-4xl mt-20 mb-10 mx-6 md:mx-0">
+                                            {/* Close Button outside top-right corner of popup */}
+                                            <button
+                                                onClick={() => setIsOpenThree(false)}
+                                                className="absolute -top-[50px] md:-top-[40px] right-0 md:-right-[55px] cursor-pointer text-prgcolor hover:text-primary bg-white text-black p-1 rounded-full shadow-md hover:bg-gray-100 z-10"
+                                            >
+                                                <LuX size={32}/>
+                                            </button>
+
+                                            {/* White Popup Box */}
+                                            <div className="bg-white rounded-[1rem] p-6 shadow-lg">
+                                                <div className="text-center">
+                                                    <h4 className="text-[22px] text-prgcolor font-semibold mb-6">
+                                                        Cartes de phonèmes
+                                                    </h4>
+                                                </div>
+                                                {/*Tab One Content*/}
+                                                <div className="tab_one_content_a">
+                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes de phonèmes
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    ZIP (20 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes de phonèmes
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    ZIP (20 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes de phonèmes
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    ZIP (20 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes de phonèmes
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    ZIP (20 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
+                                                            <div
+                                                                className="flex items-center justify-center md:justify-start gap-1">
+                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
+                                                                    Niveau 1_Cartes de phonèmes
+                                                                </h4>
+                                                                <h4 className="text-[12px] text-black">
+                                                                    ZIP (20 MB)
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Modal Four */}
+            <div className="modal_four">
+                {isOpenFour && (
+                    <div
+                        className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
+                        style={{backgroundColor: 'rgba(0,0,0,0.8)'}}
+                    >
+                        <div className="flex justify-center relative">
+                            {isOpenFour && (
+                                <div
+                                    className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
+                                    style={{backgroundColor: 'rgba(0,0,0,0.3)'}}
+                                >
+                                    <div className="flex justify-center">
+                                        <div className="relative w-full md:max-w-4xl mt-20 mb-10 mx-6 md:mx-0">
+                                            {/* Close Button outside top-right corner of popup */}
+                                            <button
+                                                onClick={() => setIsOpenFour(false)}
                                                 className="absolute -top-[50px] md:-top-[40px] right-0 md:-right-[55px] cursor-pointer text-prgcolor hover:text-primary bg-white text-black p-1 rounded-full shadow-md hover:bg-gray-100 z-10"
                                             >
                                                 <LuX size={32}/>
@@ -994,296 +1219,6 @@ const Ense = () => {
                                                             </div>
                                                         </div>
                                                     )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                )}
-            </div>
-
-            {/* Modal Two */}
-            <div className="modal_two">
-                {isOpenTwo && (
-                    <div
-                        className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
-                        style={{backgroundColor: 'rgba(0,0,0,0.8)'}}
-                    >
-                        <div className="flex justify-center relative">
-                            {isOpenTwo && (
-                                <div
-                                    className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
-                                    style={{backgroundColor: 'rgba(0,0,0,0.3)'}}
-                                >
-                                    <div ref={tabCScrollRefTwo} className="flex justify-center">
-                                        <div className="relative w-full md:max-w-4xl mt-20 mb-10 mx-6 md:mx-0">
-                                            {/* Close Button outside top-right corner of popup */}
-                                            <button
-                                                onClick={() => setIsOpenTwo(false)}
-                                                className="absolute -top-[50px] md:-top-[40px] right-0 md:-right-[55px] cursor-pointer text-prgcolor hover:text-primary bg-white text-black p-1 rounded-full shadow-md hover:bg-gray-100 z-10"
-                                            >
-                                                <LuX size={32}/>
-                                            </button>
-
-                                            {/* White Popup Box */}
-                                            <div className="bg-white rounded-[1rem] p-6 shadow-lg">
-                                                <div className="text-center">
-                                                    <h4 className="text-[22px] text-prgcolor font-semibold mb-6">
-                                                        Cartes imagées
-                                                    </h4>
-                                                </div>
-                                                {/*Tab One Content*/}
-                                                <div className="tab_one_content_a">
-                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes imagées
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes imagées
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes imagées
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes imagées
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes imagées
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                )}
-            </div>
-
-            {/* Modal Three */}
-            <div className="modal_three">
-                {isOpenThree && (
-                    <div
-                        className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
-                        style={{backgroundColor: 'rgba(0,0,0,0.8)'}}
-                    >
-                        <div className="flex justify-center relative">
-                            {isOpenThree && (
-                                <div
-                                    className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
-                                    style={{backgroundColor: 'rgba(0,0,0,0.3)'}}
-                                >
-                                    <div className="flex justify-center">
-                                        <div className="relative w-full md:max-w-4xl mt-20 mb-10 mx-6 md:mx-0">
-                                            {/* Close Button outside top-right corner of popup */}
-                                            <button
-                                                onClick={() => setIsOpenThree(false)}
-                                                className="absolute -top-[50px] md:-top-[40px] right-0 md:-right-[55px] cursor-pointer text-prgcolor hover:text-primary bg-white text-black p-1 rounded-full shadow-md hover:bg-gray-100 z-10"
-                                            >
-                                                <LuX size={32}/>
-                                            </button>
-
-                                            {/* White Popup Box */}
-                                            <div className="bg-white rounded-[1rem] p-6 shadow-lg">
-                                                <div className="text-center">
-                                                    <h4 className="text-[22px] text-prgcolor font-semibold mb-6">
-                                                        Cartes de phonèmes
-                                                    </h4>
-                                                </div>
-                                                {/*Tab One Content*/}
-                                                <div className="tab_one_content_a">
-                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes de phonèmes
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes de phonèmes
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes de phonèmes
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes de phonèmes
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Niveau 1_Cartes de phonèmes
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    PDF (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                )}
-            </div>
-
-            {/* Modal Four */}
-            <div className="modal_four">
-                {isOpenFour && (
-                    <div
-                        className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
-                        style={{backgroundColor: 'rgba(0,0,0,0.8)'}}
-                    >
-                        <div className="flex justify-center relative">
-                            {isOpenFour && (
-                                <div
-                                    className="fixed inset-0 z-50 bg-black bg-opacity-80 overflow-auto"
-                                    style={{backgroundColor: 'rgba(0,0,0,0.3)'}}
-                                >
-                                    <div className="flex justify-center">
-                                        <div className="relative w-full md:max-w-4xl mt-20 mb-10 mx-6 md:mx-0">
-                                            {/* Close Button outside top-right corner of popup */}
-                                            <button
-                                                onClick={() => setIsOpenFour(false)}
-                                                className="absolute -top-[50px] md:-top-[40px] right-0 md:-right-[55px] cursor-pointer text-prgcolor hover:text-primary bg-white text-black p-1 rounded-full shadow-md hover:bg-gray-100 z-10"
-                                            >
-                                                <LuX size={32}/>
-                                            </button>
-
-                                            {/* White Popup Box */}
-                                            <div className="bg-white rounded-[1rem] p-6 shadow-lg">
-                                                <div className="text-center">
-                                                    <h4 className="text-[22px] text-prgcolor font-semibold mb-6">
-                                                        Test de placement
-                                                    </h4>
-                                                </div>
-                                                {/*Tab One Content*/}
-                                                <div className="tab_one_content_a">
-                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Instructions du test de placement
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    ZIP (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Corrigé du test de placement
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    ZIP (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Test de placement – Expression
-                                                                    orale et Compréhension orale
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    ZIP (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                        <div className="box bg-gray-100 py-2 px-4 rounded">
-                                                            <div
-                                                                className="flex items-center justify-center md:justify-start gap-1">
-                                                                <h4 className="text-[12px] text-primary hover:underline cursor-pointer">
-                                                                    Carte d’expression orale et de compréhension orale
-                                                                </h4>
-                                                                <h4 className="text-[12px] text-black">
-                                                                    ZIP (5 MB)
-                                                                </h4>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2191,4 +2126,4 @@ const Ense = () => {
     );
 };
 
-export default Ense;
+export default Parents;
