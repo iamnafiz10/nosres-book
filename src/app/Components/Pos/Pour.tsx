@@ -240,19 +240,7 @@ const Pour = () => {
                                                         )}
 
                                                         {activeTabTwo === 'b' && (
-                                                            <div
-                                                                className="tab_one_content_b bg-[#e7dc5c1a] p-6 rounded-xl">
-                                                                <h4 className="text-yellow-500 text-[16px] font-semibold">
-                                                                    Obtenez 1 livre du professeur GRATUIT
-                                                                </h4>
-                                                                <h4 className="text-[14px] text-prgcolor">
-                                                                    Recevez 1 livre du professeur gratuit pour chaque achat
-                                                                    de 5 livres de l’élève.
-                                                                </h4>
-                                                            </div>
-                                                        )}
-                                                        {activeTabTwo === 'c' && (
-                                                            <div className="tab_one_content_c">
+                                                            <div className="tab_one_content_b">
                                                                 <div className="bg-blue-50 rounded-xl p-6 mx-auto">
                                                                     <h4 className="text-[18px] font-semibold text-primary">
                                                                         Économisez jusqu’à 30 % selon la <span
@@ -308,6 +296,18 @@ const Pour = () => {
                                                                         </table>
                                                                     </div>
                                                                 </div>
+                                                            </div>
+                                                        )}
+                                                        {activeTabTwo === 'c' && (
+                                                            <div
+                                                                className="tab_one_content_c bg-[#e7dc5c1a] p-6 rounded-xl">
+                                                                <h4 className="text-yellow-500 text-[16px] font-semibold">
+                                                                    Obtenez 1 livre du professeur GRATUIT
+                                                                </h4>
+                                                                <h4 className="text-[14px] text-prgcolor">
+                                                                    Recevez 1 livre du professeur gratuit pour chaque achat
+                                                                    de 5 livres de l’élève.
+                                                                </h4>
                                                             </div>
                                                         )}
 
