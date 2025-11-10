@@ -7,7 +7,7 @@ import {HiOutlineBars3} from "react-icons/hi2";
 import LogoImg from '../../public/assets/images/books-logo-old.svg';
 import Image from "next/image";
 import {HiUserCircle} from "react-icons/hi";
-import {Modal, ModalBody} from "flowbite-react";
+import {Modal, ModalBody, ModalHeader} from "flowbite-react";
 import {
     LuChartNoAxesColumnIncreasing,
     LuCircleArrowRight,
@@ -62,6 +62,25 @@ function Header() {
 
     // Mobile Account popup
     const [openModal, setOpenModal] = useState(false);
+    const modalRef = useRef<HTMLDivElement | null>(null);
+
+    // ✅ Custom outside click detector
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                openModal &&
+                modalRef.current &&
+                !modalRef.current.contains(event.target as Node)
+            ) {
+                setOpenModal(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [openModal]);
 
     // Mobile menu dropdown
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -784,17 +803,12 @@ function Header() {
                 </div>
             </section>
             {/* Mobile Account Modal */}
-            <Modal
-                dismissible
-                show={openModal}
-                onClose={() => setOpenModal(false)}
-                className="flex lg:hidden"
-            >
+            <Modal show={openModal} onClose={() => setOpenModal(false)} className="flex lg:hidden">
                 <ModalBody>
-                    <div className="container">
+                    {/* ref used to detect outside click */}
+                    <div ref={modalRef} className="container">
                         <div className="col flex items-center px-2 h-[85px] w-full">
-                            <div
-                                className="flex items-center gap-3 border-b border-bordercolor pb-3 w-full">
+                            <div className="flex items-center gap-3 border-b border-bordercolor pb-3 w-full">
                                 <HiUserCircle size={70} className="text-primary"/>
                                 <div className="text">
                                     <h2 className="text-prgcolor font-semibold text-[14px]">
@@ -803,34 +817,42 @@ function Header() {
                                 </div>
                             </div>
                         </div>
+
                         <h4 className="mt-2 text-[14px] text-graycolor">
-                            <Link href='#' className="text-primary">
+                            <Link href="#" className="text-primary">
                                 Connectez-vous
-                            </Link> à votre compte Nosres ou <Link href='#'
-                                                                   className="text-primary">
-                            créez-en
-                        </Link> un.
+                            </Link>{" "}
+                            à votre compte Nosres ou{" "}
+                            <Link href="#" className="text-primary">
+                                créez-en
+                            </Link>{" "}
+                            un.
                         </h4>
+
                         <h4 className="mt-3 text-[14px] text-graycolor">
-                            De nombreuses ressources pédagogiques
-                            complémentaires aux manuels scolaires
-                            peuvent être téléchargées gratuitement
-                            sur le site.
+                            De nombreuses ressources pédagogiques complémentaires aux manuels
+                            scolaires peuvent être téléchargées gratuitement sur le site.
                         </h4>
+
                         <div className="flex justify-start">
-                            <Link href='/'
-                                  className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary hover:bg-primary hover:text-white hover:border-primary">
+                            <Link
+                                href="/"
+                                className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary hover:bg-primary hover:text-white hover:border-primary"
+                            >
                                 <div className="icon">
-                                    <LuCircleArrowRight size={20} className=""/>
+                                    <LuCircleArrowRight size={20}/>
                                 </div>
                                 Connectez-vous
                             </Link>
                         </div>
+
                         <div className="flex justify-start">
-                            <Link href='/'
-                                  className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-[#3A5F8A] text-white hover:text-white hover:border-primary">
+                            <Link
+                                href="/"
+                                className="mt-2 w-full py-2 pl-2 flex text-[14px] items-center justify-start gap-2 border rounded text-primary bg-primary hover:bg-[#3A5F8A] text-white hover:text-white hover:border-primary"
+                            >
                                 <div className="icon">
-                                    <LuUserRoundPlus size={20} className=""/>
+                                    <LuUserRoundPlus size={20}/>
                                 </div>
                                 Créez votre compte
                             </Link>
