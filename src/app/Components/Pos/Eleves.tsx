@@ -125,7 +125,7 @@ const Eleves = () => {
                         <h4 className="text-[14px] text-graycolor">Télécharger</h4>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-                        <div data-aos="zoom-in" className="col box border border-bordercolor rounded-xl pb-[15px]">
+                        <div onClick={() => setIsOpenOne(true)} data-aos="zoom-in" className="cursor-pointer col box border border-bordercolor rounded-xl pb-[15px]">
                             <div className="image_wrap mt-4 md:mt-0">
                                 <Image
                                     src={profileImg}
@@ -133,12 +133,12 @@ const Eleves = () => {
                                     className="w-full h-full md:h-[200px] rounded-t-xl"
                                 />
                             </div>
-                            <h4 onClick={() => setIsOpenOne(true)}
+                            <h4
                                 className="text-center mt-4 cursor-pointer hover:underline text-[16px] text-prgcolor font-[600]">
-                                Lettre aux parents
+                                Affiches
                             </h4>
                         </div>
-                        <div data-aos="zoom-in" className="col box border border-bordercolor rounded-xl pb-[15px]">
+                        <div onClick={() => setIsOpenTwo(true)} data-aos="zoom-in" className="col cursor-pointer box border border-bordercolor rounded-xl pb-[15px]">
                             <div className="image_wrap mt-4 md:mt-0">
                                 <Image
                                     src={profileImg}
@@ -146,12 +146,12 @@ const Eleves = () => {
                                     className="w-full h-full md:h-[200px] rounded-t-xl"
                                 />
                             </div>
-                            <h4 onClick={() => setIsOpenTwo(true)}
-                                className="text-center mt-4 cursor-pointer hover:underline text-[16px] text-prgcolor font-[600]">
+                            <h4
+                                className="text-center mt-4 hover:underline text-[16px] text-prgcolor font-[600]">
                                 Marque-pages
                             </h4>
                         </div>
-                        <div data-aos="zoom-in" className="col box border border-bordercolor rounded-xl pb-[15px]">
+                        <div onClick={() => setIsOpenThree(true)} data-aos="zoom-in" className="col cursor-pointer box border border-bordercolor rounded-xl pb-[15px]">
                             <div className="image_wrap mt-4 md:mt-0">
                                 <Image
                                     src={profileImg}
@@ -159,12 +159,12 @@ const Eleves = () => {
                                     className="w-full h-full md:h-[200px] rounded-t-xl"
                                 />
                             </div>
-                            <h4 onClick={() => setIsOpenThree(true)}
+                            <h4
                                 className="text-center mt-4 cursor-pointer hover:underline text-[16px] text-prgcolor font-[600]">
                                 Pages d’écriture
                             </h4>
                         </div>
-                        <div data-aos="zoom-in" className="col box border border-bordercolor rounded-xl pb-[15px]">
+                        <div onClick={() => setIsOpenFour(true)} data-aos="zoom-in" className="col cursor-pointer box border border-bordercolor rounded-xl pb-[15px]">
                             <div className="image_wrap mt-4 md:mt-0">
                                 <Image
                                     src={profileImg}
@@ -172,7 +172,7 @@ const Eleves = () => {
                                     className="w-full h-full md:h-[200px] rounded-t-xl"
                                 />
                             </div>
-                            <h4 onClick={() => setIsOpenFour(true)}
+                            <h4
                                 className="text-center mt-4 cursor-pointer hover:underline text-[16px] text-prgcolor font-[600]">
                                 Cartes
                             </h4>

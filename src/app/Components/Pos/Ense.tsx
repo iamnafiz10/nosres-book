@@ -133,7 +133,7 @@ const Ense = () => {
                             <p className="text-[14px] mt-4 text-left text-prgcolor">
                                 Accédez à l’ensemble complet des fichiers
                                 audio MP3 pour chaque niveau de Voyage
-                                methode de lecture, comprenant des activités
+                                méthode de lecture, comprenant des activités
                                 d’écoute, des chants et des chansons et des
                                 histoires.
                             </p>
@@ -187,7 +187,7 @@ const Ense = () => {
                                 Tests
                             </h4>
                             <p className="text-[14px] mt-4 text-left text-prgcolor">
-                                Chaque niveau de Voyage methode de lecture
+                                Chaque niveau de Voyage méthode de lecture
                                 comprend des tests d’unité, de mi-parcours et
                                 de fin de niveau pour évaluer les progrès de
                                 l’enfant. Les corrigés fournissent les réponses
@@ -202,8 +202,8 @@ const Ense = () => {
                             </h4>
                             <p className="text-[14px] mt-4 text-left text-prgcolor">
                                 Téléchargez le guide pédagogique, en français
-                                et en anglais, pour tous les niveaux de Oxford
-                                Phonics World. Il contient un message de
+                                et en anglais, pour tous les niveaux de Voyage
+                                méthode de lecture. Il contient un message de
                                 l’auteur, des jeux ludiques et des instructions
                                 claires pour chaque leçon.
                             </p>
