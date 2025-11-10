@@ -5,7 +5,7 @@ import Image from "next/image";
 function Hero() {
     return (
         <>
-            <section id="banner-section" className="pt-[110px] sm:pt-[50px]">
+            <section id="banner-section" className="pt-[110px] sm:pt-[40px]">
                 <div className="content_wrap bg-[#F4F4F4] pt-[20px] pb-[15px]">
                     <div className="container py-0">
                         <div className="block lg:flex items-center justify-between">
