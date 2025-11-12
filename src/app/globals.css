@@ -177,7 +177,12 @@ input {
 /* Check box design */
 #checkbox label input {
     color: #4D7FB8 !important;
-    font-width: 400 !important;
+    /*font-width: 400 !important;*/
+}
+
+:where(.css-dev-only-do-not-override-kk2c0l).ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #4D7FB8;
+    border-color: #4D7FB8;
 }
 
 /* Tooltip Design */

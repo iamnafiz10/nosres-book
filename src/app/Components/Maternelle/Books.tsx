@@ -1,6 +1,6 @@
 "use client";
 import React, {useEffect, useRef, useState} from 'react';
-import {Checkbox, Label} from "flowbite-react";
+import {Label} from "flowbite-react";
 import {
     LuArrowDownWideNarrow,
     LuArrowLeftToLine,
@@ -15,6 +15,7 @@ import bookImgthree from "../../../../public/assets/images/book3.jpg";
 import bookImgfour from "../../../../public/assets/images/book4.jpg";
 import bookImgfive from "../../../../public/assets/images/book5.jpg";
 import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from "react-icons/md";
+import {Checkbox} from 'antd'
 
 function Books() {
     // Select Left side (One)
@@ -162,25 +163,26 @@ function Books() {
                                         id="checkbox"
                                         className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="cat1"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cat1"
                                                 checked={selected.includes("Meilleures ventes")}
                                                 onChange={() => toggleOption("Meilleures ventes")}
-                                                className="mr-2 focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
+                                                className="focus:outline-none focus:ring-0 text-[14px] focus:border-0 focus:ring-offset-0"
                                             />
                                             Meilleures ventes
                                             <h4 className="text-[14px] text-prgcolor ml-auto">
                                                 5
-                                            </h4></Label>
+                                            </h4>
+                                        </Label>
 
                                         <Label htmlFor="cat2"
-                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cat2"
                                                 checked={selected.includes("À paraître")}
                                                 onChange={() => toggleOption("À paraître")}
-                                                className="mr-2 focus:outline-none focus:ring-0 focus:border-0 focus:ring-offset-0"
+                                                className="focus:outline-none focus:ring-0 focus:border-0 focus:ring-offset-0"
                                             />
                                             À paraître
                                             <h4 className="text-[14px] text-prgcolor ml-auto">
@@ -188,7 +190,7 @@ function Books() {
                                             </h4></Label>
 
                                         <Label htmlFor="cat3"
-                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cat3"
                                                 checked={selected.includes("Nouveautés")}
@@ -201,7 +203,7 @@ function Books() {
                                             </h4></Label>
 
                                         <Label htmlFor="cat4"
-                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center text-prgcolor font-normal px-4 py-2 hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cat4"
                                                 checked={selected.includes("Ressources téléchargeables")}
@@ -260,7 +262,7 @@ function Books() {
                                     <div id="checkbox"
                                          className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="catt1"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="catt1"
                                                 checked={selectedTwo.includes("Petite section")}
@@ -272,7 +274,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="catt2"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="catt2"
                                                 checked={selectedTwo.includes("Moyenne section")}
@@ -284,7 +286,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="catt3"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="catt3"
                                                 checked={selectedTwo.includes("Grande section")}
@@ -341,7 +343,7 @@ function Books() {
                                     <div id="checkbox"
                                          className="absolute mt-1 w-full lg:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="cattt1"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt1"
                                                 checked={selectedThree.includes("Écriture")}
@@ -353,7 +355,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="cattt2"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt2"
                                                 checked={selectedThree.includes("Lecture")}
@@ -365,7 +367,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="cattt3"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt3"
                                                 checked={selectedThree.includes("Arts")}
@@ -377,7 +379,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="cattt4"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt4"
                                                 checked={selectedThree.includes("Explorer le monde")}
@@ -389,7 +391,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="cattt5"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt5"
                                                 checked={selectedThree.includes("Logique")}
@@ -401,7 +403,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="cattt6"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt6"
                                                 checked={selectedThree.includes("Résolution de problèmes")}
@@ -413,7 +415,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="cattt7"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt7"
                                                 checked={selectedThree.includes("Mathématiques")}
@@ -425,7 +427,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="cattt8"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt8"
                                                 checked={selectedThree.includes("Vivre ensemble")}
@@ -437,7 +439,7 @@ function Books() {
                                                 5
                                             </h4></Label>
                                         <Label htmlFor="cattt9"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="cattt9"
                                                 checked={selectedThree.includes("Préparation au CP")}
@@ -494,7 +496,7 @@ function Books() {
                                     <div id="checkbox"
                                          className="absolute mt-1 w-full md:w-[302px] bg-white border border-gray-300 rounded shadow z-10">
                                         <Label htmlFor="catf1"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="catf1"
                                                 checked={selectedFour.includes("One")}
@@ -505,7 +507,7 @@ function Books() {
                                             <h4 className="text-[14px] text-prgcolor ml-auto">5</h4>
                                         </Label>
                                         <Label htmlFor="catf2"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="catf2"
                                                 checked={selectedFour.includes("Two")}
@@ -516,7 +518,7 @@ function Books() {
                                             <h4 className="text-[14px] text-prgcolor ml-auto">5</h4>
                                         </Label>
                                         <Label htmlFor="catf3"
-                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer">
+                                               className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1">
                                             <Checkbox
                                                 id="catf3"
                                                 checked={selectedFour.includes("Three")}
@@ -579,7 +581,7 @@ function Books() {
                                             <Label
                                                 key={idx}
                                                 htmlFor={`catff${idx + 1}`}
-                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer"
+                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1"
                                             >
                                                 <Checkbox
                                                     id={`catff${idx + 1}`}
@@ -636,7 +638,7 @@ function Books() {
                                             <Label
                                                 key={i}
                                                 htmlFor={`cats${i + 1}`}
-                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer"
+                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1"
                                             >
                                                 <Checkbox
                                                     id={`cats${i + 1}`}
@@ -697,7 +699,7 @@ function Books() {
                                             <Label
                                                 key={id}
                                                 htmlFor={id}
-                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer"
+                                                className="flex items-center px-4 py-2 font-normal text-prgcolor hover:bg-gray-100 cursor-pointer gap-1"
                                             >
                                                 <Checkbox
                                                     id={id}
