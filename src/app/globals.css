@@ -185,6 +185,11 @@ input {
     border-color: #4D7FB8 !important;
 }
 
+:where(.css-kk2c0l).ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #4D7FB8 !important;
+    border-color: #4D7FB8 !important;
+}
+
 /* Tooltip Design */
 .tooltip_design {
     font-size: 12px;
