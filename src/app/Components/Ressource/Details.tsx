@@ -471,7 +471,7 @@ function Details() {
                                                                 <div
                                                                     className="max-w-4xl mx-auto mt-8 border border-[#69b93bc2] overflow-hidden">
                                                                     <div
-                                                                        className="bg-[#69b93bc2] text-white text-[14px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-[#69b93bc2]">
+                                                                        className="bg-[#69b93bc2] text-white text-[18px] font-semibold text-lg px-6 py-3 border-b border-[#69b93bc2]">
                                                                         Maternelle, primaire et secondaire (Maternelle à
                                                                         Terminale)
                                                                     </div>
@@ -538,7 +538,7 @@ function Details() {
                                                                 <div
                                                                     className="max-w-4xl mx-auto mt-8 border border-blue-400 overflow-hidden">
                                                                     <div
-                                                                        className="bg-blue-400 text-white text-[14px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-blue-400">
+                                                                        className="bg-blue-400 text-white text-[18px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-blue-400">
                                                                         BTS / BUT (Filières post-bac professionnelles)
                                                                     </div>
 
@@ -608,7 +608,7 @@ function Details() {
                                                                 <div
                                                                     className="max-w-4xl mx-auto mt-8 border border-yellow-300 overflow-hidden">
                                                                     <div
-                                                                        className="bg-yellow-300 text-white text-[14px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-yellow-300">
+                                                                        className="bg-yellow-300 text-white text-[18px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-yellow-300">
                                                                         Licence
                                                                     </div>
 
@@ -678,7 +678,7 @@ function Details() {
                                                                 <div
                                                                     className="max-w-4xl mx-auto mt-8 border border-[#C800DE] overflow-hidden">
                                                                     <div
-                                                                        className="bg-[#C800DE] text-white text-[14px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-[#C800DE]">
+                                                                        className="bg-[#C800DE] text-white text-[18px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-[#C800DE]">
                                                                         Maîtrise et Doctorat
                                                                     </div>
 
