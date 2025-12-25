@@ -20,7 +20,7 @@ function Details() {
             document.body.style.overflow = '';
         }
     }, [isOpenOne]);
-    const [activeTab, setActiveTab] = useState<'a' | 'b' | 'c'>('a');
+    const [activeTab, setActiveTab] = useState<'a' | 'b' | 'n' | 'c'>('a');
     const tabCScrollRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (activeTab === 'c' && tabCScrollRef.current) {
@@ -280,7 +280,7 @@ function Details() {
                                             {/* White Popup Box */}
                                             <div className="bg-white rounded-[1rem] p-6 shadow-lg">
                                                 <div
-                                                    className="tab_box block space-y-3 md:space-y-0 md:flex justify-between mx-8 items-center gap-4">
+                                                    className="tab_box block space-y-3 md:space-y-0 md:grid grid-cols-3 justify-between mx-8 items-center gap-4">
                                                     <button
                                                         type="button"
                                                         onClick={() => setActiveTab('a')}
@@ -291,6 +291,17 @@ function Details() {
                                                         }`}
                                                     >
                                                         Pour les auteurs potentiels
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setActiveTab('n')}
+                                                        className={`text-[14px] py-2 px-6 rounded-full cursor-pointer ${
+                                                            activeTab === 'n'
+                                                                ? 'bg-[#F4F4F4] text-primary font-semibold'
+                                                                : 'bg-[#F4F4F4] text-prgcolor hover:text-primary'
+                                                        }`}
+                                                    >
+                                                        Nos exigences par niveau éducatif
                                                     </button>
                                                     <button
                                                         type="button"
@@ -435,6 +446,301 @@ function Details() {
                                                                     consulter nos
                                                                     appels à projets en cours.
                                                                 </h4>
+                                                            </div>
+                                                        </div>
+                                                    )}
+
+                                                    {activeTab === 'n' && (
+                                                        <div className="tab_one_content_n">
+                                                            <div className="box">
+                                                                <h4 className="font-semibold text-[24px] pb-2 border-b border-bordercolor">
+                                                                    Nos exigences par niveau éducatif
+                                                                </h4>
+                                                                <h4 className="text-[14px] mt-4">
+                                                                    Chez Nosres Books, nous croyons que chaque manuel de
+                                                                    qualité commence par un auteur passionné et
+                                                                    compétent. Que vous souhaitiez écrire pour la
+                                                                    maternelle, l’université ou le niveau
+                                                                    post-universitaire, nous
+                                                                    recherchons des auteurs capables de transformer leur
+                                                                    expertise en outils pédagogiques efficaces.
+                                                                </h4>
+                                                            </div>
+
+                                                            <div className="box">
+                                                                <div
+                                                                    className="max-w-4xl mx-auto mt-8 border border-[#69b93bc2] overflow-hidden">
+                                                                    <div
+                                                                        className="bg-[#69b93bc2] text-white text-[14px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-[#69b93bc2]">
+                                                                        Maternelle, primaire et secondaire (Maternelle à
+                                                                        Terminale)
+                                                                    </div>
+
+                                                                    <div
+                                                                        className="divide-y divide-[#69b93bc2] text-[14px]">
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6 border-b border-[#69b93bc2]">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-[#69b93bc2] pr-2 py-4">
+                                                                                Public
+                                                                            </div>
+                                                                            <div className="col-span-3 text-gray-800">
+                                                                                Enfants et adolescents (~5–18 ans)
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6 border-b border-[#69b93bc2]">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-[#69b93bc2] pr-2 py-4">Profil
+                                                                                idéal
+                                                                            </div>
+                                                                            <div className="col-span-3 text-gray-800">
+                                                                                Enseignants en classe, spécialistes des
+                                                                                programmes scolaires, ou professionnels
+                                                                                de l’éducation
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-[#69b93bc2] pr-2 py-10">Compétences
+                                                                                clés
+                                                                            </div>
+                                                                            <div
+                                                                                className="col-span-3 text-gray-800 space-y-2">
+                                                                                <ul className="list-disc list-inside">
+                                                                                    <li>Concevoir des contenus clairs,
+                                                                                        progressifs et adaptés à l’âge
+                                                                                    </li>
+                                                                                    <li>Intégrer supports visuels,
+                                                                                        activités et évaluations
+                                                                                    </li>
+                                                                                    <li>Respecter les programmes
+                                                                                        nationaux ou régionaux
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        className="bg-green-50 text-green-800 text-sm px-6 py-3 border-t border-[#69b93bc2]">
+                                                                        Les diplômes en éducation sont un atout, et une
+                                                                        expérience de terrain est fortement valorisée.
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div className="box">
+                                                                <div
+                                                                    className="max-w-4xl mx-auto mt-8 border border-blue-400 overflow-hidden">
+                                                                    <div
+                                                                        className="bg-blue-400 text-white text-[14px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-blue-400">
+                                                                        BTS / BUT (Filières post-bac professionnelles)
+                                                                    </div>
+
+                                                                    <div
+                                                                        className="divide-y divide-blue-400 text-[14px]">
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6 border-b border-blue-400">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-blue-400 pr-2 py-4">
+                                                                                Public
+                                                                            </div>
+                                                                            <div className="col-span-3 text-gray-800">
+                                                                                Étudiants en filières professionnelles
+                                                                                (~18–20 ans)
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6 border-b border-blue-400">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-blue-400 pr-2 py-4">Profil
+                                                                                idéal
+                                                                            </div>
+                                                                            <div className="col-span-3 text-gray-800">
+                                                                                Enseignants spécialisés, professionnels
+                                                                                du secteur
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-blue-400 pr-2 py-10">Compétences
+                                                                                clés
+                                                                            </div>
+                                                                            <div
+                                                                                className="col-span-3 text-gray-800 space-y-2">
+                                                                                <ul className="list-disc list-inside">
+                                                                                    <li>
+                                                                                        Contenus techniques et pratiques
+                                                                                        adaptés à la formation
+                                                                                        professionnelle
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        Études de cas et exercices
+                                                                                        pratiques
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        Mise en application directe des
+                                                                                        compétences
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        className="bg-blue-50 text-blue-800 text-sm px-6 py-3 border-t border-blue-400">
+                                                                        Diplôme dans le domaine concerné et expérience
+                                                                        professionnelle ou pédagogique exigée.
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div className="box">
+                                                                <div
+                                                                    className="max-w-4xl mx-auto mt-8 border border-yellow-300 overflow-hidden">
+                                                                    <div
+                                                                        className="bg-yellow-300 text-white text-[14px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-yellow-300">
+                                                                        Licence
+                                                                    </div>
+
+                                                                    <div
+                                                                        className="divide-y divide-yellow-300 text-[14px]">
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6 border-b border-yellow-300">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-yellow-300 pr-2 py-4">
+                                                                                Public
+                                                                            </div>
+                                                                            <div className="col-span-3 text-gray-800">
+                                                                                Étudiants universitaires (~18–22 ans)
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6 border-b border-yellow-300">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-yellow-300 pr-2 py-4">Profil
+                                                                                Profil idéal
+                                                                            </div>
+                                                                            <div className="col-span-3 text-gray-800">
+                                                                                Professeurs ou chargés de cours
+                                                                                universitaires
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-yellow-300 pr-2 py-10">
+                                                                                Compétences clés
+                                                                            </div>
+                                                                            <div
+                                                                                className="col-span-3 text-gray-800 space-y-2">
+                                                                                <ul className="list-disc list-inside">
+                                                                                    <li>
+                                                                                        Présenter des concepts
+                                                                                        fondamentaux avec clarté et
+                                                                                        rigueur
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        Structurer des chapitres adaptés
+                                                                                        à un semestre de cours
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        Proposer exercices, études de
+                                                                                        cas et exemples pratiques
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        className="bg-yellow-50 text-yellow-800 text-sm px-6 py-3 border-t border-yellow-300">
+                                                                        Un Maîtrise ou un Doctorat est généralement
+                                                                        requis, avec une expérience d’enseignement
+                                                                        reconnue.
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div className="box">
+                                                                <div
+                                                                    className="max-w-4xl mx-auto mt-8 border border-[#C800DE] overflow-hidden">
+                                                                    <div
+                                                                        className="bg-[#C800DE] text-white text-[14px] text-gray-800 font-semibold text-lg px-6 py-3 border-b border-[#C800DE]">
+                                                                        Maîtrise et Doctorat
+                                                                    </div>
+
+                                                                    <div
+                                                                        className="divide-y divide-[#C800DE] text-[14px]">
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6 border-b border-[#C800DE]">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-[#C800DE] pr-2 py-4">
+                                                                                Public
+                                                                            </div>
+                                                                            <div className="col-span-3 text-gray-800">
+                                                                                Étudiants avancés et chercheurs (~22+
+                                                                                ans)
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6 border-b border-[#C800DE]">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-[#C800DE] pr-2 py-4">
+                                                                                Profil idéal
+                                                                            </div>
+                                                                            <div className="col-span-3 text-gray-800">
+                                                                                Experts reconnus dans leur domaine
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div
+                                                                            className="grid grid-cols-4 gap-4 items-center px-6">
+                                                                            <div
+                                                                                className="font-semibold text-gray-700 border-r border-[#C800DE] pr-2 py-10">
+                                                                                Compétences clés
+                                                                            </div>
+                                                                            <div
+                                                                                className="col-span-3 text-gray-800 space-y-2">
+                                                                                <ul className="list-disc list-inside">
+                                                                                    <li>
+                                                                                        Produire des contenus
+                                                                                        spécialisés et approfondis
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        Intégrer références et
+                                                                                        recherches actuelles
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        Favoriser la réflexion critique
+                                                                                        et l’analyse avancée
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        className="bg-[#c800de14] text-[#9d66a3] text-sm px-6 py-3 border-t border-[#C800DE]">
+                                                                        Un doctorat et une expérience de recherche ou un
+                                                                        leadership professionnel dans le domaine sont
+                                                                        attendus.
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
                                                         </div>
                                                     )}
